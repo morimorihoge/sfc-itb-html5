@@ -3,13 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>情報基礎授業資料 HTML5/CSS3によるサイト構築</title>
-  <link type="text/css" href="style.css" rel="stylesheet">
+  <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
+  
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/shCore.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
+  
 </head>
 <body>
-
+<script type="text/javascript">
+$(function(){
+  SyntaxHighlighter.all();  
+});
+</script>
+  
 <!-- ヘッダ -->
 <header>
   <h1>HTML5/CSS3によるサイト構築</h1>
@@ -33,190 +45,125 @@
 
 <!-- メインコンテンツ -->
 <article id="content" class="articlecontent">
-  <h2>第一回：コンピュータネットワークとインターネット，Webページの仕組みを知る</h2>
+  <h2>第二回：HTMLとCSSの内部構造を理解する</h2>
   <p>
-    初回となる第一回では，コンピュータネットワークとインターネットについての復習と，Webページの仕組みを知る為にちょっとしたWebページの編集を行います．
+    前回ではWebページのソースコードを表示し、いろいろな値をいじると表示が変化することを試した。
+    今回はそもそもWebページはどのように作られているのか、詳しく学んでいく。
   </p>
-
-  <h3>コンピュータネットワークの復習</h3>
+  
+  <h3>HTMLとCSSの役割</h3>
   <p>
-第4回ではコンピュータ間の通信の仕組みについて学習した．同じプロトコルでコンピュータ同士が相互に通信できる仕組みをコンピュータネットワーク（Computer Network）と呼ぶ．コンピュータネットワーク上で，ネットワークに繋がったコンピュータの事をホスト（Host）と呼ぶ．
+    人間が紙に印刷された文章を読む時は、文字の大きさや色、配置などで、見出しや本文を何気なく認識することができる。
+    しかしコンピュータにとっては、このように曖昧な基準で見出しや本文を解釈することがとても難しい。
   </p>
-  <img src="images/cn01.png" />
+  <p>
+    そこで、コンピュータが解釈しやすいように文章の構造を明示的に記述したものが、HTML（Hyper Text Markup Language）である。
+    また、文字の大きさや配置、色など、文章の見栄えに関する点は、CSS（Cascading Style Sheets）という言語で記述する。
+  </p>
+  <p>
+    HTMLとCSSで記述されたWebページは、FirefoxやSafariなどのWebブラウザというプログラムでまず解釈される。
+    Webブラウザは、解釈した結果を人間が見やすい形に整形して表示してくれる。
+      Webブラウザは，URLで指定されたHTMLファイルをまず最初に取得する．その後，取得したHTMLファイルを解析し，Webページの表示に必要なファイルがあれば，追加でファイルを取得する．
+  </p>
+  <img src="images/cn12.png" width="500" />
   <br /><br />
 
-  <h3>ネットワークの大きさ</h3>
+
+
+  <h3>HTMLの構成要素</h3>
   <p>
-    コンピュータネットワークには大きさという概念がある．最も単純なコンピュータネットワークは2台のコンピュータ同士を直接ケーブルで繋いだネットワークである．
+    HTMLはタグによって記述する．ここではタグとその要素について，詳しく解説する．
   </p>
-  <img src="images/cn02.png" />
-  <br /><br />
+  
+  <h4>タグ（Tag）</h4>
   <p>
-    もう少し大きなネットワークとしては，授業で使う特別教室の様に，一台のハブ（Hub，2台以上のコンピュータを接続するための中継装置のような物）を使って構成されたネットワークがある．
+  HTMLは、タグと呼ばれる目印で文章の構造を囲うことで記述していく。
+  タグは"&lt;"から"&gt;"で命令文を囲ったものであり、すべて半角英数字で記述する。
   </p>
-  <img src="images/cn03.png" />
-  <br /><br />
+
+  <pre class="brush: xml">
+  &lt;html&gt;
+  </pre>
+
+   <p>タグには開始タグと終了タグの2種類があり、タグ名の先頭にスラッシュを付けたものが終了タグである。また，「&lt;!--」と「--&gt;」で囲まれた部分は<span class="bold">コメント</span>と呼ばれ，Webブラウザが描画しない．コメントはHTMLファイル内に何か覚書を書きたい時や，他人に見せる時のことを考えた説明文を挿入するのに使う．
+  </p>
+
+  <pre class="brush: xml">
+  &lt;html&gt; <!-- 開始タグ -->
+  &lt;/html&gt; <!-- 終了タグ-->
+  </pre>
+  <p>  開始タグと終了タグは基本的にペアで使用するが、br（改行）やimg（画像）などタグで囲む部分の文字列（後述する要素）がない種類も存在する。その場合は，開始タグと終了タグを合わせて以下の様に記述することができる．
+  </p>
+  
+  <pre class="brush: xml">
+  &lt;br /&gt;　<!-- &lt;br&gt;&lt;/br&gt;と同じ意味） -->
+  </pre>
+
+  <h4>要素（Element）</h4>
+  <p>  同じ命令の開始タグと終了タグで囲まれた中身が、そのタグの影響範囲であり、要素と呼ぶ。要素の中に別のタグを記述することも可能で，タグの中にタグがあるといった階層構造の事を入れ子構造とも呼ぶ．要素がブラウザどのように解釈されるかは，タグの種類に依存する
+  </p>
 
   <p>
-    さらにスケールを大きくして，SFCでCNSが提供するネットワークもコンピュータネットワークである．これまでケーブルで繋いだネットワークを主体に解説しているが，無線で繋がったネットワークも同様である．
+    例として，段落を表すpタグ（paragraph：段落）を用いると，要素の中を一つの段落として文章を記述できる．
   </p>
-  <img src="images/cn04.png" width="600" />
-  <br /><br />
-  
-  <p>
-    ここまでに説明したネットワークのことを，一般にLAN（Local Area Network）と呼ぶ．LANは限定された範囲に限ったコンピュータネットワークで，物理的には同じ建物内や敷地内レベルの規模のものを指す．
-  </p>
-  <p>
-    一方，LANに対してWAN（Wide Area Network）がある．WANは長距離回線によって接続されたコンピュータネットワークを指す．例えば，大学の異なるキャンパス間を結んだネットワークはWANである．
-  </p>
-  <img src="images/cn05.png" width="600" />
-  <br /><br />
-  
-  <h3>インターネット</h3>
-  <p>
-これまでに説明してきたネットワークは，大学や友達同士のようなごく私的なネットワークだが，WANを使ってさらにコンピュータネットワークのサイズを大きくしていくとどうなるだろうか？
-  </p>
-  <h4>SFCのネットワーク（CNS）</h4>
-  <img src="images/cn04.png" width="600" />
-  <br /><br />
-  
-  <h4>慶應のネットワーク（keio.ac.jpドメイン）</h4>
-  <img src="images/cn06.png" width="600" />
-  <p>※：「<a href="http://www.juce.jp/LINK/journal/0101/04_02.html">慶應義塾大学におけるIT基盤環境の24時間運用</a>」より（私情協力ジャーナル 2001 Vol.9 No.3）より</p>
-  
-  <h4>慶應・東大・東工大を接続したネットワーク（JUNET）</h4>
-  <img src="images/cn07.png" width="600" />
-  <p>※：ITPro連載記事「<a href="http://itpro.nikkeibp.co.jp/members/NNW/NETPOINT/20050608/162375/">前例なき挑戦，礎を築く！TCP/IPの助走期（1）</a>」より</p>
-  
-  <h4>世界中のネットワークを繋げたもの（インターネット）</h4>
-  <img src="images/cn08.png" width="600" />
-  <p>※：Caida（The Cooperative Association for Internet Data Analysis） 「<a href="http://www.caida.org/research/topology/as_core_network/">IPv4 and IPv6 AS Core: Visualizing IPv4 and IPv6 Internet Topology at a Macroscopic Scale in 2010</a>」より</p>
-  
-  <p>
-    このように，あらゆる組織・国を跨って繋がったネットワークが<span class="bold">インターネット（Internet）</span>である．
-  </p>
-  <p>
-    インターネットは異なる企業・政府機関・教育機関・国・個人などが相互に繋がることができる世界規模のネットワークで，<span class="bold">IP（Internet Protocol）</span>によって接続されている．IP以外にも，これまでに解説した<span class="bold">DNS（Domain Name System）</span>など，世界規模のネットワークを管理するためのシステムによって支えられている．
-  </p>
-  <p>
-    インターネットを支える技術やバックグラウンド等については，春学期の村井先生の講義「インターネット」が詳しいので，これ以上詳しい内容についてはそちらで学習することができる．当該講義は<a href="http://itunes.sfc.keio.ac.jp/">KEIO SFC on iTunes U</a>にてオンライン講義も公開されているので，そちらを参照するのも良い．
-  </p>
-  
-  <h3>WWW - World Wide Web</h3>
-  <p>
-    <span class="bold">WWW（World Wide Web，単にWebとも呼ばれる）</span>はインターネット上でテキストや画像，動画などのデータを配信・受信するための仕組みである．サーバマシン上で動作する<span class="bold">Webサーバ（Web server）アプリケーション</span>に対して，クライアントPCの<span class="bold">Webブラウザ（Web browser）</span>が要求（Request）しにいくのが基本のモデルである．サーバとクライアントに役割分担してサービスを提供する方式を<span class="bold">「クライアント・サーバ方式」</span>または<span class="bold">「サーバ・クライアント方式」</span>と呼ぶ．
-  </p>
-  <p>
-    WebブラウザはWebとの通信を簡単にし，HTMLやJavaScriptといった言語を解析し，人間に見やすい形で表示する（レンダリング）機能を持つ．
-  </p>
-  <img src="images/cn10.png" />
-  <ol>
-    <li>WebブラウザはWebサーバに対して/index.htmlファイルをリクエストする（HTTP Request）</li>
-    <li>Webサーバはリクエストされた/index.htmlに相当するファイルを探し出す</li>
-    <li>WebサーバはWebブラウザに対し，見つかった/index.htmlを返信する（HTTP Response）</li>
-    <li>Webブラウザは取得したHTMLを解析し，人間に読みやすい形式で描画する（レンダリング）</li>
-  </ol>
 
-  <h3>URLの復習</h3>
+  <pre class="brush: xml;highlight: [5,6,7,8,9,10,11]">
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;段落１，これは一段落目です．Pタグでは通常タグの初めと終わりが改行されます．
+    長い文章は自動的に折り返されるようになっています．&lt;/p&gt;
+    &lt;p&gt;段落２．段落の途中で改行したい場合は，brタグを使うことで
+    強制的に改行することができます．&lt;br /&gt;こんな感じになります．&lt;/p&gt;
+    &lt;p&gt;段落３．HTMLの
+    中で
+    いくら改行しても，ブラウザは改行してくれないので注意&lt;/p&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+  </pre>
+  <a href="resources/lecture02-01.html">ブラウザで開く</a>
   <p>
-    <span class="bold">URL（Uniform Resource Locator，昨今はURI（Uniform Resource Identifier）</span>とも呼ばれる）はWebにおいて非常に重要な概念なので，改めて解説する．
   </p>
-  <p>
-    URLはスキーム名（プロトコル），ホスト名，パス名で構成されており，それぞれが重要な役割を持っている
-  </p>
-  <img src="images/cn11.png" />
 
-  <h4>スキーム（プロトコル）</h4>
+  <h4>属性（Attribute）</h4>
   <p>
-    <span class="bold">スキーム（プロトコル）</span>は，どのようなプロトコルでデータを取得しにいくかを示す．Webで共通プロトコルとされる<span class="bold">HTTPの場合は「http://」</span>となる．また，<span class="bold">SSL（Secure Socket Layer）による暗号化を行ったHTTPSの場合「https://」</span>となる．
-  </p>
-  
-  <h4>ホスト名</h4>
-  <p>
-    ホスト名は，インターネット上のどのホストに接続するのかを特定するのに使われる．
-  </p>
-  
-  <h4>パス名</h4>
-  <p>
-    パス名は，ホスト上のどのファイルを取得するかを示す．パス名にはディレクトリ名を含むことができ，その場合は「/（スラッシュ）」区切りで記述する．昨今のWebサーバの慣例として，ディレクトリ名のみを指定した場合には自動的に「index.html」というファイルを取得する設定になっていることが多い．つまり「http://www.keio.ac.jp/」にアクセスすることは「http://www.keio.ac.jp/index.html」にアクセスするのと同じ意味になる．
+        開始タグの中に，付加的な情報として属性（Attribute）を指定することができる．指定できる属性はタグによっても異なるが，一般的な使い道としては，タグに指定したCSSクラスを指定することで，同じタグでも表示方法を分けたり，ハイパーリンクのリンク先URLを指定したりするといったものがある．
   </p>
   <p>
-    また，ファイル以外にもプログラムをパス名として渡すこともでき「?引数名1=値1&引数名2=値2...」の形式で動的に動作を変えることができる（Webサーバの設定によって指定方法は異なる場合がある）．例として，Yahoo! Japanの検索エンジンは「http://search.yahoo.co.jp/search?q=[検索文字列]」をURLとしてリクエストすることで，検索結果を動的に変更している．
+    属性を指定するには，開始タグのタグ名の後に半角スペースを入れた後ろに「属性名="値"」と記述する．例えば，pタグにクラス「important」を付けたければ以下のように記述すれば良い．
   </p>
-  
-  <h3>Webページの公開</h3>
-  <p>
-    CNSのサービスを使ってインターネットにWebページを公開する方法を解説する
-  </p>
-  
-  <h4>CNSを通じたWebページの公開</h4>
-  <p>
-    CNSでは，ホームディレクトリに<span class="bold">「public_html（半角英数小文字）」</span>というディレクトリを作り，その下にファイルを配置することで<span class="bold">web.sfc.keio.ac.jp</span>というWebサーバを通じてWebページをインターネット上に公開することができる．public_htmlディレクトリに置かれたファイルは「http://web.sfc.keio.ac.jp/~アカウント名/[public_htmlディレクトリを起点とした相対パス]」でアクセスすることができる．また，public_html以下にさらにディレクトリを配置した場合も「/（スラッシュ）」区切りでディレクトリ階層を指定することでアクセスすることができる．
-  </p>
-  <p>
-    特別教室のiMacからなら「CNS_HOMEDIR」の直下に「public_html」フォルダを配置すれば良い．例として，アカウント名「s12345ab」のユーザがpublic_htmlの下に置いた「test.txt」というファイルは「http://web.sfc.keio.ac.jp/~s12345ab/test.txt」というURLでアクセスすることができる．
-  </p>
-  
-  <h4>演習</h4>
-  <ul>      <li>自分のホームディレクトリにpublic_htmlディレクトリを作成し，その下にtest.txtの名前で適当な文字列の書かれたテキストファイルを配置せよ．その上でhttp://から始まるURLで配置したファイルがアクセスできることを確認すること．</li>
-    <li>上記で作成したファイルを，自分のログインした端末以外からも確かにアクセスできることを確認せよ．</li>
-    <li>http://www.ht.sfc.keio.ac.jp/~hiru/file/itb11.zipからダウンロードしたファイルの中身をpublic_html以下に解凍し「http://web.sfc.keio.ac.jp/~CNSアカウント名/」にアクセスせよ．</li>
-  </ul>
-  
-  <h3>FireBugでリアルタイムに編集する</h3>
-  <p>
-    Firebugを使い，HTML/CSSの編集を体験してみる．
-  </p>
-  
-  <h4>Firebugとは</h4>
-  <p>
-      Webブラウザ「Firefox」のプラグイン（後から追加できる拡張機能）で，WebページのCSS・HTML・Javascriptをリアルタイムに編集,
-    デバッグできるWeb開発者用のツール.Firefoxで以下のサイトにアクセスすればインストールすることができる．<br />
-<a href="https://addons.mozilla.org/ja/firefox/addon/firebug/">https://addons.mozilla.org/ja/firefox/addon/firebug/</a>
-  </p>
-  <p>
-    通常，Webページを編集する際は，HTMLやCSSファイルを編集し，保存してからブラウザで表示しなければならず，手間が大きい．
-    しかし，Firebugを使うとブラウザでページを表示したまま，リアルタイムにHTMLやCSSを編集し，結果を見ることができる．
-  </p>
-  <p>
-    ただし，<span class="bold">Firebugでリアルタイム編集した結果は保存されないため，編集結果を実際に反映させるためには元のファイルを修正する必要がある</span>．
-    FirebugにはWebブラウザの通信ログ機能，JavaScriptの高機能デバッグ機能など様々な機能があるが，授業では，主にHTMLとCSSのソース表示，スタイルとレイアウトの表示を使用する．  </p>
-  <img src="images/firebug.png" width="600"/>
-  <br /><br />
-  
-  <h4>要素を選択する</h4>
-  <p>
-    ページの任意の場所で右クリックし，「要素を調査」というメニューを選択すると，左のウィンドウにクリックした場所のソースが反転表示される．
-    ソースをクリックすると編集可能になり，編集するとリアルタイムにページの内容が変化するので，いろいろいじってみよう．
-  </p>
-  <img src="images/sentaku.png" width="600"/>
-  <br /><br />
 
-  <h4>スタイルを編集する</h4>
-  <p>
-    右のウィンドウには，クリックした要素に設定されているスタイル（デザインに関する情報）が表示されている．
-    スタイルには，font-sizeやcolorなどがあり，値を自由にいじってどのように変化するかを試してみよう．
-  </p>
-  <img src="images/style.png" />
-  <br /><br />
-
-  <h4>レイアウトを編集する</h4>
-  <p>
-    右側のウィンドウを「レイアウト」タブに切り替えると，要素の大きさや余白に関する情報が表示される．
-    ここの数値もいろいろといじってみて，どのように表示が変化するか試してみよう．
-  </p>
-  <img src="images/layout.png" />
-  <br /><br />
+  <pre class="brush: xml;highlight: [7,8]">
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;link type="text/css" href="lecture02-02.css" rel="stylesheet"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p class="important"&gt;この要素はimportantクラスが適用される&lt;/p&gt;
+    &lt;p&gt;この要素には適用されない&lt;/p&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+  </pre>
+  <a href="resources/lecture02-02.html">ブラウザで開く</a>
 
   <p>
-     CSSスタイル属性の詳細については次回以降詳しく解説していくが，余力のある人は以下のサイトを参考に，スタイルシートに書かれている内容の意味を読み取ってみよう．
+    ここまでをまとめると，以下の図の通りになる．
   </p>
-  <ul>
-    <li><a href="http://www.htmq.com/style/index.shtml">HTMLクイックリファレンス「スタイルシートリファレンス（目的別）」</a>
-    </li>
-  </ul>
-  
-  
+  <img src="images/cn13.png" width="500" />
+
+  <h3>HTMLの必須要素</h3>
+  HTMLは，以下のタグ構造を満たす必要がある．
+  <pre class="brush: xml">
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;&lt;/head&gt;
+  &lt;body&gt;&lt;/body&gt;
+  &lt;/html&gt;
+  </pre>
+  <p>それぞれの内容を下記に補足する．</p>
+
 </article>
 
 
