@@ -133,6 +133,10 @@ nav .menu ul li a {
     text-decoration: none;
     white-space: nowrap;
 }
+nav .menu ul li a.current {
+    background: none repeat scroll 0 0 #C10909;
+    color: #F7E908;
+}
 nav .menu ul li a:hover {
     background: none repeat scroll 0 0 #C10909;
 }
