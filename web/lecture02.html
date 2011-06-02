@@ -109,10 +109,12 @@ $(function(){
     例として，段落を表すpタグ（paragraph：段落）を用いると，要素の中を一つの段落として文章を記述できる．
   </p>
 
-  <pre class="brush: xml;highlight: [5,6,7,8,9,10,11]">
+  <pre class="brush: xml;highlight: [7,8,9,10,11,12,13]">
   &lt;!DOCTYPE html&gt;
   &lt;html&gt;
-  &lt;head&gt;&lt;/head&gt;
+  &lt;head&gt;
+    &lt;title&gt;02-01&lt;/title&gt;
+  &lt;/head&gt;
   &lt;body&gt;
     &lt;p&gt;段落１，これは一段落目です．Pタグでは通常タグの初めと終わりが改行されます．
     長い文章は自動的に折り返されるようになっています．&lt;/p&gt;
@@ -136,10 +138,11 @@ $(function(){
     属性を指定するには，開始タグのタグ名の後に半角スペースを入れた後ろに「属性名="値"」と記述する．例えば，pタグにクラス「important」を付けたければ以下のように記述すれば良い．
   </p>
 
-  <pre class="brush: xml;highlight: [7,8]">
+  <pre class="brush: xml;highlight: [8,9]">
   &lt;!DOCTYPE html&gt;
   &lt;html&gt;
   &lt;head&gt;
+    &lt;title&gt;02-02&lt;/title&gt;
     &lt;link type="text/css" href="lecture02-02.css" rel="stylesheet"&gt;
   &lt;/head&gt;
   &lt;body&gt;
@@ -197,7 +200,9 @@ $(function(){
   <pre class="brush: xml">
   &lt;!DOCTYPE html&gt;
   &lt;html&gt;
-  &lt;head&gt;&lt;/head&gt;
+  &lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+  &lt;/head&gt;
   &lt;body&gt;&lt;/body&gt;
   &lt;/html&gt;
   </pre>
@@ -205,6 +210,7 @@ $(function(){
     <li>&lt;!DOCTYPE html&gt; --- このファイルがHTML5で書かれていることを示す．必ず１行目に記述する．</li>
     <li>&lt;html&gt;&lt;/html&gt; --- このタグで囲まれた要素がHTML文書として認識される．</li>
     <li>&lt;head&gt;&lt;/head&gt; --- 描画される情報は書かないが，このHTMLを表示するのに必要な情報を要素として記述する．前述した外部CSSファイルやJavaScriptファイルがあればここに記述することができる．また，ブラウザウィンドウに表示されるページタイトルなども個々に記述する．</li>
+    <li>&lt;title&gt;&lt;/title&gt; --- ページタイトルを記述する</li>
     <li>&lt;body&gt;&lt;/body&gt; --- ブラウザに描画させるWebページの内容を要素として記述する．</li>
   </ul>
   <p>
@@ -250,7 +256,7 @@ $(function(){
     <li>作成したHTMLが正しいかどうかを<a href="http://validator.w3.org/">W3C Markup Validation Service</a>を使って検証せよ．エラーが発生した場合は修正し，エラーが無くなるまで修正すること．</li>
   </ul>
   
-  <h3>CSSの編集</h3>
+  <h3>CSSの基本</h3>
   <p>
     CSSは、Cascading Style Sheetsの略で、HTML要素の大きさや配置、色など、文章の見栄え（スタイル）に関しての記述を行う。CSSの読みはシーエスエス、または単にスタイルシートと呼ばれる。CSSはHTMLと同じくテキストファイルで記述し，HTMLのheadタグ内からlinkタグを使って必要なCSSファイルを読み込む．
   </p>
@@ -286,7 +292,15 @@ $(function(){
   </p>
   <p>
     値に設定可能な文字列はプロパティによって異なる．例えば，文字サイズ（font-size）であれば，ピクセル数（px）や割合（%）
-    での指定が可能だが，文字色（color）であればRGB値（#000000）やカラーネーム（red, blueなど．<a href="http://www.tagindex.com/color/color_name.html">一覧</a>）
+    での指定が可能だが，文字色（color）であればRGB値（#000000）やカラーネーム（red, blueなど．
+    <a href="http://www.tagindex.com/color/color_name.html">一覧</a>）を指定する．
+    また，<a href="http://www.htmq.com/style/margin.shtml">margin</a>や
+    <a href="http://www.htmq.com/style/padding.shtml">padding</a>プロパティなど，
+    値の数が1〜4つと可変のプロパティもあるので，利用する際は各プロパティのリファレンスを良く読んで使うこと．
+  </p>
+  
+  <p>
+    以下にタグ名とクラス名を使ったHTMLとCSSのサンプルを挙げる．
   </p>
 
 </article>
