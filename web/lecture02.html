@@ -251,7 +251,7 @@ $(function(){
     
   <h4>演習</h4>
   <ul>
-    <li>新規HTMLファイルを作成し，一つのh1タグによる見出しと複数のpタグによる記事を作成せよ</li>
+    <li>新規HTMLファイル<span class="bold">lecture02.html</span>を作成し，一つのh1タグによる見出しと複数のpタグによる記事を作成せよ</li>
     <li>上記で作成した記事全体をarticleタグで囲め</li>
     <li>作成したHTMLが正しいかどうかを<a href="http://validator.w3.org/">W3C Markup Validation Service</a>を使って検証せよ．エラーが発生した場合は修正し，エラーが無くなるまで修正すること．</li>
   </ul>
@@ -268,12 +268,13 @@ $(function(){
   </p>
 
   <pre class="brush: css">
-    セレクタ { プロパティ: 値; }
+    セレクタ { プロパティ: 値; } /* コメント */
   </pre>
   <ul>
     <li>セレクタ：スタイルを適用するHTML要素の条件．タグやクラス，idが指定できる。例：article, p, .bold, #image001 ...</li>
     <li>プロパティ：スタイルの種類。例：color, width, height, ...</li>
     <li>値：プロパティに応じた設定内容。例：red, 300px, ...</li>
+    <li>コメント：/*と*/に囲った部分にHTMLと同様任意のコメントを挿入できる</li>
   </ul>
 
   <h4>セレクタ</h4>
@@ -289,6 +290,7 @@ $(function(){
   <h4>プロパティと値</h4>
   <p>
     プロパティには予め決められたプロパティ名を記述する必要がある．<a href="http://www.htmq.com/style/indexa.shtml">スタイルシートリファレンス（ABC順）</a>に詳しい一覧があるので，プロパティの一覧についてはそちらを参照の事．
+    また，CSS3という最近の新しいブラウザで使えるより表現力のあるプロパティが<a href="http://www.htmq.com/css3/index.shtml">CSS3リファレンス</a>に一覧されているので，よりきれいに見せたい場合は利用すると良い．
   </p>
   <p>
     値に設定可能な文字列はプロパティによって異なる．例えば，文字サイズ（font-size）であれば，ピクセル数（px）や割合（%）
@@ -301,6 +303,77 @@ $(function(){
   
   <p>
     以下にタグ名とクラス名を使ったHTMLとCSSのサンプルを挙げる．
+  </p>
+  
+  <p>
+    lecture02-03.html
+    <pre class="brush: xml;highlight: [5];">
+      &lt;!DOCTYPE html&gt;
+      &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;02-03&lt;/title&gt;
+        &lt;link type="text/css" href="lecture02-03.css" rel="stylesheet" /&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;article&gt;
+          &lt;h1&gt;見出しトピック&lt;/h1&gt;
+          &lt;p&gt;
+            ほげほげほげほげほげほげほげほげほげほげほげほげ&lt;br /&gt;
+            &lt;span class="important"&gt;ここはimportantクラスを適用&lt;/span&gt;ほげほげ
+          &lt;/p&gt;
+          &lt;p&gt;
+            ふがふがふがふがふがふがふがふが
+          &lt;/p&gt;
+        &lt;/article&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;
+    </pre>
+    ※：5行目のlinkタグ内のhref属性でlecture02-03.cssを読み込んでいる．相対パスで表記してあるので，
+    <span class="bold">lecture02-03.cssはlecture02-03.htmlと同じディレクトリに置く必要がある</span>．
+  </p>
+  
+  <p>
+    lecture02-03.css
+    <pre class="brush: css">
+      article {
+        border: 1px solid black;/* 要素全体を1pxの線で囲む */
+        width: 800px;/* 横幅は800px固定 */
+        /* 
+          以下3行は影の表現 
+          http://www.htmq.com/css3/box-shadow.shtml
+        */
+        -webkit-box-shadow: 10px 10px 25px gray;
+        -moz-box-shadow: 10px 10px 25px gray;
+        box-shadow: 10px 10px 25px gray;
+      }
+
+      /* 見出し */
+      h1 {
+        font-size: 24px;
+      }
+
+      /* 段落 */
+      .important {
+        font-weight: bold;
+        color: red;
+      }
+    </pre>
+    <a href="resources/lecture02-03.html">ブラウザで開く</a>
+  </p>
+  
+  <h4>演習</h4>
+  <ul>
+    <li>HTMLの演習で作成したHTMLファイルlecture02.htmlに対応するCSSファイル<span class="bold">lecture02.css</span>を作成し，linkタグで読み込む様にせよ</li>
+    <li>サンプルを参考に，タグ名とクラス名を使って見た目を整形せよ</li>
+  </ul>
+  <p>
+    ※：CSSのプロパティを調整する際は，Firebugを使って見え方を微調整した後CSSファイルを編集するようにすると効率が良い．
+  </p>
+  
+  <h3>まとめ</h3>
+  <p>
+    HTMLとCSSの基礎を学んだので．これで最低限のWebページを作ることができる様になった．
+    ここで説明したHTMLとCSSの構文は非常に大切なので，何度も手を動かして練習すること．
   </p>
 
 </article>
