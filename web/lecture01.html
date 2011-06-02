@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>情報基礎授業資料 HTML5/CSS3によるサイト構築</title>
   <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
   <!--[if lt IE 9]>
@@ -46,25 +46,25 @@
   <p>
 第4回ではコンピュータ間の通信の仕組みについて学習した．同じプロトコルでコンピュータ同士が相互に通信できる仕組みをコンピュータネットワーク（Computer Network）と呼ぶ．コンピュータネットワーク上で，ネットワークに繋がったコンピュータの事をホスト（Host）と呼ぶ．
   </p>
-  <img src="images/cn01.png" />
+  <img src="images/cn01.png" alt="cn01" />
   <br /><br />
 
   <h3>ネットワークの大きさ</h3>
   <p>
     コンピュータネットワークには大きさという概念がある．最も単純なコンピュータネットワークは2台のコンピュータ同士を直接ケーブルで繋いだネットワークである．
   </p>
-  <img src="images/cn02.png" />
+  <img src="images/cn02.png" alt="cn02" />
   <br /><br />
   <p>
     もう少し大きなネットワークとしては，授業で使う特別教室の様に，一台のハブ（Hub，2台以上のコンピュータを接続するための中継装置のような物）を使って構成されたネットワークがある．
   </p>
-  <img src="images/cn03.png" />
+  <img src="images/cn03.png" alt="cn03" />
   <br /><br />
 
   <p>
     さらにスケールを大きくして，SFCでCNSが提供するネットワークもコンピュータネットワークである．これまでケーブルで繋いだネットワークを主体に解説しているが，無線で繋がったネットワークも同様である．
   </p>
-  <img src="images/cn04.png" width="600" />
+  <img src="images/cn04.png" width="600" alt="cn04" />
   <br /><br />
   
   <p>
@@ -73,7 +73,7 @@
   <p>
     一方，LANに対してWAN（Wide Area Network）がある．WANは長距離回線によって接続されたコンピュータネットワークを指す．例えば，大学の異なるキャンパス間を結んだネットワークはWANである．
   </p>
-  <img src="images/cn05.png" width="600" />
+  <img src="images/cn05.png" width="600" alt="cn05" />
   <br /><br />
   
   <h3>インターネット</h3>
@@ -81,19 +81,19 @@
 これまでに説明してきたネットワークは，大学や友達同士のようなごく私的なネットワークだが，WANを使ってさらにコンピュータネットワークのサイズを大きくしていくとどうなるだろうか？
   </p>
   <h4>SFCのネットワーク（CNS）</h4>
-  <img src="images/cn04.png" width="600" />
+  <img src="images/cn04.png" width="600" alt="cn04" />
   <br /><br />
   
   <h4>慶應のネットワーク（keio.ac.jpドメイン）</h4>
-  <img src="images/cn06.png" width="600" />
+  <img src="images/cn06.png" width="600" alt="cn06" />
   <p>※：「<a href="http://www.juce.jp/LINK/journal/0101/04_02.html">慶應義塾大学におけるIT基盤環境の24時間運用</a>」より（私情協力ジャーナル 2001 Vol.9 No.3）より</p>
   
   <h4>慶應・東大・東工大を接続したネットワーク（JUNET）</h4>
-  <img src="images/cn07.png" width="600" />
+  <img src="images/cn07.png" width="600" alt="cn07" />
   <p>※：ITPro連載記事「<a href="http://itpro.nikkeibp.co.jp/members/NNW/NETPOINT/20050608/162375/">前例なき挑戦，礎を築く！TCP/IPの助走期（1）</a>」より</p>
   
   <h4>世界中のネットワークを繋げたもの（インターネット）</h4>
-  <img src="images/cn08.png" width="600" />
+  <img src="images/cn08.png" width="600" alt="cn08" />
   <p>※：Caida（The Cooperative Association for Internet Data Analysis） 「<a href="http://www.caida.org/research/topology/as_core_network/">IPv4 and IPv6 AS Core: Visualizing IPv4 and IPv6 Internet Topology at a Macroscopic Scale in 2010</a>」より</p>
   
   <p>
@@ -113,7 +113,7 @@
   <p>
     WebブラウザはWebとの通信を簡単にし，HTMLやJavaScriptといった言語を解析し，人間に見やすい形で表示する（レンダリング）機能を持つ．
   </p>
-  <img src="images/cn10.png" />
+  <img src="images/cn10.png" alt="cn10" />
   <ol>
     <li>WebブラウザはWebサーバに対して/index.htmlファイルをリクエストする（HTTP Request）</li>
     <li>Webサーバはリクエストされた/index.htmlに相当するファイルを探し出す</li>
@@ -128,7 +128,7 @@
   <p>
     URLはスキーム名（プロトコル），ホスト名，パス名で構成されており，それぞれが重要な役割を持っている
   </p>
-  <img src="images/cn11.png" />
+  <img src="images/cn11.png" alt="cn11" />
 
   <h4>スキーム（プロトコル）</h4>
   <p>
@@ -145,7 +145,7 @@
     パス名は，ホスト上のどのファイルを取得するかを示す．パス名にはディレクトリ名を含むことができ，その場合は「/（スラッシュ）」区切りで記述する．昨今のWebサーバの慣例として，ディレクトリ名のみを指定した場合には自動的に「index.html」というファイルを取得する設定になっていることが多い．つまり「http://www.keio.ac.jp/」にアクセスすることは「http://www.keio.ac.jp/index.html」にアクセスするのと同じ意味になる．
   </p>
   <p>
-    また，ファイル以外にもプログラムをパス名として渡すこともでき「?引数名1=値1&引数名2=値2...」の形式で動的に動作を変えることができる（Webサーバの設定によって指定方法は異なる場合がある）．例として，Yahoo! Japanの検索エンジンは「http://search.yahoo.co.jp/search?q=[検索文字列]」をURLとしてリクエストすることで，検索結果を動的に変更している．
+    また，ファイル以外にもプログラムをパス名として渡すこともでき「?引数名1=値1&amp;引数名2=値2...」の形式で動的に動作を変えることができる（Webサーバの設定によって指定方法は異なる場合がある）．例として，Yahoo! Japanの検索エンジンは「http://search.yahoo.co.jp/search?q=[検索文字列]」をURLとしてリクエストすることで，検索結果を動的に変更している．
   </p>
   
   <h3>Webページの公開</h3>
@@ -185,7 +185,7 @@
   <p>
     ただし，<span class="bold">Firebugでリアルタイム編集した結果は保存されないため，編集結果を実際に反映させるためには元のファイルを修正する必要がある</span>．
     FirebugにはWebブラウザの通信ログ機能，JavaScriptの高機能デバッグ機能など様々な機能があるが，授業では，主にHTMLとCSSのソース表示，スタイルとレイアウトの表示を使用する．  </p>
-  <img src="images/firebug.png" width="600"/>
+  <img src="images/firebug.png" width="600" alt="firebug" />
   <br /><br />
   
   <h4>要素を選択する</h4>
@@ -193,7 +193,7 @@
     ページの任意の場所で右クリックし，「要素を調査」というメニューを選択すると，左のウィンドウにクリックした場所のソースが反転表示される．
     ソースをクリックすると編集可能になり，編集するとリアルタイムにページの内容が変化するので，いろいろいじってみよう．
   </p>
-  <img src="images/sentaku.png" width="600"/>
+  <img src="images/sentaku.png" width="600" alt="sentaku" />
   <br /><br />
 
   <h4>スタイルを編集する</h4>
@@ -201,7 +201,7 @@
     右のウィンドウには，クリックした要素に設定されているスタイル（デザインに関する情報）が表示されている．
     スタイルには，font-sizeやcolorなどがあり，値を自由にいじってどのように変化するかを試してみよう．
   </p>
-  <img src="images/style.png" />
+  <img src="images/style.png" alt="style" />
   <br /><br />
 
   <h4>レイアウトを編集する</h4>
@@ -209,7 +209,7 @@
     右側のウィンドウを「レイアウト」タブに切り替えると，要素の大きさや余白に関する情報が表示される．
     ここの数値もいろいろといじってみて，どのように表示が変化するか試してみよう．
   </p>
-  <img src="images/layout.png" />
+  <img src="images/layout.png" alt="layout" />
   <br /><br />
 
   <p>
