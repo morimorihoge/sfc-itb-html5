@@ -52,332 +52,82 @@ $(function(){
 
 <!-- メインコンテンツ -->
 <article id="content" class="articlecontent">
-  <h2>第二回：HTMLとCSSの内部構造を理解する</h2>
+  <h2>第三回：画像の貼りつけとハイパーリンク</h2>
   <p>
-    前回ではWebページのソースコードを表示し，いろいろな値をいじると表示が変化することを試した．
-    今回はそもそもWebページはどのように作られているのか，詳しく学んでいく．
+    前回まででWebページ作成の基礎を学び，HTMLが書ける様になった．
+    今回ではWebページに任意の画像を貼り付ける方法と，他のページへのハイパーリンクを貼る方法について学ぶ．
+    また，自己紹介のためのWebページを作るのを目標とする．
   </p>
   
-  <h3>HTMLとCSSの役割</h3>
+  <h3>画像の貼り付け</h3>
   <p>
-    人間が紙に印刷された文章を読む時は，文字の大きさや色，配置などで，見出しや本文を何気なく認識することができる．
-    しかしコンピュータにとっては，このように曖昧な基準で見出しや本文を解釈することがとても難しい．
+    これまでの授業では，自分の Web ページを主に文字で構成することを学習した．
+    しかし，ページを閲覧する人がより内容について理解を深めるために，適切な画像や映像，地図といった
+    マルチメディアコンテンツを利用すべき場面がある．今回は，そうしたマルチメディアコンテンツを有効に利用するための方法について解説する．
   </p>
+  
   <p>
-    そこで，コンピュータが解釈しやすいように文章の構造を明示的に記述したものが，HTML（Hyper Text Markup Language）である．
-    また，文字の大きさや配置，色など，文章の見栄えに関する点は，CSS（Cascading Style Sheets）という言語で記述する．
-  </p>
-  <p>
-    HTMLとCSSで記述されたWebページは，FirefoxやSafariなどのWebブラウザというプログラムでまず解釈される．
-    Webブラウザは，解釈した結果を人間が見やすい形に整形して表示してくれる．
-      Webブラウザは，URLで指定されたHTMLファイルをまず最初に取得する．その後，取得したHTMLファイルを解析し，Webページの表示に必要なファイルがあれば，追加でファイルを取得する．
-  </p>
-  <img src="images/cn12.png" width="500" alt="cn12" />
+    自己紹介のための Web ページを作ることになったので，
+    ここでは，自分の顔写真(あるいは似顔絵やイメージ画像)を名前のそばに添えてみよう．
+  </p>  
+  <img src="images/itb-07-1.png" width="600" alt="itb07-1" />
   <br /><br />
-
-  <h3>HTMLタグ</h3>
-  <p>
-    HTMLはタグによって記述する．ここではタグとその要素について，詳しく解説する．
-  </p>
   
-  <h4>タグ（Tag）</h4>
+  <h4>Photo Booth を使った写真の撮影</h4>
   <p>
-  HTMLは，タグと呼ばれる目印で文章の構造を囲うことで記述していく．
-  タグは"&lt;"から"&gt;"で命令文を囲ったものであり，すべて半角英数字で記述する．
+    Finder から アプリケーション -> Photo Booth を選択し，起動する．
   </p>
-
-  <pre class="brush: xml">
-  &lt;html&gt;
-  </pre>
-
-   <p>タグには開始タグと終了タグの2種類があり，タグ名の先頭にスラッシュを付けたものが終了タグである．また，「&lt;!--」と「--&gt;」で囲まれた部分は<span class="bold">コメント</span>と呼ばれ，Webブラウザが描画しない．コメントはHTMLファイル内に何か覚書を書きたい時や，他人に見せる時のことを考えた説明文を挿入するのに使う．
-  </p>
-
-  <pre class="brush: xml">
-  &lt;html&gt; <!-- 開始タグ -->
-  &lt;/html&gt; <!-- 終了タグ-->
-  </pre>
-  <p>  開始タグと終了タグは基本的にペアで使用するが，br（改行）やimg（画像）などタグで囲む部分の文字列（後述する要素）がない種類も存在する．その場合は，開始タグと終了タグを合わせて以下の様に記述することができる．
-  </p>
-  
-  <pre class="brush: xml">
-  &lt;br /&gt;　<!-- &lt;br&gt;&lt;/br&gt;と同じ意味） -->
-  </pre>
-
-  <h4>要素（Element）</h4>
-  <p>  同じ命令の開始タグと終了タグで囲まれた中身が，そのタグの影響範囲であり，要素と呼ぶ．要素の中に別のタグを記述することも可能で，タグの中にタグがあるといった階層構造の事を入れ子構造とも呼ぶ．要素がブラウザどのように解釈されるかは，タグの種類に依存する
-  </p>
-
-  <p>
-    例として，段落を表すpタグ（paragraph：段落）を用いると，要素の中を一つの段落として文章を記述できる．
-  </p>
-
-  <pre class="brush: xml;highlight: [7,8,9,10,11,12,13]">
-  &lt;!DOCTYPE html&gt;
-  &lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;02-01&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;p&gt;段落１，これは一段落目です．Pタグでは通常タグの初めと終わりが改行されます．
-    長い文章は自動的に折り返されるようになっています．&lt;/p&gt;
-    &lt;p&gt;段落２．段落の途中で改行したい場合は，brタグを使うことで
-    強制的に改行することができます．&lt;br /&gt;こんな感じになります．&lt;/p&gt;
-    &lt;p&gt;段落３．HTMLの
-    中で
-    いくら改行しても，ブラウザは改行してくれないので注意&lt;/p&gt;
-  &lt;/body&gt;
-  &lt;/html&gt;
-  </pre>
-  <a href="resources/lecture02-01.html">ブラウザで開く</a>
-  <p>
-  </p>
-
-  <h4>属性（Attribute）</h4>
-  <p>
-        開始タグの中に，付加的な情報として属性（Attribute）を指定することができる．指定できる属性はタグによっても異なるが，一般的な使い道としては，タグに指定したCSSクラスを指定することで，同じタグでも表示方法を分けたり，ハイパーリンクのリンク先URLを指定したりするといったものがある．
-  </p>
-  <p>
-    属性を指定するには，開始タグのタグ名の後に半角スペースを入れた後ろに「属性名="値"」と記述する．例えば，pタグにクラス「important」を付けたければ以下のように記述すれば良い．
-  </p>
-
-  <pre class="brush: xml;highlight: [8,9]">
-  &lt;!DOCTYPE html&gt;
-  &lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;02-02&lt;/title&gt;
-    &lt;link type="text/css" href="lecture02-02.css" rel="stylesheet"&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;p class="important"&gt;この要素はimportantクラスが適用される&lt;/p&gt;
-    &lt;p&gt;この要素には適用されない&lt;/p&gt;
-  &lt;/body&gt;
-  &lt;/html&gt;
-  </pre>
-  <a href="resources/lecture02-02.html">ブラウザで開く</a>
-
-  <p>
-    ここまでをまとめると，以下の図の通りになる．
-  </p>
-  <img src="images/cn13.png" width="500" alt="cn13" />
+  <img src="images/itb-07-2.png" width="600" alt="itb07-2" />
   <br /><br />
   
   <p>
-    ここまでにはpタグとbrタグの例しか出していないが，他にもHTMLで使えるタグは沢山定義されているので，以下のサイトなどを参考にすると良い．
+    Photo Booth は，Mac の画面上枠に埋めこまれているカメラを使って写真を撮影，加工することのできるソフトウェアである．
+    試しに自分の写真を撮影してみよう．
   </p>
-  <ul>
-    <li><a href="http://www.htmq.com/html5/index.shtml">HTML5リファレンス（HTMLリファレンス）</a></li>
-  </ul>
-  <p>
-    タグは基本的には必要に応じて覚えていくのが良いが，良く使うタグとして，以下のタグは覚えておくと良い．各タグの使い方などは，<a href="http://www.htmq.com/html5/">HTML5タグリファレンス</a>を読むか，実際にそのタグが使われているWebページのソースコードを読むと良い．
-  </p>
-  <ul>
-    <li>headタグ内に書けるタグ
-      <ul>
-        <li>titleタグ：要素をそのページのページタイトル（ブラウザウィンドウに表示される文字列）とする．</li>
-        <li>metaタグ：そのWebページに関する詳細情報を記述する．文字コードの指定などに良く使われる．詳細は<a href="http://www.htmq.com/html5/meta.shtml">&lt;meta&gt;- HTMLタグリファレンス</a>を参考に</li>
-        <li>linkタグ：そのWebページに関連する外部ファイルを記述する．CSSやJavaScriptのファイルURLはこのタグで指定する．
-          rel属性にファイルタイプ（stylesheetやjavascript），href属性にファイルのURLを指定する．</li>
-      </ul>
-    </li>
-    <li>bodyタグ内に書けるタグ
-      <ul>
-        <li>articleタグ：一つの完結する記事全体を囲む．本文全体はこれで囲むと良い．</li>
-        <li>asideタグ：補足的な情報を囲む．サイドバーなどはこのタグで囲むと良い．</li>
-        <li>sectionタグ：補足的な情報を囲む．サイドバーなどはこのタグで囲むと良い．</li>
-        <li>h1,h2...h6タグ：見出しを記述する．数字が少ないほど大見出しで，大きいほど小見出しになる</li>
-        <li>pタグ：要素を1つの段落として記述する</li>
-        <li>brタグ：強制的に改行する．要素を持たない</li>
-        <li>aタグ：ハイパーリンクを記述するのに使う．リンク先URLはhref属性として指定し，要素がリンク文字列となる</li>
-        <li>imgタグ：画像を表示するときに使う．画像のURLをsrc属性として指定し，要素は持たない</li>
-        <li>ul, ol, liタグ：リストを列挙するときに使う．このタグ一覧はul，liタグを用いて書かれている</li>
-        <li>table, tr, tdタグ：表を書きたい時に使う</li>
-        <li>spanタグ：汎用のインライン要素．CSSと組み合わせて文章の中の一部の文字列の色を変えたい時などに重宝する</li>
-        <li>divタグ：汎用のブロック要素．CSSと組み合わせてあるブロック範囲を指定したい時に重宝する</li>
-      </ul>
-    </li>
-  </ul>
-
-  <h3>HTMLの必須要素</h3>
-  前後してしまうが，HTMLは以下のタグ構造を満たす必要がある．
-  <pre class="brush: xml">
-  &lt;!DOCTYPE html&gt;
-  &lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;&lt;/body&gt;
-  &lt;/html&gt;
-  </pre>
-  <ul>
-    <li>&lt;!DOCTYPE html&gt; --- このファイルがHTML5で書かれていることを示す．必ず１行目に記述する．</li>
-    <li>&lt;html&gt;&lt;/html&gt; --- このタグで囲まれた要素がHTML文書として認識される．</li>
-    <li>&lt;head&gt;&lt;/head&gt; --- 描画される情報は書かないが，このHTMLを表示するのに必要な情報を要素として記述する．前述した外部CSSファイルやJavaScriptファイルがあればここに記述することができる．また，ブラウザウィンドウに表示されるページタイトルなども個々に記述する．</li>
-    <li>&lt;title&gt;&lt;/title&gt; --- ページタイトルを記述する</li>
-    <li>&lt;body&gt;&lt;/body&gt; --- ブラウザに描画させるWebページの内容を要素として記述する．</li>
-  </ul>
-  <p>
-    注意として，html, head, bodyタグは一つのファイル中に必ず一つずつしか記述してはいけない．これらのタグが複数あった場合，どのように表示されるかはブラウザによって異なる．
-  </p>
-  <p>
-    新しく一からHTMLファイルを書き始める時は，以下のテンプレートをコピー＆ペーストして書き始めると良い
-  </p>
-  <pre class="brush: xml">
-  &lt;!DOCTYPE html&gt;
-  &lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset="UTF-8" /&gt;&lt;!-- 文字コードの指定 --&gt;
-    &lt;title&gt;ここにタイトルを書く&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    本文
-  &lt;/body&gt;
-  &lt;/html&gt;
-  </pre>
-  
-  <h4>正しいHTMLが書けているかのチェック</h4>
-  <p>
-    自分の書いたHTMLの構文が正しいタグ構造で書かれているかを確認するには，<a href="http://validator.w3.org/">W3Cの提供するMarkup Validation Service（構文チェックサービス）</a>を利用すると良い．
-  </p>
-  <img src="images/validator01.png" width="600" alt="validator01" />
+  <img src="images/itb-07-3.png" width="600" alt="itb07-4" />
   <br /><br />
-  <p>
-    W3C Markup Validation Serviceでは，URLを指定する，HTMLファイルをアップロードする，HTMLを直接コピーペーストするのいずれかの方法でHTMLを検証することができる．
-    検証結果は，成功した場合はPassedと表示され，失敗した場合はエラーの数と，そのエラーを修正するための情報が表示される．
-  </p>
-  <img src="images/validation_success.png" width="600" alt="validation_success" />
-  <p>検証に成功</p>
-  <img src="images/validation_error.png" width="600" alt="validation_error" />
-  <p>検証に失敗</p>
-  <img src="images/validation_error_details.png" width="600" alt="validation_error_details" />
-  <p>失敗時のエラー理由．ここでは二つのエラーの原因がimgタグに必須のalt属性をセットしていないことだということが分かる．</p>
-    
-  <h4>演習</h4>
-  <ul>
-    <li>新規HTMLファイル<span class="bold">lecture02.html</span>を作成し，一つのh1タグによる見出しと複数のpタグによる記事を作成せよ</li>
-    <li>上記で作成した記事全体をarticleタグで囲め</li>
-    <li>作成したHTMLが正しいかどうかを<a href="http://validator.w3.org/">W3C Markup Validation Service</a>を使って検証せよ．エラーが発生した場合は修正し，エラーが無くなるまで修正すること．</li>
-  </ul>
-  
-  <h3>CSSの基本</h3>
-  <p>
-    CSSは、Cascading Style Sheetsの略で、HTML要素の大きさや配置、色など、文章の見栄え（スタイル）に関しての記述を行う。CSSの読みはシーエスエス、または単にスタイルシートと呼ばれる。CSSはHTMLと同じくテキストファイルで記述し，HTMLのheadタグ内からlinkタグを使って必要なCSSファイルを読み込む．
-  </p>
-  
-  <h4>書式</h4>
-  <p>
-    CSSの基本は，タグ名やクラス名（後述）といった条件に対して，どのようなスタイルを適用するかを次々と記述していくことである．
-    書式は以下のようになっている。
-  </p>
 
-  <pre class="brush: css">
-    セレクタ { プロパティ: 値; } /* コメント */
+  <p>
+    「エフェクト」のメニューから，様々な効果を付加して撮影することもできる．
+  </p>
+  
+  <p>
+    撮影した画像は，自分のホームディレクトリの ピクチャ -&gt; Photo Booth の下に保存される．
+    ファイル名が「写真(日付)」と日本語で作成されているが，日本語ファイル名のままだとページへの貼付けに支障をきたすので
+    アルファベットのファイル名( taro_picture.jpg など)に変更しておこう．
+  </p>
+  
+  <h4>画像のサイズを調整する</h4>
+  <p>
+    ファイルを開くと，プレビューで写真が表示されるが，このまま Web ページに貼り付けるには少しサイズが大きすぎる．
+    適切なサイズに調整しよう．
+    ツール -&gt; サイズの調整 から写真のサイズを変更可能だ．幅，高さをそれぞれ半分の 320ピクセル * 240ピクセル にしておこう．
+  </p>
+  <img src="images/itb-07-4.png" width="600" alt="itb07-4" />
+  <br /><br />
+  
+  <p>
+    サイズの調整が終わったら ファイル -> 保存 として忘れずにセーブしておく．
+    また，画像の特定の部分を切り抜くことも可能だ．
+    マウスをドラッグして切り抜きたい場所を選択する．
+  </p>
+  <img src="images/itb-07-11.png" width="600" alt="itb07-11" />
+  <br /><br />
+  
+  <p>
+    その後，ツール -&gt; 切り取り を選択すると，選択した箇所が切り取られて表示される．
+  </p>
+  <img src="images/itb-07-12.png" width="600" alt="itb07-12" />
+  <br /><br />
+  
+  <p>
+    切り抜きが終わったら，同じく ファイル -&gt; 保存 を選択してセーブしておこう．
+  </p>
+  
+  
+  <pre class="brush: xml">
+  &lt;html&gt;
   </pre>
-  <ul>
-    <li>セレクタ：スタイルを適用するHTML要素の条件．タグやクラス，idが指定できる。例：article, p, .bold, #image001 ...</li>
-    <li>プロパティ：スタイルの種類。例：color, width, height, ...</li>
-    <li>値：プロパティに応じた設定内容。例：red, 300px, ...</li>
-    <li>コメント：/*と*/に囲った部分にHTMLと同様任意のコメントを挿入できる</li>
-  </ul>
-
-  <h4>セレクタ</h4>
-  <p>
-    セレクタにはタグ名，クラス，idが指定できる．
-  </p>
-  <ul>
-    <li>タグ名：単にタグ名を設定すれば良い．タグ名だけを指定した場合，その名前のタグ全てに中括弧{}内に指定したプロパティが設定される</li>
-    <li>クラス名：<span style="bold">全てのHTMLタグにはclass属性を付与することができる</span>．class属性で指定した名前をCSS中で<span class="bold">「.クラス名」</span>と指定することで，指定したクラス名を属性に持つHTML要素だけにプロパティを設定することができる．classは複数のHTMLタグで同じ名前を指定することができるので，使い回しが可能</li>
-    <li>id：<span class="bold">全てのHTMLタグにはHTMLファイル中で<span class="red">一意な</span>id属性を付与することができる．</span>id属性で指定した名前をCSS中<span class="bold">「#id名」</span>と指定することで，指定したid名を属性に持つHTML要素だけにプロパティを設定することができる．id名はHTMLファイル中で一意であることが求められるので，ページ中で一つしか存在しないことが分かっている要素に対してのみ使用できる</li>
-  </ul>
-  
-  <h4>プロパティと値</h4>
-  <p>
-    プロパティには予め決められたプロパティ名を記述する必要がある．<a href="http://www.htmq.com/style/indexa.shtml">スタイルシートリファレンス（ABC順）</a>に詳しい一覧があるので，プロパティの一覧についてはそちらを参照の事．
-    また，CSS3という最近の新しいブラウザで使えるより表現力のあるプロパティが<a href="http://www.htmq.com/css3/index.shtml">CSS3リファレンス</a>に一覧されているので，よりきれいに見せたい場合は利用すると良い．
-  </p>
-  <p>
-    値に設定可能な文字列はプロパティによって異なる．例えば，文字サイズ（font-size）であれば，ピクセル数（px）や割合（%）
-    での指定が可能だが，文字色（color）であればRGB値（#000000）やカラーネーム（red, blueなど．
-    <a href="http://www.tagindex.com/color/color_name.html">一覧</a>）を指定する．
-    また，<a href="http://www.htmq.com/style/margin.shtml">margin</a>や
-    <a href="http://www.htmq.com/style/padding.shtml">padding</a>プロパティなど，
-    値の数が1〜4つと可変のプロパティもあるので，利用する際は各プロパティのリファレンスを良く読んで使うこと．
-  </p>
-  
-  <p>
-    以下にタグ名とクラス名を使ったHTMLとCSSのサンプルを挙げる．
-  </p>
-  
-  <p>
-    lecture02-03.html
-    <pre class="brush: xml;highlight: [5];">
-      &lt;!DOCTYPE html&gt;
-      &lt;html&gt;
-      &lt;head&gt;
-        &lt;title&gt;02-03&lt;/title&gt;
-        &lt;link type="text/css" href="lecture02-03.css" rel="stylesheet" /&gt;
-      &lt;/head&gt;
-      &lt;body&gt;
-        &lt;article&gt;
-          &lt;h1&gt;見出しトピック&lt;/h1&gt;
-          &lt;p&gt;
-            ほげほげほげほげほげほげほげほげほげほげほげほげ&lt;br /&gt;
-            &lt;span class="important"&gt;ここはimportantクラスを適用&lt;/span&gt;ほげほげ
-          &lt;/p&gt;
-          &lt;p&gt;
-            ふがふがふがふがふがふがふがふが
-          &lt;/p&gt;
-        &lt;/article&gt;
-      &lt;/body&gt;
-      &lt;/html&gt;
-    </pre>
-    ※：5行目のlinkタグ内のhref属性でlecture02-03.cssを読み込んでいる．相対パスで表記してあるので，
-    <span class="bold">lecture02-03.cssはlecture02-03.htmlと同じディレクトリに置く必要がある</span>．
-  </p>
-  
-  <p>
-    lecture02-03.css
-    <pre class="brush: css">
-      article {
-        border: 1px solid black;/* 要素全体を1pxの線で囲む */
-        width: 800px;/* 横幅は800px固定 */
-        /* 
-          以下3行は影の表現 
-          http://www.htmq.com/css3/box-shadow.shtml
-        */
-        -webkit-box-shadow: 10px 10px 25px gray;
-        -moz-box-shadow: 10px 10px 25px gray;
-        box-shadow: 10px 10px 25px gray;
-      }
-
-      /* 見出し */
-      h1 {
-        font-size: 24px;
-      }
-
-      /* 段落 */
-      .important {
-        font-weight: bold;
-        color: red;
-      }
-    </pre>
-    <a href="resources/lecture02-03.html">ブラウザで開く</a>
-  </p>
-  
-  <h4>演習</h4>
-  <ul>
-    <li>HTMLの演習で作成したHTMLファイルlecture02.htmlに対応するCSSファイル<span class="bold">lecture02.css</span>を作成し，linkタグで読み込む様にせよ</li>
-    <li>サンプルを参考に，タグ名とクラス名を使って見た目を整形せよ</li>
-  </ul>
-  <p>
-    ※：CSSのプロパティを調整する際は，Firebugを使って見え方を微調整した後CSSファイルを編集するようにすると効率が良い．
-  </p>
-  
-  <h3>まとめ</h3>
-  <p>
-    HTMLとCSSの基礎を学んだので．これで最低限のWebページを作ることができる様になった．
-    ここで説明したHTMLとCSSの構文は非常に大切なので，何度も手を動かして練習すること．
-  </p>
 
 </article>
 
