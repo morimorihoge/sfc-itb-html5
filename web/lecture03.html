@@ -124,10 +124,71 @@ $(function(){
     切り抜きが終わったら，同じく ファイル -&gt; 保存 を選択してセーブしておこう．
   </p>
   
+  <h4>ページに貼りつけよう</h4>
+  <p>
+    画像の用意ができたら，実際に Web ページに貼りつけて表示させよう．
+    画像の表示には img タグを利用する．HTML 内の任意の場所で
+  </p>
+  <pre class="brush: xml">
+　   &lt;img src="画像ファイルへの相対パス，もしくは URL" alt="代替名" /&gt;
+  </pre>
+  <p>
+    と記述することで指定したファイルを表示でき1る．
+    今回は，resourcesディレクトリ内にあるHTMLファイルから，imagesというディレクトリににある画像を保存して表示する．
+    そのため，HTML ファイルから画像ファイルへの相対パスは "../images/taro_picture.jpg" であり，
+    以下の記述によって taro_picture.jpg をページ内に表示できる．
+  </p>
+  <pre class="brush: xml">
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;03-02&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;img src="../images/taro_picture.jpg" alt="太郎" /&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+  </pre>
+  <a href="resources/lecture03-02.html">ブラウザで見る</a>
+  <p>
+    画像が表示されず，alt属性に設定した文字列が表示されている場合は，src属性に指定したパスが間違っているか，画像がそもそも存在しない
+    可能性があるので，確認すること．
+  </p>
+  
+  <h3>ハイパーリンクの作成</h3>
+  <p>
+    Webページはハイパーリンク（単にリンクとも呼ばれる）によって，マウスでクリックすることで別ページに遷移することができるのが特徴である．
+    ここではハイパーリンクの貼り方を学ぶ
+  </p>
+  
+  <h4>aタグによるハイパーリンク</h4>
+  <p>
+    ハイパーリンクの作成にはaタグを用いる．第二回でも少し解説したが，aタグのhref属性にリンク先のURL，または相対パスを記述することで，
+    要素がリンク対象になる．
+    要素に使えるのは文字列だけというわけではなく，imgタグを要素内に記述することで，画像自体をリンク対象にすることもできる．
+  </p>
   
   <pre class="brush: xml">
-  &lt;html&gt;
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;03-01&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="../lecture01.html"&gt;第一回ページへ&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="http://www.sfc.keio.ac.jp/"&gt;SFCホームページへ&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;
+        &lt;a href="http://www.google.co.jp/"&gt;
+          &lt;img src="http://www.google.co.jp/images/logos/ps_logo2.png"
+            alt="google logo" /&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
   </pre>
+  <a href="resources/lecture03-01.html">ブラウザで見る</a>
 
 </article>
 
