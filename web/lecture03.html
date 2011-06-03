@@ -46,17 +46,21 @@ $(function(){
     <li>
       <a href="./lecture03.html" class="current">第三回</a>
     </li>
+    <li>
+      <a href="./mid_report.html">中間課題</a>
+    </li>
   </ul>
   </div>
 </nav>
 
 <!-- メインコンテンツ -->
 <article id="content" class="articlecontent">
-  <h2>第三回：画像の貼りつけとハイパーリンク</h2>
+  <h2>第三回：画像の貼りつけとハイパーリンク，外部Webサービスの埋め込み</h2>
   <p>
     前回まででWebページ作成の基礎を学び，HTMLが書ける様になった．
     今回ではWebページに任意の画像を貼り付ける方法と，他のページへのハイパーリンクを貼る方法について学ぶ．
-    また，自己紹介のためのWebページを作るのを目標とする．
+    また，昨今のWebページで一般的な外部Webサービスの埋め込みについても学習する．
+    第三回までの内容で，自己紹介のためのWebページを作るのを目標とする．
   </p>
   
   <h3>画像の貼り付け</h3>
@@ -75,7 +79,7 @@ $(function(){
   
   <h4>Photo Booth を使った写真の撮影</h4>
   <p>
-    Finder から アプリケーション -> Photo Booth を選択し，起動する．
+    Finder から アプリケーション -&gt; Photo Booth を選択し，起動する．
   </p>
   <img src="images/itb-07-2.png" width="600" alt="itb07-2" />
   <br /><br />
@@ -107,7 +111,7 @@ $(function(){
   <br /><br />
   
   <p>
-    サイズの調整が終わったら ファイル -> 保存 として忘れずにセーブしておく．
+    サイズの調整が終わったら ファイル -&gt; 保存 として忘れずにセーブしておく．
     また，画像の特定の部分を切り抜くことも可能だ．
     マウスをドラッグして切り抜きたい場所を選択する．
   </p>
@@ -133,25 +137,25 @@ $(function(){
 　   &lt;img src="画像ファイルへの相対パス，もしくは URL" alt="代替名" /&gt;
   </pre>
   <p>
-    と記述することで指定したファイルを表示でき1る．
+    と記述することで指定したファイルを表示できる．代替名は画像が見つからなかった場合に表示される文字列である．
     今回は，resourcesディレクトリ内にあるHTMLファイルから，imagesというディレクトリににある画像を保存して表示する．
     そのため，HTML ファイルから画像ファイルへの相対パスは "../images/taro_picture.jpg" であり，
     以下の記述によって taro_picture.jpg をページ内に表示できる．
   </p>
-  <pre class="brush: xml">
+  <pre class="brush: xml;highlight: [7];">
     &lt;!DOCTYPE html&gt;
     &lt;html&gt;
     &lt;head&gt;
       &lt;title&gt;03-02&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
-    &lt;img src="../images/taro_picture.jpg" alt="太郎" /&gt;
+      &lt;img src="../images/taro_picture.jpg" alt="太郎" /&gt;
     &lt;/body&gt;
     &lt;/html&gt;
   </pre>
   <a href="resources/lecture03-02.html">ブラウザで見る</a>
   <p>
-    画像が表示されず，alt属性に設定した文字列が表示されている場合は，src属性に指定したパスが間違っているか，画像がそもそも存在しない
+    画像が表示されず，alt属性に設定した代替名が表示されている場合は，src属性に指定したパスが間違っているか，画像がそもそも存在しない
     可能性があるので，確認すること．
   </p>
   
@@ -168,7 +172,7 @@ $(function(){
     要素に使えるのは文字列だけというわけではなく，imgタグを要素内に記述することで，画像自体をリンク対象にすることもできる．
   </p>
   
-  <pre class="brush: xml">
+  <pre class="brush: xml;highlight: [8,9,11,12,13,14];">
     &lt;!DOCTYPE html&gt;
     &lt;html&gt;
     &lt;head&gt;
@@ -189,6 +193,64 @@ $(function(){
     &lt;/html&gt;
   </pre>
   <a href="resources/lecture03-01.html">ブラウザで見る</a>
+  <br /><br />
+  
+  <h3>外部の Web サービスが提供する情報を埋め込む</h3>
+  <p>
+    昨今のWebページでは，Webパーツやウィジェットと呼ばれる外部サービスの情報を自分のページに埋め込むことが一般的になった．
+    ここでは，そうした外部Webサービスが提供する情報を埋め込む方法を説明する．
+  </p>
+  
+  <h4>外部Webサービスとは</h4>
+  <p>
+    伝えたい情報の内容によっては，地図などを Web ページ内に埋め込み表示できると，より分かりやすく伝えることができる．
+    Web サービスの中には，地図やアカウントの発言など，サービス内の情報を自分の Web ページに埋め込むことができるような機能や，
+    埋め込むための ウィジェット(Widget)を用意しているサービスもある．伝えたい内容に合わせて，情報の埋め込みを積極的に活用すると良い．
+  </p>
+  <img src="images/itb-07-10.png" width="600" alt="itb07-11" />
+  <br /><br />
+  
+  <h4>Google Maps でお気に入りのお店を紹介しよう</h4>
+  <p>
+    <a href="http://maps.google.com/">Google Maps</a> は，世界中の地図を検索し，表示することのできる Web サービスである．
+    またこのサービスは，特定の場所周辺の地図を切り出し，自分の Web ページに埋め込んで表示できる機能を提供している．
+    自分のお気に入りの店を地図に表示し，紹介してみよう．
+  </p>
+  <img src="images/itb-07-5.png" width="600" alt="itb07-5" />
+  <br /><br />
+  <p>
+    まず最初に<a href="http://maps.google.com/">Google Maps (http://maps.google.co.jp/)</a>
+    の検索ボックスに，表示させたい場所の名前(店名でも検索できる)や住所を入力し，表示させる．
+  </p>
+  <img src="images/itb-07-6.png" width="600" alt="itb07-6" />
+  <br /><br />
+  <p>
+    画面右上の「リンク」から「埋め込み地図のカスタマイズとプレビュー」をクリックすると，カスタマイズのためのウィンドウが開く．
+  </p>
+  <img src="images/itb-07-8.png" width="600" alt="itb07-8" />
+  <br /><br />
+  <p>
+    地図のサイズをプレビューを見ながら確認し，画面下に生成されている HTML タグをコピーして，自分の Web ページの地図を表示したい場所に貼りつける．
+  </p>
+  
+  <h4>Twitter ウィジェットを表示してみよう</h4>
+  <p>
+    <a href="http://twitter.com/">Twitter</a> は，ここ数年話題になっているマイクロブログサービスである．
+    Twitter に関する細かい説明は省くが，このサービスも，自分の発言や他人の発言(公開される設定になっているもの)を自分の Web ページに表示することのできる
+    ウィジェット(Widget: 簡易なプログラム)を提供している．
+    <a href="http://twitter.com/about/resources/widgets">Twitter Widget のページ(http://twitter.com/about/resources/widgets)</a>にアクセスし，プロフィールウィジェット(あるいは，検索ウィジェット)を表示してみよう．
+  </p>
+  <img src="images/itb-07-9.png" width="600" alt="itb07-9" />
+  <br /><br />
+  <p>
+    どちらかを選択して表示される情報をカスタマイズし，「完了&amp;コード取得」をクリックするとカスタマイズされたウィジェットを表示するコードが出力される．
+    カスタマイズした内容はコード内に含まれているため，例えばウィジェットの幅を変更したければ width: を，高さを変更するなら height を表示したい場所に合わせて変更すればよい．
+  </p>
+  
+  <h4>演習</h4>
+  <p>
+    Google MapsとTwitter Widgetを埋め込んだHTMLファイルを作成し，動作を確認せよ．
+  </p>
 
 </article>
 
