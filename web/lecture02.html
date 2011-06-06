@@ -38,13 +38,13 @@ $(function(){
       <a href="./">Home</a>
     </li>
     <li>
-      <a href="./lecture01.html">第一回</a>
+      <a href="./lecture01.html">第5回</a>
     </li>
     <li>
-      <a href="./lecture02.html" class="current">第二回</a>
+      <a href="./lecture02.html" class="current">第6回</a>
     </li>
     <li>
-      <a href="./lecture03.html">第三回</a>
+      <a href="./lecture03.html">第7回</a>
     </li>
     <li>
       <a href="./mid_report.html">中間課題</a>
@@ -55,7 +55,7 @@ $(function(){
 
 <!-- メインコンテンツ -->
 <article id="content" class="articlecontent">
-  <h2>第二回：HTMLとCSSの内部構造を理解する</h2>
+  <h2>第6回：HTMLとCSSの内部構造を理解する</h2>
   <p>
     前回ではWebページのソースコードを表示し，いろいろな値をいじると表示が変化することを試した．
     今回はそもそもWebページはどのように作られているのか，詳しく学んでいく．
@@ -179,15 +179,16 @@ $(function(){
       <ul>
         <li>titleタグ：要素をそのページのページタイトル（ブラウザウィンドウに表示される文字列）とする．</li>
         <li>metaタグ：そのWebページに関する詳細情報を記述する．文字コードの指定などに良く使われる．詳細は<a href="http://www.htmq.com/html5/meta.shtml">&lt;meta&gt;- HTMLタグリファレンス</a>を参考に</li>
-        <li>linkタグ：そのWebページに関連する外部ファイルを記述する．CSSやJavaScriptのファイルURLはこのタグで指定する．
-          rel属性にファイルタイプ（stylesheetやjavascript），href属性にファイルのURLを指定する．</li>
+        <li>linkタグ：そのWebページに関連する外部ファイルを記述する．CSSやRSSファイルURLはこのタグで指定する．
+          rel属性にファイルタイプ（stylesheetやRSSフィード），href属性にファイルのURLを指定する．</li>
       </ul>
     </li>
     <li>bodyタグ内に書けるタグ
       <ul>
         <li>articleタグ：一つの完結する記事全体を囲む．本文全体はこれで囲むと良い．</li>
         <li>asideタグ：補足的な情報を囲む．サイドバーなどはこのタグで囲むと良い．</li>
-        <li>sectionタグ：補足的な情報を囲む．サイドバーなどはこのタグで囲むと良い．</li>
+        <li>navタグ：ナビゲーション情報を囲む．</li>
+        <li>sectionタグ：一纏まりの情報を囲む．articleやasideよりも汎用的なタグ．</li>
         <li>h1,h2...h6タグ：見出しを記述する．数字が少ないほど大見出しで，大きいほど小見出しになる</li>
         <li>pタグ：要素を1つの段落として記述する</li>
         <li>brタグ：強制的に改行する．要素を持たない</li>
