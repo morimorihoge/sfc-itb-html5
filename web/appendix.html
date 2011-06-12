@@ -4,12 +4,25 @@
   <meta charset="UTF-8">
   <title>情報基礎授業資料 HTML5/CSS3によるサイト構築</title>
   <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
+  
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/shCore.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
+  
 </head>
 <body>
-
+<script type="text/javascript">
+$(function(){
+  SyntaxHighlighter.all();  
+});
+</script>
+  
 <!-- ヘッダ -->
 <header>
   <h1>HTML5/CSS3によるサイト構築</h1>
@@ -22,7 +35,7 @@
   <ul>
     <li>
       <!-- ファイル名を省略するとindex.htmlを表示する -->
-      <a href="./" class="current">Home</a>
+      <a href="./">Home</a>
     </li>
     <li>
       <a href="./lecture01.html">第5回</a>
@@ -40,7 +53,7 @@
       <a href="./sshfs.html">SSHFS</a>
     </li>
     <li>
-      <a href="./appendix.html">Appendix</a>
+      <a href="./appendix.html" class="current">Appendix</a>
       <ul>
         <li><a href="./html_entities.html">HTMLエンティティ</a></li>
         <li></li>
@@ -53,36 +66,22 @@
 
 <!-- メインコンテンツ -->
 <article id="content" class="articlecontent">
-  <h2>このWebサイトについて</h2>
+  <h2>Appendix</h2>
   <p>
-    このページはSFC情報基礎におけるWebサイト構築の共通資料です．<br>
-    各自の予習・復習に役立てて下さい．
+    ここでは，第5〜7回の内容で解説し切れなかった少し進んだ内容について掘り下げる．
+    最終課題で正しいHTMLを作成するために必要な技術なので，各自マスターしておくこと．
   </p>
-  <p>
-    本授業資料の対象者はタッチタイピングができることとテキストエディタが使えることを前提としています．
-    これらについて不安な学生は予め予習をしておくことを勧めます．
-  </p>
-
-  <h2>授業資料</h2>
+  
+  <h3>
+    目次
+  </h3>
   <ul>
-    <li><a href="./lecture01.html">第5回：コンピュータネットワークとインターネット，Webページの仕組みを知る</a></li>
-    <li><a href="./lecture02.html">第6回：HTMLとCSSの内部構造を理解する</a></li>
-    <li><a href="./lecture03.html">第7回：画像の貼りつけとハイパーリンク，外部Webサービスの埋め込み</a></li>
-    <li><a href="./mid_report.html">中間課題</a></li>
-    <li><a href="./sshfs.html">SSHFS：自分のPCからCNSのホームディレクトリを更新する</a></li>
-    <li>第11回</li>
+    <li>
+      <a href="./html_entities.html">HTMLエンティティ：HTMLで&gt;や&lt;を文字列として表示するには？</a>
+    </li>
   </ul>
-  <h3>授業資料について</h3>
-  <p>
-    この授業資料ページはHTML5で書かれていますので，そのまま学習用教材として使うことができます．
-    最新のソースコードは
-    <a href="https://github.com/morimorihoge/sfc-itb-html5">
-      https://github.com/morimorihoge/sfc-itb-html5
-    </a>で公開されていますので，そちらからダウンロードできます．
-  </p>
-    
-
 </article>
+
 
 <aside>
   <section>

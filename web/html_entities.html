@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>情報基礎授業資料 HTML5/CSS3によるサイト構築</title>
+  <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
+  
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/shCore.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
+  
+</head>
+<body>
+<script type="text/javascript">
+$(function(){
+  SyntaxHighlighter.all();  
+});
+</script>
+  
+<!-- ヘッダ -->
+<header>
+  <h1>HTML5/CSS3によるサイト構築</h1>
+  <p>SFC情報基礎授業資料</p>
+</header>
+
+<!--ナビゲーション --> 
+<nav>
+  <div class="menu">
+  <ul>
+    <li>
+      <!-- ファイル名を省略するとindex.htmlを表示する -->
+      <a href="./">Home</a>
+    </li>
+    <li>
+      <a href="./lecture01.html">第5回</a>
+    </li>
+    <li>
+      <a href="./lecture02.html">第6回</a>
+    </li>
+    <li>
+      <a href="./lecture03.html">第7回</a>
+    </li>
+    <li>
+      <a href="./mid_report.html">中間課題</a>
+    </li>
+    <li>
+      <a href="./sshfs.html">SSHFS</a>
+    </li>
+    <li>
+      <a href="./appendix.html" class="current">Appendix</a>
+      <ul>
+        <li><a href="./html_entities.html" class="current">HTMLエンティティ</a></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+</nav>
+
+<!-- メインコンテンツ -->
+<article id="content" class="articlecontent">
+  <h2>HTMLエンティティ（特殊文字）とエスケープ</h2>
+  <p>
+    HTMLではタグを使う事で多種多様な表現が出来ることを学んだ．
+    その中でタグは&lt;と&gt;で囲むということを学んだが，そもそも「&lt;」や「&gt;」を文字として入力したい場合は
+    どうすれば良いのだろうか？
+    本ページではこうした問題について解説する
+  </p>
+  
+  <h3>HTMLにおける特殊文字</h3>
+  <p>
+    HTMLにおいて，特殊文字とされている文字は以下の通りである．
+    これらの記号をHTMLタグに関係の無い文字列としてHTMLの中に含めた場合，
+    <a href="http://validator.w3.org/">W3CのValidator</a>
+    がエラーを検出する．
+  </p>
+  <ul>
+    <li>&lt;（小なり）：タグの開始記号</li>
+    <li>&gt;（大なり）：タグの終了記号</li>
+    <li>&amp;（アンパサンド）：HTMLエンティティのエスケープ用文字</li>
+  </ul>
+  
+  <p>
+    なぜこれらの記号がエラーになるのかは，HTMLを解釈するブラウザの気持ちになって考えると分かりやすい．例えば，
+    タグの開始記号である&lt;が通常の文字列として許されているとして，以下の文字列について考えてみる．
+  </p>
+  
+  <pre class="brush: xml;highlight: [2]">
+  &lt;p&gt;
+    HTML&lt;HyperText Markup Language&gt;は，
+    Webページを構成する文書フォーマットである
+  &lt;/p&gt;
+  </pre>
+  
+  <p>
+    これを書いた人は，&lt;と&gt;を<span class="bold red">文字列として
+    </span>記述した．では，Webブラウザはこの文章をどう解釈するのだろうか？
+  </p>
+  <p>
+    まず，WebブラウザはHTMLファイルを先頭から一文字ずつ読んでいき
+    「&lt;」を検出すると，「&gt;」までをタグとして認識する（この処理をParse（パース）と呼ぶ）．例として，1行目のpタグ
+    をpタグとして解釈するのは，&lt;の後にpという文字があり，その後&gt;でタグが閉じているからである．
+  </p>
+  <p>
+    それでは，2行目はどうか？先に挙げた規則に沿って解釈すると，&lt;を認識した時点で，
+    <span class="bold red">
+      次の&gt;までをタグとして解釈する．
+    </span>
+    すなわち，「HyperText Markup Language」というタグとして認識してしまうのである．
+    さらに見ていくと「HyperText Markup Language」タグの閉じタグ
+    「&lt;/HyperText Markup Language&gt;」がpの閉じタグの前に存在しない．
+    よって，WebブラウザにとってこのHTMLは不正なHTMLとして認識されてしまう．
+  </p>
+  <p>
+    それでは，HTMLの文章としてこれらの特殊文字を扱いたい場合には，どのようにすればよいだろうか？
+  </p>
+  
+  <h4>
+    エスケープ文字&amp;
+  </h4>
+  <p>
+    こうした疑問に答えるのがエスケープ（Escape）である．これは，
+    <span class="bold red">
+      ある特定の文字列を決められた文字として扱う
+    </span>という処理である．HTML以外にもほとんどのプログラミング言語でエスケープをサポートしている（ルールは言語によって異なる）．
+  </p>
+  <p>
+    HTMLのエスケープには半角アンパサンド（&amp;）を使う．この記号を使い，&lt;, &gt;を文字列として表示させることができる．
+    以下に置き換えのルールを示す．
+  </p>
+  <ul>
+    <li>&lt;（小なり）：&amp;lt;（Less Than）</li>
+    <li>&gt;（大なり）：&amp;gt;（Greater Than）</li>
+    <li>&amp;：&amp;amp;（ampersand）</li>
+  </ul>
+  <p>
+    エスケープ文字を使って先程の例を書き換えたものは以下の通りである．
+  </p>
+  <pre class="brush: xml;highlight: [2]">
+  &lt;p&gt;
+    HTML&amp;lt;HyperText Markup Language&amp;gt;は，
+    Webページを構成する文書フォーマットである
+  &lt;/p&gt;
+  </pre>
+  <p>
+    これで，&lt;, &gt;の記号はWebブラウザにとって文字列として解釈されるようになる．
+    また，エスケープ&amp;記号自体もエスケープの対象になっているのは，&amp;自体を文字列として扱いたい場合に
+    &amp;もまたエスケープ出来ないとうまく扱うことが出来ないためである．
+  </p>
+
+  <h3>
+    まとめ
+  </h3>
+  <p>
+    本ページではHTMLエンティティとされる特殊文字を文字列として扱う方法を解説した．
+    正しいHTMLを書くためには必要な情報なので，最終課題までには覚えておくこと．
+  </p>
+  
+</article>
+
+
+<aside>
+  <section>
+    <h3>
+      SFC/ITC関連参考サイトリンク
+    </h3>
+    <ul>
+      <li><a href="http://itc.sfc.keio.ac.jp/pukiwiki/">湘南藤沢インフォメーションテクノロジーセンター</a></li>
+      <li><a href="http://itc.sfc.keio.ac.jp/pukiwiki/index.php?%B5%BB%BD%D1%BE%F0f%CA%F3%2FWWW">技術情報/WWW</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>
+      外部参考サイトリンク
+    </h3>
+    <ul>
+      <li><a href="https://addons.mozilla.org/ja/firefox/addon/firebug/">Firebug公式サイト</a></li>
+      <li><a href="http://www.htmq.com/index.htm">HTMLクイックリファレンス</a></li>
+      <li><a href="http://www.tagindex.com/color/color_name.html">カラーチャート/カラーネーム 147色 - TAG index Webサイト</a></li>
+      <li><a href="http://validator.w3.org/">W3C　Markup　Validation Service</a></li>
+    </ul>
+  </section>
+</aside>
+
+<!-- フッタ --> 
+<footer>
+  <p>Copyright&copy; 2011 SFC</p>
+</footer>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23811911-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
