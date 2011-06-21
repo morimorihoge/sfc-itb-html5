@@ -55,11 +55,15 @@ $(function(){
     <li>
       <a href="./appendix.html">Appendix</a>
       <ul>
-        <li><a href="./html_entities.html">HTMLエンティティ</a></li>
-        <li></li>
-        <li></li>
+        <li><a href="./cross_browser.html">
+          クロスブラウザ対応
+        </a></li>
+        <li><a href="./html_entities.html">
+          HTMLエンティティ</a>
+        </li>
       </ul>
     </li>
+
   </ul>
   </div>
 </nav>
@@ -235,7 +239,10 @@ $(function(){
     注意として，html, head, bodyタグは一つのファイル中に必ず一つずつしか記述してはいけない．これらのタグが複数あった場合，どのように表示されるかはブラウザによって異なる．
   </p>
   <p>
-    新しく一からHTMLファイルを書き始める時は，以下のテンプレートをコピー＆ペーストして書き始めると良い
+    新しく一からHTMLファイルを書き始める時は，以下のテンプレートをコピー＆ペーストして書き始めると良い．
+    html5.jsについては <a href="cross_browser.html">
+      クロスブラウザ対応について
+    </a>を参照のこと．
   </p>
   <pre class="brush: xml">
   &lt;!DOCTYPE html&gt;
@@ -243,6 +250,9 @@ $(function(){
   &lt;head&gt;
     &lt;meta charset="UTF-8" /&gt;&lt;!-- 文字コードの指定 --&gt;
     &lt;title&gt;ここにタイトルを書く&lt;/title&gt;
+    &lt;!--[if lt IE 9]&gt;
+    &lt;script src="http://html5shim.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
+    &lt;! endif=""&gt;&lt;/!&gt;
   &lt;/head&gt;
   &lt;body&gt;
     本文

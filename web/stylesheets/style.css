@@ -62,6 +62,19 @@ p {
     padding-bottom: 20px;
 }
 
+table {
+  border: solid 1px gray;
+}
+
+table tr th {
+  border: solid 1px gray;
+  background-color: #eee;
+}
+
+table tr td {
+  border: solid 1px gray;
+}
+
 span.bold {
   font-weight: bold;
 }
@@ -77,6 +90,7 @@ header {
     height: 220px;
     margin-top: 10px;
     min-height: 220px;
+    behavior: url(ie-css3.htc);
 }
 header h1, header p {
     position: relative;
@@ -98,6 +112,7 @@ nav {
     float: left;
     margin: 0 auto;
     width: 960px;
+    behavior: url(ie-css3.htc);
 }
 nav .menu {
     font-size: 16px;
@@ -161,6 +176,7 @@ nav .menu li:hover li a:hover {
     margin: 10px 0;
     padding: 5px 20px;
     width: 610px;
+    behavior: url(ie-css3.htc);
 }
 #content ul {
     list-style-image: url("images/redarrow.gif");
@@ -200,6 +216,7 @@ aside {
 .articlecontent img {
     -moz-box-shadow: 3px 3px 7px #777777;
     -webkit-box-shadow: 3px 3px 7px #777777;
+    behavior: url(ie-css3.htc);
 }
 aside section {
     -moz-box-shadow: 3px 3px 7px #777777;
@@ -207,6 +224,7 @@ aside section {
     background-color: #FFFFFF;
     margin: 10px 0 0;
     padding: 10px 15px;
+    behavior: url(ie-css3.htc);
 }
 aside section ul {
     color: #C10909;
@@ -231,6 +249,7 @@ footer {
     float: left;
     margin-bottom: 10px;
     width: 960px;
+    behavior: url(ie-css3.htc);
 }
 footer p {
     font-size: 11px;
