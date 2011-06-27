@@ -177,6 +177,7 @@ nav .menu li:hover li a:hover {
     padding: 5px 20px;
     width: 610px;
     behavior: url(ie-css3.htc);
+    line-height: 150%;
 }
 #content ul {
     list-style-image: url("images/redarrow.gif");
