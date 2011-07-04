@@ -55,9 +55,18 @@ $(function(){
     <li>
       <a href="./appendix.html">Appendix</a>
       <ul>
-        <li><a href="./html_entities.html">HTMLエンティティ</a></li>
-        <li></li>
-        <li></li>
+        <li><a href="./character_encoding.html">
+          文字化けと文字コード
+        </a></li>
+        <li><a href="./cross_browser.html">
+          クロスブラウザ対応
+        </a></li>
+        <li><a href="./html_entities.html">
+          HTMLエンティティ</a>
+        </li>
+        <li><a href="./html_entities.html">
+          CSSをもう少し詳しく理解する</a>
+        </li>
       </ul>
     </li>
   </ul>
@@ -243,7 +252,24 @@ $(function(){
   <p>
     地図のサイズをプレビューを見ながら確認し，画面下に生成されている HTML タグをコピーして，自分の Web ページの地図を表示したい場所に貼りつける．
   </p>
-  
+  <p>
+  Google Maps ウィジェットを貼りつけた際，<a href="http://validator.w3.org/">W3C Markup Validation Service</a>でエラーが出る場合には，
+  エラーの内容の通り，スタイルシートに iframe タグのプロパティを設定し，HTML ファイル側の記述を削除する必要がある．
+  </p>
+  style.css
+  <pre class="brush: css">
+      iframe {
+          frameborder: 0;
+          scrolling: no;
+          marginheight: 0;
+          marginwidth: 0;
+      }
+  </pre>
+  Google Maps ウィジェットとして表示された iframe タグの中に記述されている frameborder などの指定を削除する．
+  <pre class="brush: xml">
+    &lt;iframe width="425" height="350" src="ほげほげ"&gt;
+  </pre>
+
   <h4>Twitter ウィジェットを表示してみよう</h4>
   <p>
     <a href="http://twitter.com/">Twitter</a> は，ここ数年話題になっているマイクロブログサービスである．

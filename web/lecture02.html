@@ -55,9 +55,18 @@ $(function(){
     <li>
       <a href="./appendix.html">Appendix</a>
       <ul>
-        <li><a href="./html_entities.html">HTMLエンティティ</a></li>
-        <li></li>
-        <li></li>
+        <li><a href="./character_encoding.html">
+          文字化けと文字コード
+        </a></li>
+        <li><a href="./cross_browser.html">
+          クロスブラウザ対応
+        </a></li>
+        <li><a href="./html_entities.html">
+          HTMLエンティティ</a>
+        </li>
+        <li><a href="./html_entities.html">
+          CSSをもう少し詳しく理解する</a>
+        </li>
       </ul>
     </li>
   </ul>
@@ -235,7 +244,10 @@ $(function(){
     注意として，html, head, bodyタグは一つのファイル中に必ず一つずつしか記述してはいけない．これらのタグが複数あった場合，どのように表示されるかはブラウザによって異なる．
   </p>
   <p>
-    新しく一からHTMLファイルを書き始める時は，以下のテンプレートをコピー＆ペーストして書き始めると良い
+    新しく一からHTMLファイルを書き始める時は，以下のテンプレートをコピー＆ペーストして書き始めると良い．
+    html5.jsについては <a href="cross_browser.html">
+      クロスブラウザ対応について
+    </a>を参照のこと．
   </p>
   <pre class="brush: xml">
   &lt;!DOCTYPE html&gt;
@@ -243,6 +255,9 @@ $(function(){
   &lt;head&gt;
     &lt;meta charset="UTF-8" /&gt;&lt;!-- 文字コードの指定 --&gt;
     &lt;title&gt;ここにタイトルを書く&lt;/title&gt;
+    &lt;!--[if lt IE 9]&gt;
+    &lt;script src="http://html5shim.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
+    &lt;! endif=""&gt;&lt;/!&gt;
   &lt;/head&gt;
   &lt;body&gt;
     本文
@@ -325,7 +340,8 @@ $(function(){
   
   <p>
     lecture02-03.html
-    <pre class="brush: xml;highlight: [5];">
+  </p>
+  <pre class="brush: xml;highlight: [5];">
       &lt;!DOCTYPE html&gt;
       &lt;html&gt;
       &lt;head&gt;
@@ -345,14 +361,16 @@ $(function(){
         &lt;/article&gt;
       &lt;/body&gt;
       &lt;/html&gt;
-    </pre>
+  </pre>
+  <p>
     ※：5行目のlinkタグ内のhref属性でlecture02-03.cssを読み込んでいる．相対パスで表記してあるので，
     <span class="bold">lecture02-03.cssはlecture02-03.htmlと同じディレクトリに置く必要がある</span>．
   </p>
   
   <p>
     lecture02-03.css
-    <pre class="brush: css">
+  </p>
+  <pre class="brush: css">
       article {
         border: 1px solid black;/* 要素全体を1pxの線で囲む */
         width: 800px;/* 横幅は800px固定 */
@@ -375,7 +393,8 @@ $(function(){
         font-weight: bold;
         color: red;
       }
-    </pre>
+  </pre>
+  <p>
     <a href="resources/lecture02-03.html">ブラウザで開く</a>
   </p>
   
