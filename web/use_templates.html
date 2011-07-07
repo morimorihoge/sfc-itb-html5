@@ -86,7 +86,7 @@ $(function(){
 <article id="content" class="articlecontent">
   <h2>HTMLテンプレートからサイトを構築する</h2>
   <p>
-    完全にフルスクラッチで0からWebサイトを作成するのは初心者には敷居が高い．
+    HTMLとCSSを1から作成することはは初心者にとっては敷居が高い．
     本説では，インターネット上に多く公開されているHTMLテンプレートを用いて
     Webサイトを構築する手順を解説する．
   </p>
@@ -319,28 +319,28 @@ $(function(){
   </p>
   
   <pre class="brush: xml;highlight: [2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
-  <aside id="sidebar"><!-- sidebar -->
-		<h3>Things To Do</h3>
-			<ul>
-				<li><a href="#">Play Games</a></li>
-				<li><a href="#">Chat With Friends</a></li>
-				<li><a href="#">Swap Stories</a></li>
-				<li><a href="#">Sell Stuff</a></li>
-				<li><a href="#">Buy Stuff</a></li>
-				<li><a href="#">Trade Stuff</a></li>
-			</ul>
+  &lt;aside id="sidebar"&gt;&lt;!-- sidebar --&gt;
+		&lt;h3&gt;Things To Do&lt;/h3&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Play Games&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Chat With Friends&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Swap Stories&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Sell Stuff&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Buy Stuff&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Trade Stuff&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
 
-		<h3>Our Sponsors</h3>
-			<img src="images/ad125.jpg" alt="" /> <img src="images/ad125.jpg" alt="" /><br />
-			<img src="images/ad125.jpg" alt="" /> <img src="images/ad125.jpg" alt="" /><br /><br />
+		&lt;h3&gt;Our Sponsors&lt;/h3&gt;
+			&lt;img src="images/ad125.jpg" alt="" /&gt; &lt;img src="images/ad125.jpg" alt="" /&gt;&lt;br /&gt;
+			&lt;img src="images/ad125.jpg" alt="" /&gt; &lt;img src="images/ad125.jpg" alt="" /&gt;&lt;br /&gt;&lt;br /&gt;
 
-		<h3>Connect With Us</h3>
-			<ul>
-				<li><a href="#">Twitter</a></li>
+		&lt;h3&gt;Connect With Us&lt;/h3&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
 
-				<li><a href="#">Facebook</a></li>
-			</ul>
-  </aside><!-- end of sidebar -->
+				&lt;li&gt;&lt;a href="#"&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+  &lt;/aside&gt;&lt;!-- end of sidebar --&gt;
   </pre>
   
   <p>
@@ -351,7 +351,38 @@ $(function(){
   
   <p>
     同じ様に，フッタや他の部分からも必要のない部分を削除していけば良い．
+    この時点ではトップページしか無いので，ヘッダナビゲーションの「Home」以外の要素は全て削除した．
+    具体的には，下図のハイライト部分を削除している．
   </p>
+  <pre class="brush: xml;highlight: [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]">
+  &lt;nav&gt;&lt;!-- top nav --&gt;
+		&lt;div class="menu"&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;
+			    &lt;ul&gt;
+   					&lt;li&gt;&lt;a href="#"&gt;The Ranch&lt;/a&gt;&lt;/li&gt;
+   					&lt;li&gt;&lt;a href="#"&gt;History&lt;/a&gt;&lt;/li&gt;
+   					&lt;li&gt;&lt;a href=""&gt;Vision&lt;/a&gt;&lt;/li&gt;
+   				&lt;/ul&gt;
+  			&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Products&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a href="#"&gt;Spurs&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="#"&gt;Chaps&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a href="#"&gt;Rodeos&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="#"&gt;Wrangling&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/nav&gt;&lt;!-- end of top nav --&gt;
+	</pre>
   
   <h4>
     必要なブロックを表示が崩れないように気をつけながら追加していく
@@ -396,6 +427,64 @@ $(function(){
   <p>
     また，複数ページで構成されるWebサイトの場合は，各ページへのナビゲーションリンクも
     正しく設定してやる必要があることに注意する．
+  </p>
+
+  
+  <h3>
+    二枚目以降のページを作成し，ナビゲーションリンクを貼る
+  </h3>
+  <p>
+    Webサイト複数ページで構成されるのが普通である．
+    ここでは最初に作ったトップページを元に，２枚目以降のページを作成する．
+    なお，二度手間を防ぐために，二枚目以降のページを作る前にサイト共通の部分
+    （ヘッダ・フッタ・サイドバーなど）は完成させておくことが望ましい．
+  </p>
+  
+  <h4>
+    なにはともあれコピー
+  </h4>
+  <p>
+    ここでは，トップページ「Home（index.html）」を元に，連絡先ページ「Contact Us（contact_us.html）」
+    を作成することにする．
+    index.htmlをそのままcontact_us.htmlにコピーする．
+  </p>
+  <img src="images/use_templates09.png" alt="use_templates09" />
+  <br /><br />
+  <p>
+    次に，index.html, contact_us.html両方のナビゲーション部分にお互いへのリンクを貼る．
+    このHTMLテンプレートにおいては，ヘッダナビゲーションはnavタグで囲まれた部分にある．
+    そのナビゲーション部分を下記のように書き換える．
+    <span class="bold red">
+      必ずindex.html, contact_us.html両方のナビゲーションを修正すること．
+    </span>
+  </p>
+  
+  <pre class="brush: xml;highlight: [4,5]">
+  &lt;nav&gt;&lt;!-- top nav --&gt;
+		&lt;div class="menu"&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="contact_us.html"&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/nav&gt;&lt;!-- end of top nav --&gt;
+	</pre>
+	
+  <p>
+    書き換えた結果，ヘッダナビゲーション部分は下図の様になる．
+  </p>
+  <img src="images/use_templates10.png" alt="use_templates10" width="600" />
+  <br /><br />
+  
+  <p>
+    これで，それぞれのリンクをクリックすることでお互いのページに飛ぶことが出来るようになった．
+    ここまで確認できたらcontact_us.htmlを本来の内容に修正していけば良い．
+    さらにページを増やす場合，
+    <span class="bold red">
+      既に作成した全てのページのナビゲーション部分を修正する必要がある
+    </span>
+    事を忘れないこと．
+    これを忘れてしまうと，ページによってナビゲーションの内容が変わってしまう．
   </p>
   
   <h3>
