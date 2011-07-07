@@ -6,7 +6,7 @@ header, footer, section, aside, nav, article {
     display: block;
 }
 body {
-    background: url("images/bg.gif") repeat scroll 0 0 #A9A9A9;
+    background: url("../images/bg.gif") repeat scroll 0 0 #A9A9A9;
     font: 14px/20px "Trebuchet MS",Verdana,Helvetica,Arial,sans-serif;
     margin: 0 auto;
     width: 960px;
@@ -86,7 +86,7 @@ span.red {
 header {
     -moz-box-shadow: 3px 3px 7px #777777;
     -webkit-box-shadow: 3px 3px 7px #777777;
-    background: url("images/introimage.png") repeat scroll 0 0 #FFFFFF;
+    background: url("../images/introimage.png") repeat scroll 0 0 #FFFFFF;
     height: 220px;
     margin-top: 10px;
     min-height: 220px;
