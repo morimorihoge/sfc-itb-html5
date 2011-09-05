@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web Design With HTML5/CSS3</title>
+  <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
+  
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/shCore.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
+  
+</head>
+<body>
+<script type="text/javascript">
+$(function(){
+  SyntaxHighlighter.all();  
+});
+</script>
+  
+<!-- ヘッダ -->
+<header>
+  <h1>Web Design With HTML5/CSS3</h1>
+  <p>SFC IT Literacy Course</p>
+</header>
+
+<!--ナビゲーション --> 
+<nav>
+  <div class="menu">
+  <ul>
+    <li>
+      <!-- Go to index.html when no file name is assigned -->
+      <a href="./" >Home</a>
+    </li>
+    <li>
+      <a href="./lecture01.html">Lec. #5</a>
+    </li>
+    <li>
+      <a href="./lecture02.html">Lec. #6</a>
+    </li>
+    <li>
+      <a href="./lecture03.html">Lec. #7</a>
+    </li>
+    <li>
+      <a href="./mid_report.html">Mid-term</a>
+    </li>
+    <li>
+      <a href="./final_report.html">Final</a>
+    </li>
+    <li>
+      <a href="./sshfs.html" class="current">SSHFS</a>
+    </li>
+    <li>
+      <a href="./appendix.html">Appendix</a>
+      <ul>
+        <li><a href="./character_encoding.html">
+          Character Codes
+        </a></li>
+        <li><a href="./cross_browser.html">
+          Cross-browser Coding
+        </a></li>
+        <li><a href="./html_entities.html">
+          HTML Entities</a>
+        </li>
+        <li><a href="./advanced_css.html">
+          CSS in Detail</a>
+        </li>
+        <li><a href="./useful_tags.html">
+          Commonly Used HTML Tags</a>
+        </li>
+        <li><a href="./use_templates.html">
+          Using HTML Templates</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+</nav>
+
+<!-- メインコンテンツ -->
+<article id="content" class="articlecontent">
+  <h2>SSHFS : Uploading Files To Your CNS Home Directory Using Your Own PC</h2>
+  <p>
+    In this section, we would go over how to use SSHFS, which enables you to access your CNS home directory with your own PC. By using this function, you would be able to update your web site from anywhere with internet access. 
+  </p>
+  
+  <h3>Precautions For Using SSHFS</h3>
+  <p>
+    SSHFS enables you to access the data in your CNS home directory as if it is an external HDD attached to your PC. However, don't forget that the connection is &quot;virtual&quot;. For example, <span class="bold red">
+    if the internet connection is lost while editing a file on the SSHFS, or if your PC sleeps and resumes while the connection is active, the changes to your files may be lost, and at the worst case, some of the files may get corrupted. </span>
+    SSHFS may be useful, but it very important to save your work constantly.
+  </p>
+
+  <h3>Windows</h3>
+  <p>
+    If you are a Windows user, there are two ways to access your CNS home directory. One way is to transfer files with WinSCP, and another is to mount your directory with Dokan SSHFS.
+  </p>
+  
+  <h4>Transfering Files With WinSCP</h4>
+  <p>
+    The detailed instructions of transferring files with WinSCP is indicated in the <a href="http://itc.sfc.keio.ac.jp/pukiwiki/index.php?%B5%BB%BD%D1%BE%F0%CA%F3%2F%A5%EA%A5%E2%A1%BC%A5%C8%A5%ED%A5%B0%A5%A4%A5%F3%2FSSH%B8%F8%B3%AB%B8%B0%C7%A7%BE%DA%2FWinSCP">ITC Web Site (Japanese only)</a>. 
+  </p>
+  <p>
+    WinSCP is an application which enables file transfers over the network using the SCP protocol. It is an useful application for transferring normal files, but considering the editing of HTML files, it may not be the case. Upon editing HTML files, or other files which may require constant updates, you must follow the following directions. 
+  </p>
+  <ol>
+    <li>Edit the HTML file with a text editor in your local PC.</li>
+    <li>Save the file to a local destination within your PC.</li>
+    <li>Start WinSCP, and upload the files to their corresponding location.</li>
+    <li>Check the page with your browser. Return to step 1 when you encounter problems.</li>
+  </ol>
+  <p>
+    When editing HTML files, you may have to repeat this process many times. If so, there is a chance you may forget to upload the files after you have saved them locally. If this happens, the files would not be updated, and may cause worthless problems. Therefore, in this class, we recommend you use, Dokan SSHFS instead.
+  </p>
+  
+  <h4>Mounting Your Directory With Dokan SSHFS</h4>
+  <p>
+    <a href="http://dokan-dev.net/category/SSHFS/">Dokan SSHFS</a>
+    is a software which enables you to access your CNS home directory as if it is a external HDD attatched to your PC. By using Dokan SSHFS, you would be able to directly edit your files within your CNS home directory, 
+  and won't have to save and upload files manually.</p>
+  
+  <p>
+    In order to install Dokan SSHFS, go to the 
+    <a href="http://dokan-dev.net/download/">Dokan Download Page</a>, and download the <span class="bold">Dokan Library</span> and the
+  <span class="bold">Dokan SSHFS</span></p>
+  <p>
+    Make sure you install the Dokan Library first. Double-click on the file you have downloaded, and follow the instructions on the screen to install. 
+  </p>
+  <img src="images/dokan-lib.png" alt="dokan-lib" />
+  <br /><br />
+  
+  <p>
+    Next, install the Dokan SSHFS. Since the most recent version of Dokan SSHFS does not include an installer, unpack the Dokan SSHFS package, and place it under a directory you prefer. Double-click on the Dokan SSHFS icon, and enter the connection settings as shown below. 
+  </p>
+  <img src="images/dokan-sshfs-settings.png" alt="dokan-sshfs-settings" />
+  <br /><br />
+  
+  Settings
+  <ul>
+    <li>Host: ccx00.sfc.keio.ac.jp</li>
+    <li>User: <span class="bold red">Your CNS Account Name</span></li>
+    <li>Password: <span class="bold red">Your CNS Login Password</span></li>
+    <li>Server Root: <span class="bold red">/home/[Your CNS Account Name]</span></li>
+    <li>Drive: N (or any other unused drive letter)</li>
+  </ul>
+  
+  <p>
+    When you have finished entering the settings, click on the &quot;Connect&quot; button. If successful, a window shown below would appear.
+  </p>
+  <img src="images/dokan-sshfs-start.png" alt="dokan-sshfs-start" />
+  <br /><br />
+  
+  <p>
+    You should be able to see a drive named &quot;DOKAN&quot; in your Explorer. 
+  </p>
+  <img src="images/dokan-explorer01.png" alt="dokan-explorer01" />
+  <br /><br />
+  
+  <p>
+    When you open the drive, you would see the same files and folders you would see on the Macs in the computer room. These files and folders would be available for editing. 
+  </p>
+  <img src="images/dokan-explorer02.png" alt="dokan-explorer02" width="600" />
+  <br /><br />
+  
+  <h3>Mac OS X</h3>
+  <p>
+    If you are a Mac OS X user, you have the options of either using Cyberduck or SSHFS for accesing your CNS home directory.
+  </p>
+
+  <h4>Transfering Files With Cyberduck</h4>
+  <p>
+    Cyberduck is a software equivalent to WinSCP discussed above. The detailed instructions of transferring files with Cyberduck is indicated in the <a href="http://itc.sfc.keio.ac.jp/pukiwiki/index.php?%B5%BB%BD%D1%BE%F0%CA%F3%2F%A5%EA%A5%E2%A1%BC%A5%C8%A5%ED%A5%B0%A5%A4%A5%F3%2FSSH%B8%F8%B3%AB%B8%B0%C7%A7%BE%DA%2FCyberduck">ITC Web Site (Japanese only)</a>.
+  </p>
+  <p>
+    Cyberduck encounters the same issues upon editing HTML files, so we recommend you use SSHFS for the Mac as well.
+  </p>
+  
+  <h4>Mounting Your Directory With SSHFS</h4>
+  <p>
+    In order to mount your home directory with Mac OS X, you need to download and install <a href="http://code.google.com/p/macfuse/">MacFUSE</a> and
+    <a href="http://code.google.com/p/sshfs-gui/">sshfs-gui</a>. 
+  MacFUSE is the application which enables the mounting of your CNS home directory, and sshfs-gui makes the configuration process more simple.</p>
+  
+  <p>
+	  First, download and install MacFUSE. The version of MacFUSE provided in the web site above may have problems upon starting up. Therefore, we recommend you download the <a href="http://www.offthehill.org/wp-content/uploads/2010/12/macfuse-core-10.5-2.1.9.zip">Stable Version (2.1.9)</a> from here. Download, unpack, and double-click on the  <span class="bold red">MacFUSE Core.pkg</span> icon to install.</p>
+  <img src="images/macfuse-install.png" alt="macfuse-install" width="600" />
+  <br /><br />
+  
+  <p>
+    Next, install sshfs-gui. Download the most recent version of sshfs-gui from the <a href="http://code.google.com/p/sshfs-gui/downloads/list">download page</a> and install (drag and drop) it to your &quot;Applications&quot; folder. 
+  </p>
+  <img src="images/sshfs-gui-icon.png" alt="sshfs-gui-icon" />
+  <br /><br />
+  
+  <p>
+    When the installation is complete, double-click on the SSHFS GUI icon, and enter the settings as shown below.
+  </p>
+  <img src="images/sshfs-gui-settings.png" alt="sshfs-gui-settings" />
+  <br /><br />
+  Settings
+  <ul>
+    <li>Host: ccx00.sfc.keio.ac.jp</li>
+    <li>User: <span class="bold red">Your CNS Account Name</span></li>
+    <li>Password: <span class="bold red">Your CNS Login Password</span></li>
+    <li>Server Root: <span class="bold red">/home/[Your CNS Account Name]</span></li>
+  </ul>
+  
+  <p>
+  When you have completed the settings, click on the &quot;Mount&quot; button. On the first time, a dialog message shown below would appear, so click on the &quot;Accept Key&quot; button.</p>
+  <img src="images/sshfs-gui-validation.png" alt="sshfs-gui-validation" />
+  <br /><br />
+  
+  <p>
+  If successful, you would be able to access your CNS home directory from the Finder. </p>
+  <img src="images/sshfs-gui-01.png" alt="sshfs-gui-01" width="600" />
+  <br /><br />
+  
+  <p>
+  For easier access to your home directory, drag and drop the icon of your mounted drive under the &quot;Devices&quot; section on your finder. If you ever lose the window with your home directory, first select &quot;Open Folder&quot; from the &quot;Move&quot; menu, then enter the following path in the text box. </p>
+  <p>Path: 
+    <span class="bold red"> /Volumes/[CNS Account Name]@ccx00.sfc.keio.ac.jp</span></p>
+  <img src="images/sshfs-gui-02.png" alt="sshfs-gui-02" width="600" />
+  <br /><br />
+  
+  
+</article>
+
+<aside>
+  <section>
+    <h3>
+      SFC/ITC Reference Links
+    </h3>
+    <ul>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/en/top_sfc.html">Shonon Fujisawa Information Technology Center</a></li>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/ja/network_web.html">CNS Web Service (Japanese Only)</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>
+      Other Reference Links
+    </h3>
+    <ul>
+      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/firebug//">Firebug</a></li>
+      <li><a href="http://www.htmlcodetutorial.com/">HTML Code Tutorial</a></li>
+      <li><a href="http://immigration-usa.com/html_colors.html">Complete HTML True Color Chart</a></li>
+      <li><a href="http://validator.w3.org/">W3C Markup Validation Service</a></li>
+    </ul>
+  </section>
+</aside>
+<!-- フッタ --> 
+<footer>
+  <p>Copyright&copy; 2011 SFC</p>
+</footer>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23811911-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

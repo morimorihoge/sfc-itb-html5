@@ -1,0 +1,11 @@
+/* headerの重要な部分を強調 */
+header .important {
+  font-weight: bold;
+  color: blue;
+}
+
+/* articleの重要な部分を強調 */
+article .important {
+  font-weight: bold;
+  color: red;
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web Design With HTML5/CSS3</title>
+  <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<!-- ヘッダ -->
+<header>
+  <h1>Web Design With HTML5/CSS3</h1>
+  <p>SFC IT Literacy Course</p>
+</header>
+
+<!--ナビゲーション --> 
+<nav>
+  <div class="menu">
+  <ul>
+    <li>
+      <!-- Go to index.html when no file name is assigned -->
+      <a href="./" class="current">Home</a>
+    </li>
+    <li>
+      <a href="./lecture01.html">Lec. #5</a>
+    </li>
+    <li>
+      <a href="./lecture02.html">Lec. #6</a>
+    </li>
+    <li>
+      <a href="./lecture03.html">Lec. #7</a>
+    </li>
+    <li>
+      <a href="./mid_report.html">Mid-term</a>
+    </li>
+    <li>
+      <a href="./final_report.html">Final</a>
+    </li>
+    <li>
+      <a href="./sshfs.html">SSHFS</a>
+    </li>
+    <li>
+      <a href="./appendix.html">Appendix</a>
+      <ul>
+        <li><a href="./character_encoding.html">
+          Character Codes
+        </a></li>
+        <li><a href="./cross_browser.html">
+          Cross-browser Coding
+        </a></li>
+        <li><a href="./html_entities.html">
+          HTML Entities</a>
+        </li>
+        <li><a href="./advanced_css.html">
+          CSS in Detail</a>
+        </li>
+        <li><a href="./useful_tags.html">
+          Commonly Used HTML Tags</a>
+        </li>
+        <li><a href="./use_templates.html">
+          Using HTML Templates</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+</nav>
+
+<!-- メインコンテンツ -->
+<article id="content" class="articlecontent">
+  <h2>About This Web Site</h2>
+  <p>
+  	This web site is the lecture materials for the web design in the 
+	IT Literacy Course of SFC.<br>
+	Please refer to this site for personal reference.
+  </p>
+  <p>
+  	This lecture would proceed assuming that all students are able to use a text editor, and are able to touch-type.
+    Students who are unconfident about these skills are recommended to practice beforehand. 
+  </p>
+
+  <h2>Class Materials</h2>
+  <ul>
+    <li><a href="./lecture01.html">Lecture #5 : Learn About the Basics of Web Pages, Computer Networks, and the Internet</a></li>
+    <li><a href="./lecture02.html">Lecture #6 : Understand the Internal Structure of HTML and CSS</a></li>
+    <li><a href="./lecture03.html">Lecture #7 : How To Add Images, Hyperlinks, and Third-Party Web Services</a></li>
+    <li><a href="./mid_report.html">Mid-term Assignment</a></li>
+    <li><a href="./final_report.html">Final Assignment</a></li>
+    <li><a href="./sshfs.html">SSHFS : Uploading Files To Your CNS Home Directory Using Your Own PC</a></li>
+    <li><a href="./appendix.html">
+      Appendix : Additional Skills and Techniques 
+    </a>
+      <ul>
+      	<li><a href="./character_encoding.html">
+          Character Codes
+        </a></li>
+        <li><a href="./cross_browser.html">
+          Cross-Browser Coding
+        </a></li>
+        <li><a href="./html_entities.html">
+          HTML Entities</a>
+        </li>
+        <li><a href="./advanced_css.html">
+          CSS in Detail</a>
+        </li>
+        <li><a href="./useful_tags.html">
+          </a>
+        </li>
+        <li><a href="./use_templates.html">
+          Using HTML Templates</a>
+        <li><a href="./character_encoding.html">
+          Character encoding and codes
+        </a></li>
+    </ul>
+    </li>
+  </ul>
+  <p>
+    This web site is written with HTML5. Therefore, you may use this as a template for your own site.
+    The latest source code is available at
+    <a href="https://github.com/morimorihoge/sfc-itb-html5">
+      https://github.com/morimorihoge/sfc-itb-html5</a>.
+  </p>
+    
+
+</article>
+
+<aside>
+  <section>
+    <h3>
+      SFC/ITC Reference Links
+    </h3>
+    <ul>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/en/top_sfc.html">Shonon Fujisawa Information Technology Center</a></li>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/ja/network_web.html">CNS Web Service (Japanese Only)</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>
+      Other Reference Links
+    </h3>
+    <ul>
+      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/firebug//">Firebug</a></li>
+      <li><a href="http://www.htmlcodetutorial.com/">HTML Code Tutorial</a></li>
+      <li><a href="http://immigration-usa.com/html_colors.html">Complete HTML True Color Chart</a></li>
+      <li><a href="http://validator.w3.org/">W3C Markup Validation Service</a></li>
+    </ul>
+  </section>
+</aside>
+
+<!-- フッタ --> 
+<footer>
+  <p>Copyright&copy; 2011 SFC</p>
+</footer>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23811911-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

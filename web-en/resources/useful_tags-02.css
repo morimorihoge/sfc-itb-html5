@@ -1,0 +1,13 @@
+/* 表を強調するためのスタイル */
+table {
+  border: solid 1px black;
+}
+
+th {
+  border: solid 1px gray;
+  background-color: #eeeeee;
+}
+
+td {
+  border: solid 1px gray;
+}
