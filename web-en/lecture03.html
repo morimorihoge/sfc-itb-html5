@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web Design With HTML5/CSS3</title>
+  <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
+  
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/shCore.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
+  
+</head>
+<body>
+<script type="text/javascript">
+$(function(){
+  SyntaxHighlighter.all();  
+});
+</script>
+  
+<!-- ヘッダ -->
+<header>
+  <h1>Web Design With HTML5/CSS3</h1>
+  <p>SFC IT Literacy Course</p>
+</header>
+
+<!--ナビゲーション --> 
+<nav>
+  <div class="menu">
+  <ul>
+    <li>
+      <!-- Go to index.html when no file name is assigned -->
+      <a href="./" >Home</a>
+    </li>
+    <li>
+      <a href="./lecture01.html">Lec. #5</a>
+    </li>
+    <li>
+      <a href="./lecture02.html">Lec. #6</a>
+    </li>
+    <li>
+      <a href="./lecture03.html" class="current">Lec. #7</a>
+    </li>
+    <li>
+      <a href="./mid_report.html">Mid-term</a>
+    </li>
+    <li>
+      <a href="./final_report.html">Final</a>
+    </li>
+    <li>
+      <a href="./sshfs.html">SSHFS</a>
+    </li>
+    <li>
+      <a href="./appendix.html">Appendix</a>
+      <ul>
+        <li><a href="./character_encoding.html">
+          Character Codes
+        </a></li>
+        <li><a href="./cross_browser.html">
+          Cross-browser Coding
+        </a></li>
+        <li><a href="./html_entities.html">
+          HTML Entities</a>
+        </li>
+        <li><a href="./advanced_css.html">
+          CSS in Detail</a>
+        </li>
+        <li><a href="./useful_tags.html">
+          Commonly Used HTML Tags</a>
+        </li>
+        <li><a href="./use_templates.html">
+          Using HTML Templates</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+</nav>
+
+<!-- メインコンテンツ -->
+<article id="content" class="articlecontent">
+  <h2>Lecture #7 : How To Add Images, Hyperlinks, and Third-Party Web Services</h2>
+  <p>
+  	In the previous lectures, we have learned the basics of HTML and created a simple web page.
+    In this lecture, we would learn how to place images, add hyperlinks, and embed third-party web services, such as Twitter 
+    and Facebook. The goal of this lecture is to make a self-introduction web page.
+  </p>
+  
+  <h3>Placing Images</h3>
+  <p>
+    In the previous lectures, we have discussed mainly about HTML and the structure of web pages.
+    In this lecture, we would discuss how to add multimedia contents (e.g. images, video clips, maps, etc.) to a web page.
+  </p>
+  
+  <p>
+    Since the goal of this lecture is to create a self-introduction web page,
+    the first step would be to add your name and picture (or some kind of image).
+  </p>  
+  <img src="images/itb-07-1.png" width="600" alt="itb07-1" />
+  <br /><br />
+  
+  <h4>Taking Pictures With Photo Booth</h4>
+  <p>
+    Open the "Finder", look for "Photo Booth" under the "Applications" folder, and double-click on the icon.
+  </p>
+  <img src="images/itb-07-2.png" width="600" alt="itb07-2" />
+  <br /><br />
+  
+  <p>
+    Photo Booth is a software that enables users to take pictures using the built-in camera on the Mac.
+  </p>
+  <img src="images/itb-07-3.png" width="600" alt="itb07-4" />
+  <br /><br />
+
+  <p>
+    You can also add special effects to your picture from the "Effects" menu.
+  </p>
+  
+  <p>
+    The pictures you have taken would be saved under: [Your home directory] -&gt; &quot;Pictures&quot; -&gt; &quot;Photo Booth&quot;.
+    The file names would be in Japanese, so rename the file
+    using only alphabets (e.g. picture.jpg), since it's not good to use Japanese file names in web pages, .
+  </p>
+  
+  <h4>Adjusting the Image Size</h4>
+  <p>
+    When you double-click on the file, the image would be opened by the &quot;Preview&quot; application. When your picture appears on the screen, you would probably notice that it is too large for web pages. You can resize your picture by selecting &quot;Adjust Size&quot; under the &quot;Tools&quot; menu. For now, resize it to 320 px (width) x 240 px (height).
+  </p>
+  <img src="images/itb-07-4.png" width="600" alt="itb07-4" />
+  <br /><br />
+  
+  <p>
+  Don't forget to save the picture (select &quot;Save&quot; under the &quot;File&quot; menu) after you have finished resizing it. You can also crop your picture using the &quot;Preview&quot; application.First, drag the mouse, and select the area that you wish to crop. Afterwards, select &quot;Crop&quot; from the &quot;Tools&quot; menu.</p>
+  <img src="images/itb-07-11.png" width="600" alt="itb07-11" />
+  <br />
+  ．  <img src="images/itb-07-12.png" width="600" alt="itb07-12" />
+  <br /><br />
+  
+  <p>
+    Again, don't forget to save your picture after you have finished cropping it.．
+  </p>
+  
+  <h4>Placing Images on Web Pages</h4>
+  <p>
+    Now that you have your picture ready, let's place it on to your web page.
+    For placing images on to a web page we would use the "img" tag.
+  </p>
+  <pre class="brush: xml">
+　   &lt;img src="URL or Relative Path to Image file" alt="Alternative Name" /&gt;
+  </pre>
+  <p>
+    The &quot;alt&quot; attribute defines an alternative name for the image. It would appear on the screen as a text if the image file is unable to load. In the following example, the HTML file is stored under the &quot;resources&quot; directory, and the image file (bob_picture.jpg) is stored under the &quot;images&quot; directory. Therefore, the relative path of the image file would be &quot;../image/bob_picture.jpg&quot;, from the perspective of the HTML file. 
+  </p>
+  <pre class="brush: xml;highlight: [7];">
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;03-02&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;img src="../images/bob_picture.jpg" alt="BOB" /&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+  </pre>
+  <p><a href="resources/lecture03-02.html">Open with browser</a><br />
+  </p>
+  <p>If the text defined as the &quot;Alternative Name&quot; appears instead of the image, check if the path is correct and the actual image file exists at the correct location.</p>
+<h3>Hyperlinks</h3>
+  <p>
+    As a key feature of web pages, there are hyperlinks (a.k.a. &quot;links&quot;), which enables users to jump to another page by clicking on them. </p>
+  
+  <h4>Creating Hyperlinks</h4>
+  <p>
+    For creating hyperlinks, the &quot;a&quot; tag is used. As briefly discussed in the previous lecture, the &quot;a&quot; tag requires a &quot;href&quot; attribute, which defines the relative path or URL of the destination. All the elements within the &quot;a&quot; tag would become hyperlinks. This also means that images may also become hyperlinks, as well as regular text. 
+  </p>
+  
+  <pre class="brush: xml;highlight: [8,9,11,12,13,14];">
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;03-01&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="../lecture01.html"&gt;Lecture #5 Materials&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="http://www.sfc.keio.ac.jp/"&gt;Official SFC Web Site&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;
+        &lt;a href="http://www.google.co.jp/"&gt;
+          &lt;img src="http://www.google.co.jp/images/logos/ps_logo2.png"
+            alt="google logo" /&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+  </pre>
+  <p><a href="resources/lecture03-01.html">Open with browser</a><br />
+    <br />
+    
+  </p>
+<h3>Embedding Third-Party Web Services</h3>
+  <p>
+    You may see things called &quot;web parts&quot; or &quot;widgets&quot; on some of the new web pages. These are features that enable users to add information from third-party web services (e.g. Twitter, Facebook, and many more...) to their own web pages. In this section, we would discuss how to embed such services to a web page. 
+  </p>
+  
+  <h4>What Are Third-Party Web Services?</h4>
+  <p>
+    Currently, many people use Twitter, for example, to &quot;tweet&quot; what he or she is doing right now. Some may use Google Maps to look for a place to eat, or others may use Facebook to share their pictures with friends and family members. Some of these web services provide features which enable users to embed the information from such services to their own web page. These features may be very useful upon enriching your web page, so consider using them based on what kind of information you want to share.
+  </p>
+  <img src="images/itb-07-10.png" width="600" alt="itb07-11" />
+  <br /><br />
+  
+  <h4>Sharing Your Favorite Place With Google Maps</h4>
+  <p>
+  <a href="http://maps.google.com/">Google Maps</a> is a web service which enables users to search and view the map of any place around the globe. Google Maps also enable users to add maps to their own web page. As a practice, lets add a map that pin points the location of your favorite place.</p>
+  <p> <img src="images/itb-07-5.png" width="600" alt="itb07-5" />
+    <br /><br />
+  </p>
+  <p>
+    First of all, enter the name or address of your favorite shop in the search window of <a href="http://maps.google.com/">Google Maps (http://maps.google.com/)</a>.
+  </p>
+  <img src="images/itb-07-6.png" width="600" alt="itb07-6" />
+  <br /><br />
+  <p>
+    Next, click on the &quot;Customize and preview embedded map&quot; link under the &quot;Link&quot; menu (icon with a picture of a chain) located on the top right corner of the screen.
+  </p>
+  <img src="images/itb-07-8.png" width="600" alt="itb07-8" />
+  <br /><br />
+  <p>
+    Adjust the size of the map, and copy the HTML code located at the bottom. Then, paste the code to your original page.</p>
+  <p>
+  When you add the codes from the Google Maps widget, you may encounter some errors when validating the page through the <a href="http://validator.w3.org/">W3C Markup Validation Service</a>. If you do, add a property for the &quot;iframe&quot; tag in your CSS file, and delete the corresponding parts from your HTML file.
+  </p>
+  CSS File
+  <pre class="brush: css">
+      iframe {
+          frameborder: 0;
+          scrolling: no;
+          marginheight: 0;
+          marginwidth: 0;
+      }
+  </pre>
+  HTML File
+  <pre class="brush: xml">
+    &lt;iframe width="425" height="350" src="XXXXXXXX"&gt;
+  </pre>
+
+  <h4>Embedding the Twitter Widget</h4>
+  <p>
+    <a href="http://twitter.com/">Twitter</a> is one of the most popular micro-blogging service worldwide. As mentioned above, Twitter also provides widgets for showing real-time &quot;tweets&quot; on your orignal page. In order to embed the Twitter Widget, access the 
+    <a href="http://twitter.com/about/resources/widgets">Twitter Widget Web Site</a> to begin with.</p>
+  <img src="images/itb-07-9.png" width="600" alt="itb07-9" />
+  <br /><br />
+  <p>
+    Select the type of widget you wish, and customize it to your preferences. When everything is finished, cilck on &quot;Finish &amp; Grab Code&quot;. Finally, copy and paste the code to your own orignal HTML file, as it was with the Google Maps widget.
+  </p>
+  
+  <h4>Exercise</h4>
+  <p>
+    Embed a map from Google Maps and a widget from Twitter to your web page, and see how it works.
+  </p>
+
+</article>
+
+
+<aside>
+  <section>
+    <h3>
+      SFC/ITC Reference Links
+    </h3>
+    <ul>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/en/top_sfc.html">Shonon Fujisawa Information Technology Center</a></li>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/ja/network_web.html">CNS Web Service (Japanese Only)</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>
+      Other Reference Links
+    </h3>
+    <ul>
+      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/firebug//">Firebug</a></li>
+      <li><a href="http://www.htmlcodetutorial.com/">HTML Code Tutorial</a></li>
+      <li><a href="http://immigration-usa.com/html_colors.html">Complete HTML True Color Chart</a></li>
+      <li><a href="http://validator.w3.org/">W3C Markup Validation Service</a></li>
+    </ul>
+  </section>
+</aside>
+<!-- フッタ --> 
+<footer>
+  <p>Copyright&copy; 2011 SFC</p>
+</footer>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23811911-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

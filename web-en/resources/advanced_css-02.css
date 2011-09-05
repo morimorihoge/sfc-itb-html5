@@ -1,0 +1,9 @@
+/* 太字にするだけのクラス */
+.bold {
+  font-weight: bold;
+}
+
+/* 赤字にするだけのクラス */
+.red {
+  color: red;
+}

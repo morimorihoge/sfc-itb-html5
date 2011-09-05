@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web Design With HTML5/CSS3</title>
+  <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
+  
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/shCore.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
+  
+</head>
+<body>
+<script type="text/javascript">
+$(function(){
+  SyntaxHighlighter.all();  
+});
+</script>
+  
+<!-- ヘッダ -->
+<header>
+  <h1>Web Design With HTML5/CSS3</h1>
+  <p>SFC IT Literacy Course</p>
+</header>
+
+<!--ナビゲーション --> 
+<nav>
+  <div class="menu">
+  <ul>
+    <li>
+      <!-- Go to index.html when no file name is assigned -->
+      <a href="./" >Home</a>
+    </li>
+    <li>
+      <a href="./lecture01.html">Lec. #5</a>
+    </li>
+    <li>
+      <a href="./lecture02.html">Lec. #6</a>
+    </li>
+    <li>
+      <a href="./lecture03.html">Lec. #7</a>
+    </li>
+    <li>
+      <a href="./mid_report.html">Mid-term</a>
+    </li>
+    <li>
+      <a href="./final_report.html">Final</a>
+    </li>
+    <li>
+      <a href="./sshfs.html">SSHFS</a>
+    </li>
+    <li>
+      <a href="./appendix.html" class="current">Appendix</a>
+      <ul>
+        <li><a href="./character_encoding.html">
+          Character Codes
+        </a></li>
+        <li><a href="./cross_browser.html">
+          Cross-browser Coding
+        </a></li>
+        <li><a href="./html_entities.html">
+          HTML Entities</a>
+        </li>
+        <li><a href="./advanced_css.html">
+          CSS in Detail</a>
+        </li>
+        <li><a href="./useful_tags.html">
+          Commonly Used HTML Tags</a>
+        </li>
+        <li><a href="./use_templates.html">
+          Using HTML Templates</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+</nav>
+
+<!-- メインコンテンツ -->
+<article id="content" class="articlecontent">
+  <h2>HTML Entities (Special Characters and Escapes)</h2>
+  <p>
+    When coding web pages with HTML, we have learned that each tag begins with a &quot;&lt;&quot; symbol, and ends with a &quot;&gt;&quot; symbol. However, what should do when you want to use such symbols in your page as a  text? In this section, we would discuss about such issues.
+  </p>
+  
+  <h3>Special Characters in HTML</h3>
+  <p>
+  In HTML, the following characters are recognized as special characters. The <a href="http://validator.w3.org/">W3C HTML Validator</a> would return errors, if  these characters were to appear in the HTML file as regular text unrelated to tags.  </p>
+  <ul>
+    <li>&lt; : A symbol indicating the beginning of a tag</li>
+    <li>&gt; : A symbol indicating the end of a tag</li>
+    <li>&amp; : A symbol indicating escapes</li>
+  </ul>
+  
+  <p>
+  The following sample shows an example of special characters used in a wrong way. </p>
+  
+  <pre class="brush: xml;highlight: [2]">
+  &lt;p&gt;
+    HTML&lt;HyperText Markup Language&gt; 
+    is a language for creating web pages.
+  &lt;/p&gt;
+  </pre>
+  
+  <p>
+    In this sample, the symbols, &quot;&lt;&quot; and &quot;&gt;&quot; are used as characters for a <span class="bold red">text string</span>. Us humans would be able to recognize  these as &quot;brackets&quot;. However, web browsers would see them as indicators of HTML tags. When browsers detect the first &quot;&lt;&quot; symbol, it would then 
+  look for the next &quot;&gt;&quot; symbol, and recognizes the characters in between as HTML tags. In this particular case, browsers would recognize the characters, &quot;HyperText Markup Language&quot;, as a HTML tag. Since this sample code does not have an end tag marked &quot;&lt;/Hypertext Markup Language&gt;&quot;, the validator would return errors.  </p>
+  <p>
+    So, what should we do if we want to use special characters as regular text in HTML??
+  </p>
+  
+  <h4>The Escape Character &quot;&amp;&quot; </h4>
+  <p>
+  The solution to the question above are &quot;escapes&quot;. <span class="bold red">Escapes enables us to express certain characters with alternative codes.  </span>This feature is not only supported by HTML, but also other programming languages as well, though rules and formats may not be the same. </p>
+  <p>
+    In HTML, the ampersand symbol (&amp;) is used for indicating escapes. For example, the &quot;&lt;&quot; symbol, the &quot;&gt;&quot; symbol, and the &quot;&amp;&quot; may be expressed in the following way. 
+  </p>
+  <ul>
+    
+    <li>&lt; : <b>&amp;lt;</b></li>
+    <li>&gt; : <b>&amp;gt;</b></li>
+    <li>&amp; : <b>&amp;amp;</b></li>
+  </ul>
+  <p>
+    The following code shows an example of the correct way to use special characters within regular text contents.
+  </p>
+  <pre class="brush: xml;highlight: [2]">
+  &lt;p&gt;
+    HTML &amp;lt;HyperText Markup Language&amp;gt;
+    is a language for creating web pages. Language
+  &lt;/p&gt;
+  </pre>
+  <p>
+    By using escapes, the browser would be able to tell tags from aprtこれで，&lt;, &gt;の記号はWebブラウザにとって文字列として解釈されるようになる．
+    また，エスケープ&amp;記号自体もエスケープの対象になっているのは，&amp;自体を文字列として扱いたい場合に
+    &amp;もまたエスケープ出来ないとうまく扱うことが出来ないためである．
+  </p>
+
+  <h3>
+    まとめ
+  </h3>
+  <p>
+    本ページではHTMLエンティティとされる特殊文字を文字列として扱う方法を解説した．
+    正しいHTMLを書くためには必要な情報なので，最終課題までには覚えておくこと．
+  </p>
+  
+</article>
+
+
+<aside>
+  <section>
+    <h3>
+      SFC/ITC Reference Links
+    </h3>
+    <ul>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/en/top_sfc.html">Shonon Fujisawa Information Technology Center</a></li>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/ja/network_web.html">CNS Web Service (Japanese Only)</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>
+      Other Reference Links
+    </h3>
+    <ul>
+      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/firebug//">Firebug</a></li>
+      <li><a href="http://www.htmlcodetutorial.com/">HTML Code Tutorial</a></li>
+      <li><a href="http://immigration-usa.com/html_colors.html">Complete HTML True Color Chart</a></li>
+      <li><a href="http://validator.w3.org/">W3C Markup Validation Service</a></li>
+    </ul>
+  </section>
+</aside>
+<!-- フッタ --> 
+<footer>
+  <p>Copyright&copy; 2011 SFC</p>
+</footer>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23811911-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

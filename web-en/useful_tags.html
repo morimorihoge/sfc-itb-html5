@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web Design With HTML5/CSS3</title>
+  <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
+  
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/shCore.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
+  
+</head>
+<body>
+<script type="text/javascript">
+$(function(){
+  SyntaxHighlighter.all();  
+});
+</script>
+  
+<!-- ヘッダ -->
+<header>
+  <h1>Web Design With HTML5/CSS3</h1>
+  <p>SFC IT Literacy Course</p>
+</header>
+
+<!--ナビゲーション --> 
+<nav>
+  <div class="menu">
+  <ul>
+    <li>
+      <!-- Go to index.html when no file name is assigned -->
+      <a href="./" >Home</a>
+    </li>
+    <li>
+      <a href="./lecture01.html">Lec. #5</a>
+    </li>
+    <li>
+      <a href="./lecture02.html">Lec. #6</a>
+    </li>
+    <li>
+      <a href="./lecture03.html">Lec. #7</a>
+    </li>
+    <li>
+      <a href="./mid_report.html">Mid-term</a>
+    </li>
+    <li>
+      <a href="./final_report.html">Final</a>
+    </li>
+    <li>
+      <a href="./sshfs.html">SSHFS</a>
+    </li>
+    <li>
+      <a href="./appendix.html" class="current">Appendix</a>
+      <ul>
+        <li><a href="./character_encoding.html">
+          Character Codes
+        </a></li>
+        <li><a href="./cross_browser.html">
+          Cross-browser Coding
+        </a></li>
+        <li><a href="./html_entities.html">
+          HTML Entities</a>
+        </li>
+        <li><a href="./advanced_css.html">
+          CSS in Detail</a>
+        </li>
+        <li><a href="./useful_tags.html">
+          Commonly Used HTML Tags</a>
+        </li>
+        <li><a href="./use_templates.html">
+          Using HTML Templates</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+</nav>
+
+<!-- メインコンテンツ -->
+<article id="content" class="articlecontent">
+  <h2>
+    
+  </h2>
+  <p>
+    第6回で様々なHTMLタグがあることを紹介したが，それらの詳細な使い方については解説しなかった．
+    ここでは，数多くのHTMLタグの中から良く使われ，使い方を知っていると便利なタグを紹介する
+  </p>
+  
+  <h3>
+    ul, ol, liによる列挙
+  </h3>
+  <p>
+    ul (Unordered List), ol (Ordered List), li (List Item)を使うと
+    項目を列挙することができる．
+    これらのタグは<span class="bold red">
+      必ずul, olの中に0個以上のliタグが来るように配置する．
+      また，ul, olタグの直下に文字列を書いてはいけない．
+    </span>
+    ulとolの差は，li要素の前に黒丸が来る（順序なし：unordered）か，数値が来る（ordered）かの違いである．
+  </p>
+  <pre class="brush: xml">
+  &lt;ul&gt;
+    &lt;li&gt;りんご&lt;/li&gt;
+    &lt;li&gt;ごりら&lt;/li&gt;
+    &lt;li&gt;らっこ&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ol&gt;
+    &lt;li&gt;羽でチュン&lt;/li&gt;
+    &lt;li&gt;羽でチュチュン&lt;/li&gt;
+    &lt;li&gt;羽そろえば牙を向く&lt;/li&gt;
+  &lt;/ol&gt;
+  </pre>
+  <p>
+    <a href="resources/useful_tags-01.html">
+      表示結果
+    </a>
+  </p>
+  
+  <h3>
+    dl, dt, ddによる定義・説明リスト
+  </h3>
+  <p>
+    複数の要素に対して説明を列挙していく時に用いると良い．前述したul, ol, liタグに似ているが，
+    dl, dt, ddは対となる要素の組み合わせのリストであることが異なる．
+    dl (Description List)タグ内に
+    dt (Description Term)タグとして説明したい用語を記述し，
+    dd (Description, Definition)タグで説明を書いていく．
+  </p>
+  
+  <pre class="brush: xml">
+  &lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+
+    &lt;dt&gt;JK&lt;/dt&gt;
+    &lt;dd&gt;常識的に考えて&lt;/dd&gt;
+
+    &lt;dt&gt;チョベリバ&lt;/dt&gt;
+    &lt;dd&gt;超ベリーバッド&lt;/dd&gt;
+  &lt;/dl&gt;
+  </pre>
+  <p>
+    <a href="resources/useful_tags-02.html">
+      表示結果
+    </a>
+  </p>
+  
+  
+  <h3>
+    tableタグによる表の表示
+  </h3>
+  <p>
+    HTMLで表を表現するときに使うのがtableタグである．
+    tableタグはHTML5で記述方法が大きく再定義されたが，ひとまず以下の書き方をしていれば
+    古いブラウザでも正しく表示される（W3C Markup Validatorでもエラーにはならない）．
+  </p>
+  
+  スタイルシート
+  <pre class="brush: css">
+  /* 表を強調するためのスタイル */
+  table {
+    border: solid 1px black;
+  }
+
+  th {
+    border: solid 1px gray;
+    background-color: #eeeeee;
+  }
+
+  td {
+    border: solid 1px gray;
+  }
+  </pre>
+  
+  HTML
+  <pre class="brush: xml">
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;th&gt;見出し1&lt;/th&gt;
+      &lt;th&gt;見出し2&lt;/th&gt;
+      &lt;th&gt;見出し3&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;データ1-1&lt;/td&gt;
+      &lt;td&gt;データ1-2&lt;/td&gt;
+      &lt;td&gt;データ1-3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;データ2-1&lt;/td&gt;
+      &lt;td&gt;データ2-2&lt;/td&gt;
+      &lt;td&gt;データ2-3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  </pre>
+  <p>
+    <a href="resources/useful_tags-03.html">
+      表示結果
+    </a>
+  </p>
+  <p>
+    HTML5に準拠した正しい構造については以下のサイトを参考にすると良い．
+  </p>
+  <ul>
+    <li><a href="http://webmitikusa.blog47.fc2.com/blog-entry-20.html">Webの道草：テーブルの正しい構造</a></li>
+    <li><a href="http://www.htmq.com/html5/table.shtml">HTMLクイックリファレンス：table</a></li>
+  </ul>
+  
+  <h3>
+    まとめ
+  </h3>
+  <p>
+    ここに挙げた以外にも沢山のHTMLタグがあるが，最初から全てを覚えようとはせずに，
+    必要になったときに覚えていくようにすれば十分である．
+    ただし，ここに挙げた３種類のタグは一般的なWebページでも使われる可能性が高いタグであるので，
+    使いこなせると良い．
+  </p>
+  
+</article>
+
+
+<aside>
+  <section>
+    <h3>
+      SFC/ITC Reference Links
+    </h3>
+    <ul>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/en/top_sfc.html">Shonon Fujisawa Information Technology Center</a></li>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/ja/network_web.html">CNS Web Service (Japanese Only)</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>
+      Other Reference Links
+    </h3>
+    <ul>
+      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/firebug//">Firebug</a></li>
+      <li><a href="http://www.htmlcodetutorial.com/">HTML Code Tutorial</a></li>
+      <li><a href="http://immigration-usa.com/html_colors.html">Complete HTML True Color Chart</a></li>
+      <li><a href="http://validator.w3.org/">W3C Markup Validation Service</a></li>
+    </ul>
+  </section>
+</aside>
+<!-- フッタ --> 
+<footer>
+  <p>Copyright&copy; 2011 SFC</p>
+</footer>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23811911-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
