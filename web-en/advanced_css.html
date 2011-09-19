@@ -59,7 +59,7 @@ $(function(){
       <a href="./appendix.html" class="current">Appendix</a>
       <ul>
         <li><a href="./character_encoding.html">
-          Character Codes
+          Character Encoding
         </a></li>
         <li><a href="./cross_browser.html">
           Cross-browser Coding
@@ -85,105 +85,67 @@ $(function(){
 <!-- メインコンテンツ -->
 <article id="content" class="articlecontent">
   <h2>
-    CSSをもう少し詳しく理解する
+    CSS in Detail
   </h2>
   <p>
-    第6回でCSSの基礎的な内容を紹介したが，CSSにはもっと多くの機能がある．
-    本ページではそうしたCSSの応用的な内容について解説する．
-    尚，このページの内容は
-    <a href="http://webdesignrecipes.com/css-blocklevel-elements/">
-      CSSでレイアウトするなら絶対覚えておきたいブロックレベル要素のクセとかいろいろ
-    </a>
-    の内容をベースに，一部を抜き出した物なので，より詳しい内容を知りたい場合はそちらを参照すること．
-  </p>
+  In  lecture #6,  we have discussed the basics of CSS. In this section, we would discuss more about CSS, in detail. </p>
   
   <h3>
-    クラスの使い方についてもう少し詳しく
+    More About Using Classes
   </h3>
   <p>
-    良いCSSを書くためには，CSSクラスの理解が不可欠である．本説では特に子孫セレクタと複数クラスの同時指定について解説する．
+    In order to create CSS files in a orderly fashioned way, the basic ideas of classes must be mastered. In this section, the ideas of classes would be described along with explainations of descendant classes and multible classes definitions. 
   </p>
   
-  <h4>
-    子孫セレクタ
-  </h4>
+  <h4>Descendant Classes</h4>
   <p>
-    第6回の内容では，セレクタにはタグ名やクラス，idを指定することができると解説した．
-    しかし，もっと細かい条件でセレクタを指定することが可能である．
-    例えば，第6回で，重要な文字列をハイライトしたい時に使うクラス「important」を定義するには以下のように指定した．
+    In lecture #6, we have discussed how to define specific tag names, classes, and id names as selectors. For example, say there was a class named &quot;important&quot; in your CSS file, as shown below.  This particular class would highlight portions of text with red, and make them bold. 
   </p>
   <pre class="brush: css">
-    /* 重要な部分を強調 */
+    /* Highlight Important Portions */
     .important {
       font-weight: bold;
       color: red;
     }
   </pre>
   <p>
-    上記の記述により「class="important"」を付けたタグの中は赤色太字になる．
-    しかし，ここで作った「important」クラスは，HTML全体に適用される．例えば，headerタグ内でもarticleでも，
-    とにかくimportantクラスを指定すると前述のスタイルが適用されてしまう．
-  </p>
-  <p>
-    通常はこのような挙動で問題は無いのだが，
-    <span class="red bold">
-      デザイン上header内とarticle内でimportantクラスのスタイルを変えたいと思ったときに問題が生じる．
-    </span>
-    例えば，header領域の背景色が黒で，article領域の背景色が白だった場合，強調させたい時には別の色を用いたい場合が
-    あるかもしれない．また，表示するフォントサイズなども適宜変更したいという場合があり得る．
-  </p>
-  <p>
-    この場合，これまでやってきた方法で対応しようとすると，header用とarticle用の
-    二つのクラスを以下のように定義することになる．
-  </p>
-  <pre class="brush: css">
-    /* header用重要な部分を強調 */
+  In this particular case, this class may be applied to any tag or element. However, if you want the highlight to look different, based on the name of the tag, this could be a problem. For example, say the background color of the &quot;header&quot; area is black, and the background color of the &quot;article&quot; area is white. If you were to highlight text in each of the areas, it may be better if they had different colors. </p>
+  <p>In order to change the color, the most simplistic method would be create two different classes for each of the areas, as shown below.</p>
+<pre class="brush: css">
+    /* Highlight For Header */
     .important_header {
       font-weight: bold;
       color: blue;
     }
-    /* article用重要な部分を強調 */
+    /* Highlight For Article */
     .important_article {
       font-weight: bold;
       color: red;
     }
   </pre>
   <p>
-    こうすると，header用とarticle用のクラスが別の名前になるので，header内で重要な部分には
-    「class="important_header"」を使い，article内には
-    「class="important_article"」を用いれば良い．
-    しかし，この対応方法だと，さらにナビゲーション部分やフッタ部分で同じことをやろうとしたときに，
-    <span class="red bold">クラス名がどんどん煩雑になっていってしまうという問題がある</span>．
-  </p>
+  Creating individual classes may not be a problem if the number of varieties are small. However, there were a wide varieties of styles, the style sheet would become complicated with similar class names.</p>
   
   <p>
-    これを解決するのが<span class="red bold">
-      子孫セレクタ
-    </span>である．
-    子孫セレクタは，セレクタの対象を「XXX内のYYY」という形で絞り込んでいくことができる．
-    子孫セレクタを指定するには，セレクタ部分にスペースを空けて親から子に向かって記述していけば良い．
-    具体的には以下の通りである．
+    The solution to this problem would be use <span class="red bold">
+      descendant selectors</span>. By using descendant selectors, users would be able to assign the same class name for every type of tag, and obtain different designs at the same time. The following code indicates a sample of style definitions with descendant selectors.
   </p>
   
   <pre class="brush: css;highlight: [2,8]">
-  /* header内の重要な部分を強調 */
+  /* Highlight For Header */
   header .important {
     font-weight: bold;
     color: blue;
   }
 
-  /* article内の重要な部分を強調 */
+  /* Highlight For Article */
   article .important {
     font-weight: bold;
     color: red;
   }
   </pre>
   <p>
-    一つ目は「headerタグ内のimportantクラスに対するセレクタ」であり，
-    二つ目は「articleタグ内のimportantクラスに対するセレクタ」を意味している．
-    よって，同じimportantクラスを指定しても，そのタグがどこにあるのかで別のスタイルを
-    参照する．
-  </p>
+    As mentioned aboved, the same class name may be defined for any type of tag in the HTML file.</p>
   
   <pre class="brush: xml">
   &lt;!-- html,headタグは省略 --&gt;
@@ -205,33 +167,23 @@ $(function(){
       &lt;/span&gt;
     &lt;/footer&gt;
   &lt;/body&gt;
-  </pre>
-  <a href="resources/advanced_css-01.html">
-    サンプルコード
-  </a>
+
+</pre>
+  <p><a href="resources/advanced_css-01.html">Open the sample code with a browser</a></p>
   <p>
-    子孫セレクタは上記の様なシチュエーションの他にも，細かくセレクタを指定することで，そのスタイルが
-    HTMLのどこで使われているかを見やすくするという利点もある．
-    必要がなければ特に使いこなさなくても良いが，世の中で配布されているテンプレートでは
-    当たり前の様に使われているので，それらを改変する時には上記の知識が必要である．
-  </p>
+  Descendant selectors also enable to make things clear on CSS files. This may seem confusing at first, but it is used commonly in most HTML template. Therefore, you would need the knowledge of them upon adjusting style definitions and values in HTML templates.</p>
   
-  <h4>
-    複数クラスの同時指定
-  </h4>
+  <h4>Multiple Class Definitions</h4>
   <p>
-    属性にクラス名を記述する際，同時に複数のクラスを指定することができる．
-    複数クラスを指定する際は，<span class="bold red">クラス名を指定する際にスペースを空けてクラス名を記述していく</span>．
-    以下にサンプルを示す．
-  </p>
+  When defining classes as HTML attributes, you may add multiple class names to a single definition. The following code indicates an sample of multiple class definitions. <span class="bold red">When defining multiple class names, separate them with a space in between each class name</span>. </p>
   
   <pre class="brush: css">
-  /* 太字にするだけのクラス */
+  /* Class For Bold Characters */
   .bold {
     font-weight: bold;
   }
 
-  /* 赤字にするだけのクラス */
+  /* Class For Highlighting */
   .red {
     color: red;
   }
@@ -241,27 +193,25 @@ $(function(){
   &lt;body&gt;
     &lt;article&gt;
       &lt;p&gt;
-        ここはなにもクラス指定なし
+        No style applied here.
       &lt;/p&gt;
       &lt;p class="bold"&gt;
-        boldクラスのみ指定
+        &quot;Bold&quot; class applied.
       &lt;/p&gt;
       &lt;p class="red"&gt;
-        redクラスのみ指定
+        &quot;Red&quot; class applied.
       &lt;/p&gt;
       &lt;p class="bold red"&gt;
-        bold, redクラスを両方指定
+        Both &quot;bold&quot; and &quot;red&quot; classes applied.
       &lt;/p&gt;
     &lt;/article&gt;
   &lt;/body&gt;
-  </pre>
-  <a href="resources/advanced_css-02.html">
-    サンプルコード
-  </a>
-  <p>
-    このように，複数クラスの同時指定をうまく利用すると，スタイルシートの重複を避けたり，
-    HTMLファイルの見通しがよくなったりするので，うまく活用できるところでは活用すると良い．
+
+</pre>
+  <p><a href="resources/advanced_css-02.html">Open the sample code with a browser </a>
   </p>
+  <p>
+  Multiple class definitions are useful upon avoiding duplicate definitions and making style sheets simpler. Therefore, we recommend you use them upon making your own style sheet.</p>
   
 </article>
 

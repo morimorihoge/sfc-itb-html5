@@ -59,7 +59,7 @@ $(function(){
       <a href="./appendix.html">Appendix</a>
       <ul>
         <li><a href="./character_encoding.html">
-          Character Codes
+          Character Encoding
         </a></li>
         <li><a href="./cross_browser.html">
           Cross-browser Coding
@@ -133,7 +133,7 @@ $(function(){
   </pre>
   <p>
   Start tags and end tags are mostly used in pairs, but there are some tags which may be
-  shortened into one tag. (e.g. "br" for line breaks and "img" for images)
+  shortened into one tag. (e.g. "br" for line feeds and "img" for images)
   </p>
   
   <pre class="brush: xml">
@@ -142,7 +142,7 @@ $(function(){
 
   <h4>Elements</h4>
   <p>  
-    The text or a group of tags within a specific start tag and end tag of the same kind are called "elements". A single element may have different tags within itself. This type of hierarchical framework is called the "nested structure". It depends on the browser how each element is processed.
+    A group of text or tags within a specific start tag and end tag of the same kind are called "elements". A single element may have different tags within itself. This type of hierarchical framework is called the "nested structure". It depends on the browser how each element is processed.
   </p>
 
   <p>
@@ -159,23 +159,24 @@ $(function(){
   &lt;body&gt;
     &lt;p&gt;
 	  Paragraph 1 - This is the first paragraph. When the "p" tag is 
-	  used, line breaks would automatically be inserted before and 
+	  used, line feeds would automatically be inserted before and 
 	  after each paragraph. Long sentences would also be returned.
     &lt;/p&gt;
     &lt;p&gt;
-	  Paragraph 2 - If you want to force a line break, you can use 
+	  Paragraph 2 - If you want to force a line feed, you can use 
 	  the "br" tag. A forced life feed would look like this. &lt;br /&gt;
 	&lt;/p&gt;
     &lt;p&gt;
-	  Paragraph 3 - Watch where you place the "br" tag, as line breaks
+	  Paragraph 3 - Watch where you place the "br" tag, as line feeds
 	  are not permitted within the "html" element.
 	&lt;/p&gt;
   &lt;/body&gt;
   &lt;/html&gt;
-  </pre>
-  <a href="resources/lecture02-01.html">Open the sample code with a bowser</a>
-  <p>
-  </p>
+
+</pre>
+  <p><a href="resources/lecture02-01.html">Open the sample code with a bowser</a>  </p>
+<p>
+</p>
 
   <h4>Attributes</h4>
   <p>
@@ -185,13 +186,12 @@ $(function(){
 	it appears, or we may define the destination URL for a hyperlink.
   </p>
   <p>
-    Attributes are defined after a space following the tag name:<br /> 
-	&lt;[Tag Name] [Attribute Name]="value"&gt; <br />
-	For example, if you were to define a CSS class called "important" to the "p" tag,
-	it would look like the following code.
-  </p>
-
-  <pre class="brush: xml;highlight: [8,9]">
+    Attributes are defined after a space following the name of the tag:<br /> 
+  &lt;[Tag Name] [Attribute Name]="value"&gt;<br />
+    </p>
+  <p>For example, if you were to define a CSS class called "important" to the "p" tag,
+    it should look like the following sample code.  </p>
+<pre class="brush: xml;highlight: [8,9]">
   &lt;!DOCTYPE html&gt;
   &lt;html&gt;
   &lt;head&gt;
@@ -208,31 +208,18 @@ $(function(){
   &lt;/body&gt;
   &lt;/html&gt;
   </pre>
-  <a href="resources/lecture02-02.html">Open the sample code with a bowser</a>
-
-  <p>
-    The following diagram wraps up what we have discussed so far.
-  </p>
+  <p><a href="resources/lecture02-02.html">Open the sample code with a bowser</a>  </p>
+<p>&nbsp;
+</p>
+  <p>The following diagram wraps up what we have discussed so far. </p>
   <img src="images/cn13.png" width="500" alt="cn13" />
   <br /><br />
   
   <p>
-  	So far, we have only discussed "p" tags and "br" tags. 
-	The following site discribes the 
-	details of the tags we haven't discussed.
-  </p>
+  	So far, we have discussed only about "p" tags and "br" tags, but there are dozens more that are defined as HTML tags. In order to view the references of HTML tags, visit  the "<a href="http://www.w3schools.com/html5/html5_reference.asp">HTML5 Tag
+	Reference</a>" web site. It is also good to go over the source codes of existing web pages. </p>
   <ul>
-    <li><a href="http://www.w3schools.com/html5/html5_reference.asp">HTML5 Tag Reference</a></li>
-  </ul>
-  <p>
-    There is no need to memorize every single tag, but it's good to know some of the
-	main ones listed below. 
-	Upon referencing the usage of the tags, you can always go over sites such
-	as "<a href="http://www.w3schools.com/html5/html5_reference.asp">HTML5 Tag
-	Reference</a>", but going over the source codes of other web pages is also a nice way.
-  </p>
-  <ul>
-    <li>Tags which are to be written within the "head" tag:
+    <li>Tags which are to be written within the "head" element:
       <ul>
         <li>"title" tag: Title of the page. (To be shown on the title bar of the browser)</li>
         <li>"meta" tag: Used for defining the fundamental information of a web page.
@@ -250,13 +237,13 @@ $(function(){
         <li>"aside" tag: Used for defining supplimentary information of a page. Suitable for "Sidebars".</li>
         <li>"nav" tag: Used for defining navigation links (bars).</li>
         <li>"section" tag: Used for bundling a set of contents. </li>
-        <li>"h1", "h2", ..., "h6" tag: Used for defining captions. The larger the number, the smaller the caption font size. </li>
+        <li>"h1", "h2", &quot;h3&quot;, &quot;h4&quot;, &quot;h5&quot;, and "h6" tags: Used for defining captions. The larger the number, the smaller the caption font size. </li>
         <li>"p" tag: Used for defining a paragraph.</li>
-        <li>"br" tag: Forces line breaks. This tag does not require any elements.</li>
+        <li>"br" tag: Forces line feeds. This tag does not require any elements.</li>
         <li>"a" tag: Used for defining hyperlinks. The  &quot;href&quot; attribute indicates the link destination, and the elements would appear as the actual hyperlink text.</li>
         <li>"img" tag: Used for defining images. The &quot;src&quot; attribute indicated the URL to the actual image material. This tag does not require any elements. </li>
-        <li>"ul", "ol", "li" tag: Used for listing items as enumerations. This list, in particular, uses &quot;ui&quot; and &quot;li&quot; tags.</li>
-        <li>"table", "tr", "td" tag: Used for defining tables.</li>
+        <li>"ul", "ol", and "li" tags: Used for listing items as enumerations. This list, in particular, uses &quot;ui&quot; and &quot;li&quot; tags.</li>
+        <li>"table", "tr", and "td" tags: Used for defining tables.</li>
         <li>"span" tag: An in-line attribute used for general purposes. In most cases, it is used in combination with CSS, in order to change the font in some portions of the document.</li>
         <li>"div" tag: Used for designating element blocks. In most cases, it is used in combination with CSS, to change the design of a certain area (block) in the document.</li>
       </ul>
@@ -420,7 +407,7 @@ $(function(){
       }
   </pre>
   <p>
-    <a href="resources/lecture02-03.html">Open in browser</a>
+    <a href="resources/lecture02-03.html">Open the sample code with a browser</a>
   </p>
   
   <h4>Exercise</h4>
