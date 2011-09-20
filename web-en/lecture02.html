@@ -71,7 +71,7 @@ $(function(){
           CSS in Detail</a>
         </li>
         <li><a href="./useful_tags.html">
-          wCommonly Used HTML Tags</a>
+          Commonly Used HTML Tags</a>
         </li>
         <li><a href="./use_templates.html">
           Using HTML Templates</a>
@@ -101,22 +101,22 @@ $(function(){
     CSS (Cascade Style Sheets), on the other hand, is used for specifying the font size, color, and layout.
   </p>
   <p>
-  	Web pages written in HTML and CSS is first analyzed by the web broser (e.g. Firefox and Safari).
-    It then builds and presents the "web page" in a form which humans are easy to view.
-    Upon building the "web page", if additional files such as images and video clips are required, it will download it.
+  	A web page written with HTML is first analyzed by the web broser (e.g. Firefox and Safari).
+    Browsers then render the page, and presents a view in a form which humans may understand.
+    If additional files such as images and video clips were to be required upon rendering, browsers would download them.
   </p>
   <img src="images/cn12.png" width="500" alt="cn12" />
   <br /><br />
 
   <h3>HTML Tags</h3>
   <p>
-    In HTML, the structure of the page is expressed using tags. This section will explain the details of HTML tags.
+    In HTML, the structure of a page is expressed using tags. This section will explain the details of HTML tags.
   </p>
   
   <h4>Tags</h4>
   <p>
   HTML tags are symbols that indicate the structure of the page.
-  Each tag begins with a "&lt;", and ends with a "&gt;".
+  Each tag begins with a "&lt;" symbol, and ends with a "&gt;" symbol.
   </p>
 
   <pre class="brush: xml">
@@ -124,8 +124,7 @@ $(function(){
   </pre>
 
    <p>
-   Among the tags, there are "start tags" and "end tags". As indicated below, the end tags have a slash at the beginning. Any text framed by "&lt;!--" and "--&gt;" are called <span class="bold">"comments"</span>, and are ingnored by the browser. Comments are used when you what to leave a memo within the code, or when you want to leave a message for other developers to read.
-  </p>
+   Among the tags, there are "start tags" and "end tags". As indicated below, the end tags have a slash at the beginning. Any text framed by "&lt;!--" and "--&gt;" are called <span class="bold">"comments"</span>. They would be  ingnored by the browser upon rendering. Comments are used for leaving a memo within the code.</p>
 
   <pre class="brush: xml">
   &lt;html&gt; <!-- start tag -->
@@ -142,7 +141,7 @@ $(function(){
 
   <h4>Elements</h4>
   <p>  
-    A group of text or tags within a specific start tag and end tag of the same kind are called "elements". A single element may have different tags within itself. This type of hierarchical framework is called the "nested structure". It depends on the browser how each element is processed.
+    A group of text or tags between a specific start tag and end tag are called "elements". A single element may have different tags within itself. This type of hierarchical framework is called the "nested structure". It depends on the browser how each element is processed.
   </p>
 
   <p>
@@ -150,7 +149,7 @@ $(function(){
    element as a paragraph. 
   </p>
 
-  <pre class="brush: xml;highlight: [7,8,9,10,11,12,13]">
+  <pre class="brush: xml;highlight: [7,8,9,10,11]">
   &lt;!DOCTYPE html&gt;
   &lt;html&gt;
   &lt;head&gt;
@@ -180,18 +179,17 @@ $(function(){
 
   <h4>Attributes</h4>
   <p>
-    In the start tags, we are able to add "attributes" as parameters for the tag.
-	The types of attributes we are able to define depends on what tag we use.
-	We may define a CSS class for each tag in order to change the way
-	it appears, or we may define the destination URL for a hyperlink.
-  </p>
+    In the start tags, you are able to add "attributes".
+	The types of attributes you are able to define, depends on what tag you use.
+	For example, you may define a CSS class for each tag in order to change the way
+  it appears, or you may define the destination URL for a hyperlink. </p>
   <p>
     Attributes are defined after a space following the name of the tag:<br /> 
   &lt;[Tag Name] [Attribute Name]="value"&gt;<br />
     </p>
   <p>For example, if you were to define a CSS class called "important" to the "p" tag,
     it should look like the following sample code.  </p>
-<pre class="brush: xml;highlight: [8,9]">
+<pre class="brush: xml;highlight: [8,9,10]">
   &lt;!DOCTYPE html&gt;
   &lt;html&gt;
   &lt;head&gt;
@@ -216,36 +214,35 @@ $(function(){
   <br /><br />
   
   <p>
-  	So far, we have discussed only about "p" tags and "br" tags, but there are dozens more that are defined as HTML tags. In order to view the references of HTML tags, visit  the "<a href="http://www.w3schools.com/html5/html5_reference.asp">HTML5 Tag
-	Reference</a>" web site. It is also good to go over the source codes of existing web pages. </p>
+  	So far, we have discussed only about "p" tags and "br" tags, but there are dozens more that are defined as HTML tags. In order to view the references of HTML tags, visit  the <a href="http://www.w3schools.com/html5/html5_reference.asp">HTML5 Tag
+	Reference</a> web site. It is also good to go over the source codes of existing web pages. </p>
   <ul>
     <li>Tags which are to be written within the "head" element:
       <ul>
-        <li>"title" tag: Title of the page. (To be shown on the title bar of the browser)</li>
-        <li>"meta" tag: Used for defining the fundamental information of a web page.
-		(Commonly used for defining the character encoding method)
-		</li>
-        <li>"link" tag: Defines the external files relative to the web page. (Commonly
+        <li><strong><em>"title" tag: </em></strong>Title of the page. (To be shown on the title bar of the browser)</li>
+        <li><strong><em>"meta" tag: </em></strong>Used for defining the fundamental information of a web page.
+		(Commonly used for defining the character encoding method) </li>
+        <li><strong><em>"link" tag: </em></strong>Defines external files relavant to the page. (Commonly
 		used for defining CSS and RSS files. The "rel" attribute indicates the file type,
-		and the "href" attribute indicate the URL of the file.
+		and the "href" attribute indicates the URL of the file.
 		</li>
       </ul>
     </li>
     <li>Tags which may be used within the "body" tag:
       <ul>
-        <li>"article" tag: The main body of an article. </li>
-        <li>"aside" tag: Used for defining supplimentary information of a page. Suitable for "Sidebars".</li>
-        <li>"nav" tag: Used for defining navigation links (bars).</li>
-        <li>"section" tag: Used for bundling a set of contents. </li>
-        <li>"h1", "h2", &quot;h3&quot;, &quot;h4&quot;, &quot;h5&quot;, and "h6" tags: Used for defining captions. The larger the number, the smaller the caption font size. </li>
-        <li>"p" tag: Used for defining a paragraph.</li>
-        <li>"br" tag: Forces line feeds. This tag does not require any elements.</li>
-        <li>"a" tag: Used for defining hyperlinks. The  &quot;href&quot; attribute indicates the link destination, and the elements would appear as the actual hyperlink text.</li>
-        <li>"img" tag: Used for defining images. The &quot;src&quot; attribute indicated the URL to the actual image material. This tag does not require any elements. </li>
-        <li>"ul", "ol", and "li" tags: Used for listing items as enumerations. This list, in particular, uses &quot;ui&quot; and &quot;li&quot; tags.</li>
-        <li>"table", "tr", and "td" tags: Used for defining tables.</li>
-        <li>"span" tag: An in-line attribute used for general purposes. In most cases, it is used in combination with CSS, in order to change the font in some portions of the document.</li>
-        <li>"div" tag: Used for designating element blocks. In most cases, it is used in combination with CSS, to change the design of a certain area (block) in the document.</li>
+        <li><strong><em>"article" tag: </em></strong>The main body of an article. </li>
+        <li><strong><em>"aside" tag: </em></strong>Used for defining supplimentary information of a page. Suitable for side bars.</li>
+        <li><strong><em>"nav" tag: </em></strong>Used for defining navigation links (bars).</li>
+        <li><strong>"section" tag: </strong>Used for bundling a set of contents. </li>
+        <li><strong><em>"h1", "h2", &quot;h3&quot;, &quot;h4&quot;, &quot;h5&quot;, and "h6" tags: </em></strong>Used for defining captions. Larger the number, smaller the font. </li>
+        <li><strong><em>"p" tag: </em></strong>Used for defining paragraphs.</li>
+        <li><strong><em>"br" tag: </em></strong>Forces line feeds. This tag does not require any elements.</li>
+        <li><strong><em>"a" tag: </em></strong>Used for defining hyperlinks. The  &quot;href&quot; attribute indicates the link destination, and the elements would appear as the actual hyperlink text.</li>
+        <li><strong><em>"img" tag: </em></strong>Used for placing images. The &quot;src&quot; attribute indicates the URL to the actual image material. This tag does not require any elements. </li>
+        <li><strong><em>"ul", "ol", and "li" tags: </em></strong>Used for listing items as enumerations. This list, in particular, uses &quot;ui&quot; and &quot;li&quot; tags.</li>
+        <li><strong><em>"table", "tr", and "td" tags: </em></strong>Used for defining tables.</li>
+        <li><strong><em>"span" tag:</em></strong> An in-line attribute used for general purposes. In most cases, it is used in combination with CSS, in order to change the font in some portions of the document.</li>
+        <li><strong><em>"div" tag: </em></strong>Used for defining element blocks. In most cases, it is used in combination with CSS, to change the design of a certain area (block) in the document.</li>
       </ul>
     </li>
   </ul>
@@ -264,13 +261,12 @@ $(function(){
   <ul>
     <li>&lt;!DOCTYPE html&gt; --- Indicates the file is written in HTML5. Must be written in the first line of the file.</li>
     <li>&lt;html&gt;&lt;/html&gt; --- The elements within these tags would be recognized as the contents of the HTML document.</li>
-    <li>&lt;head&gt;&lt;/head&gt; --- Indicates the preliminary information for a HTML file. Mainly used for defining external CSS files and JavaScript files. It is also used for indicating the title of a page, which appears on the browser window.</li>
+    <li>&lt;head&gt;&lt;/head&gt; --- Indicates the preliminary information for a HTML file. Mainly used for defining external CSS and JavaScript files. It is also used for indicating the title of a page, which would appear on the browser window.</li>
     <li>&lt;title&gt;&lt;/title&gt; --- The elements within these tags Indicate the title of a page.</li>
     <li>&lt;body&gt;&lt;/body&gt; --- The elemetns within these tags Indicate the main body of a page.</li>
   </ul>
   <p>
-    As an important fact, &quot;html&quot;, &quot;head&quot;, and &quot;body&quot; tags shall only apprear once in a single HTML document. If these tags were to appear more than once, it may lead to various errors, depending on the browser. 
-  </p>
+  As an important fact, &quot;html&quot;, &quot;head&quot;, and &quot;body&quot; tags shall only apprear once in a single HTML document. If these tags were to appear more than once, it may lead to various errors.</p>
   <p>
     When creating a new HTML file, it is recommended that you use the following template to start off with. Refer to the  <a href="cross_browser.html">
       Cross-browser Coding</a> section for the details of &quot;html5.js&quot;.
@@ -297,7 +293,7 @@ $(function(){
   <img src="images/validator01.png" width="600" alt="validator01" />
   <br /><br />
   <p>
-    In the W3C Markup Validation Service, you can check your HTML coding either by submitting the URL, uploading the actual file, or by directly inputing the  code to the text box. If the document was correctly coded with no errors, the validation result would indicated a &quot;check passed&quot; message. If not, it would show the number of errors along with help messages  for fixing them. 
+    In the W3C Markup Validation Service, you can check your HTML coding either by submitting the URL, uploading the actual file, or  pasting the  code to the text box. If the document was correctly coded with no errors, the validation result would return  a &quot;check passed&quot; message. If not, it would show the number of errors along with help messages  for fixing them. 
   </p>
   <img src="images/validation_success.png" width="600" alt="validation_success" />
   <p>--- Passed Validation Checks ---</p>
@@ -308,14 +304,14 @@ $(function(){
     
   <h4>Excersice</h4>
   <ul>
-    <li>Create a new HTML file &quot;<span class="bold">lecture02.html</span>&quot;, and write a article document with at least one &quot;h1&quot; caption tag, and multiple &quot;p&quot; paragraph tags. </li>
+    <li>Create a new HTML file &quot;<span class="bold">lecture02.html</span>&quot;, and write an article document with at least one &quot;h1&quot; caption tag, and multiple &quot;p&quot; paragraph tags. </li>
     <li>Box off the article with an &quot;article&quot; tag.</li>
-    <li>Validate your HTML file with the <a href="http://validator.w3.org/">W3C Markup Validation Service</a>. If there are any errors, fix them until your HTML file passes the validation. </li>
+    <li>Validate your HTML file with the W3C Markup Validation Service. If there are any errors, fix them until your HTML file passes the validation. </li>
   </ul>
   
   <h3>The Basics of CSS</h3>
   <p>
-  CSS (Cascading Style Sheets) is used for defining the font, size, layout, and colors of a HTML document.  In order for a HTML file to load an external CSS file, the URL to the actual CSS must be indicated with a &quot;link&quot; tag within the &quot;head&quot; tag. </p>
+  CSS (Cascading Style Sheets) is used for defining the font, size, layout, and colors of a HTML document.  In order for HTML files to load external CSS files, the URL to the actual CSS file must be indicated with a &quot;link&quot; tag within the &quot;head&quot; tag. </p>
 <h4>Format</h4>
   <p>
     In CSS, the format of each style definitions are as follows:
@@ -325,27 +321,27 @@ $(function(){
     Selector { Property: value; } /* Comments */
   </pre>
   <ul>
-    <li>Selector: Indicates where the style shall be applied within the document. Selectors may be defined by using  conditions of HTML elements, such as tags, classes, and IDs. (e.g. &quot;article&quot;, &quot;p&quot;, &quot;.bold&quot;, &quot;#image001&quot;, and many more...)</li>
-    <li>Property: Indicated the type of style. (e.g. color, width, height, ...)</li>
-    <li>Value: Indicates the parameters for each property. (e.r. red, 300px, ...)</li>
-    <li>Comments: May be used for commenting the code. The comments in CSS files begins with &quot;/*&quot; and ends with &quot;*/&quot;.</li>
+    <li><strong><em>Selector: </em></strong>Indicates where the style shall be applied within the document. Selectors may be defined by with HTML elements, such as tags, classes, and IDs. (e.g. &quot;article&quot;, &quot;p&quot;, &quot;.bold&quot;, &quot;#image001&quot;, and many more...)</li>
+    <li><strong><em>Property:</em></strong> Indicates the type of style. (e.g. color, width, height, ...)</li>
+    <li><strong><em>Value:</em></strong> Indicates the parameters for each property. (e.r. red, 300px, ...)</li>
+    <li><strong><em>Comments:</em></strong> May be used for commenting the code. The comments in CSS files begins with &quot;/*&quot; and ends with &quot;*/&quot;.</li>
   </ul>
 
   <h4>Selectors</h4>
   <p>
   For the selector, either the class, the id, or the names of specific tags may be defined.</p>
   <ul>
-    <li>Specific Tag Names: When specific tag names are defined, the style would be applied to all the tags with the specified name in the HTML document.</li>
-    <li>Class: In HTML, all tags may contain a &quot;class&quot; attribute. When the selector is defined with a class name along with a period at the beginning (&quot;.[class name]&quot;), the style would be applied to all the tags with the specified class name within the HTML document. In the HTML file, the same class name may be used more than once. </li>
-    <li>Id: In HTML, <span class="bold">all tags may contain an &quot;id&quot; attribute with an <span class="red">unique id name</span>. </span>When the selector is defined with a id name, along with a sharp-symbol at the beginning (&quot;#[id name]&quot;), the style would be applied to the tag with the specified id name. Unlike &quot;class&quot; attributes, the name of &quot;id&quot; attributes must be unique within a single HTML document, and the same name must not  be used more than once.</li>
+    <li><strong><em>Specific Tag Names:</em></strong> When specific tag names are defined, the style would be applied to all the tags with the specified name in the HTML document.</li>
+    <li><strong><em>Classes:</em></strong> In HTML, all tags may contain a &quot;class&quot; attribute. When the selector is defined with a class name along with a period at the beginning (&quot;.[class name]&quot;), the style would be applied to all the tags with the specified class name within the HTML document. In the HTML file, the same class name may be used more than once. </li>
+    <li><strong><em>IDs:</em></strong> In HTML, <span class="bold">all tags may contain an &quot;id&quot; attribute with an <span class="red">unique id name</span>. </span>When the selector is defined with a id name, along with a sharp-symbol at the beginning (&quot;#[id name]&quot;), the style would be applied to the tag with the specified id name. Unlike &quot;class&quot; attributes, the name of &quot;id&quot; attributes must be unique within a single HTML document, and the same ID must not  be used more than once.</li>
   </ul>
   
   <h4>Properties and Values</h4>
   <p>
-  The <a href="http://meiert.com/en/indices/css-properties/">CSS Properties Index</a> contains a complete list of properties which may be used for defining styles. In the  <a href="http://meiert.com/en/indices/css-properties/">CSS Properties Index</a>, there are also information on properties exclusive for  CSS3. CSS3 is a new and advanced standard for defining styles, and requires a compatible browser. If you want to use more &quot;cool and neat&quot; styles, consider using CSS3.</p>
+  The <a href="http://meiert.com/en/indices/css-properties/">CSS Properties Index</a> contains a complete list of properties which may be used for defining styles. There are also information for properties exclusive for  CSS3. CSS3 is a new and advanced standard for defining styles, and requires a compatible browser. </p>
   <p>
-    The format of values depent on the property. For example, for defining the size of the text by using the &quot;font-size&quot; property, the value may be defined by pixel (px) or percentage (%). 
-    On the other hand, for defining the color of the text by using the &quot;color&quot; property, the values may be defined by RGB codes (#000000) or color names (red, blue, and 
+    The format of values depent on the property. For example, the size of the text must be defined  by pixel (px) or percentage (%). 
+    On the other hand, colors must be defined by RGB codes (#000000) or color names (red, blue, and 
   <a href="http://www.w3schools.com/cssref/css_colornames.asp">many more...</a>). For some properties such as &quot;<a href="http://www.w3.org/TR/css3-box/#the-margin">margin</a>&quot; and &quot;<a href="http://www.w3.org/TR/css3-box/#the-padding">padding</a>&quot;, the number of required values may be a vary, depending on the situation. When using such properties, be sure to go over the references.</p>
   
   <p>
@@ -377,7 +373,7 @@ $(function(){
       &lt;/html&gt;
   </pre>
   <p>
-  In this HTML file, the CSS file (<span class="bold">lecture02-03.css</span>) is indicated with a &quot;link&quot; tag in the 5th line. Since the indicated path to the CSS file is relative,  <span class="bold">lecture02-03.css must be in the same directory as lecture02-03.html.</span></p>
+  In this HTML file, the CSS file (<span class="bold">lecture02-03.css</span>) is indicated with a &quot;link&quot; tag on the 5th line. Since the path to the CSS file is relative,  <span class="bold">lecture02-03.css must be in the same directory as lecture02-03.html.</span></p>
   
   <p>
     lecture02-03.css
@@ -412,7 +408,7 @@ $(function(){
   
   <h4>Exercise</h4>
   <ul>
-    <li>Make a CSS file (lecture02.css) for the &quot;lecture02.html&quot; page you have created in the previous Exercise. Load the CSS using the &quot;link&quot; tag.</li>
+    <li>Make a CSS file (lecture02.css) for the &quot;lecture02.html&quot; page you have created in the previous exercise. Load the CSS using a &quot;link&quot; tag.</li>
     <li>Adjust the style and design using &quot;specific tag names&quot; and &quot;classes&quot;.</li>
   </ul>
   <p>
@@ -421,7 +417,7 @@ $(function(){
   
   <h3>In This Section...</h3>
   <p>
-  You have leared the basics of HTML and CSS, and learned how to create a simple web page. The facts discussed in this section is very important, so it is recommended that you review and practice the skills.</p>
+  You have leared the basics of HTML and CSS, and learned how to create simple web pages. The facts discussed in this section is very important, so it is recommended that you review and practice the skills.</p>
 
 </article>
 

@@ -98,7 +98,7 @@ $(function(){
   Before we discuss anything about character encodings, we would first discuss about how computers handle &quot;characters&quot;. In the world of computers, every piece of information is expressed with <span class="red bold">chains of bits</span>. Each bit indicates either a &quot;0&quot; or a &quot;1&quot;, and chains of bits are commonly indicated using  binary, octal, or hexadecimal numbers.</p>
   
   <p>
-  In the binary number system, each digit represents a single bit. For example, the number &quot;000111&quot; indicates a data of 6 bits. In the octal number system, each digit ranges from &quot;0&quot; to &quot;7&quot;, representing a chain of 3 bits. Therefore, the number &quot;650&quot; in the octal number system indicates a chain of 9 bits. Finally, in the hexadicimal number system, each digit ranges from &quot;0&quot; to &quot;9&quot;, and &quot;A&quot; to &quot;F&quot;. Each digit is able to represent a chain of 4 bits, which also means that the number &quot;F134&quot;, for example, indicates a chain of 16 bits. The following chart indicates the range  of values a 4-digit number is able to express, in the three numbering systems.</p>
+  In the binary number system, each digit represents a single bit. For example, the number &quot;000111&quot; indicates a chain of 6 bits. In the octal number system, each digit ranges from &quot;0&quot; to &quot;7&quot;, representing a chain of 3 bits. Therefore, the number &quot;650&quot; in the octal number system indicates a chain of 9 bits. Finally, in the hexadicimal number system, each digit ranges from &quot;0&quot; to &quot;9&quot;, and &quot;A&quot; to &quot;F&quot;. Each digit is able to represent a chain of 4 bits, which also means that the number &quot;F134&quot;, for example, indicates a chain of 16 bits. The following chart indicates the range  of values a 4-digit number may indicate, in the three numbering systems.</p>
   
   <table>
     <caption>
@@ -144,7 +144,7 @@ $(function(){
   If that is the case, how would computers handle characters??</p>
   
   <p>
-    Getting right to the answer, <span class="bold red">computers uses character mapping tables, which indicate codes (in numbers) for each one of the characters</span>. For example, in the <a href="http://www.asciitable.com/">ASCII  Table</a>, which indicates codes for the alphabets and numbers commonly used in most languages, the following rules apply for mapping (encoding) characters.</p>
+    Getting right to the answer, <span class="bold red">computers uses character mapping tables, which indicate codes (in numbers) for each one of the characters</span>. For example, the <a href="http://www.asciitable.com/">ASCII  table</a> indicates codes for the alphabets and numbers commonly used in most languages. In the ASCII table, the following rules apply for mapping (encoding) characters.</p>
   <ul>
     <li>
     The size of a code for 1 character must be 8 bits.</li>
@@ -154,11 +154,11 @@ $(function(){
     </li>
   </ul>
   <p>
-  If computers were to handle the  following characters, it would be translated into &quot;chains of numbers&quot; using the ASCII Table, as shown below.</p>
+  If computers were to handle the  following characters, it would be translated into &quot;chains of numbers&quot; using the ASCII table, as shown below.</p>
   <p> <img src="images/char_encoding01.png" alt="char_encoding01" width="600" /><br />
   </p>
   <p>
-    As shown above, computers handle characters using numbers. The numbers which correspond to certain characters are called <span class="bold red">character codes</span>. As there are a lot of different languages throughout the world, there are different methods of character encoding for each individual language. The following table indicates the details of the encoding methods mainly used in Japan for expressing Japanese characters, as well as alphabets.
+    As shown above, computers handle characters using numbers. The numbers which correspond to certain characters are called <span class="bold red">character codes</span>. As there are a lot of different spoken languages throughout the world, there are different methods of character encoding for each individual language. The following table indicates the details of the encoding methods mainly used in Japan for expressing Japanese characters, as well as alphabets.
   </p>
   
   <table>
@@ -237,21 +237,21 @@ $(function(){
   
   <p>
   If the browser can't find the corresponding tag, it tries to interpret the document with its default encoding settings. If the encoding methods match, there won't be a problem. However, if the default settings don't match that of the document, it is more or less likely that character corruptions would occur. The occurance of corruptions differ based on the type and the default settings of the browser. </p>
-  <p>For example, <a href="http://web.sfc.keio.ac.jp/~morimori/sfc-itb-html5/resources/lecture03-01.html">this web page (written in Japanese)</a>
+  <p>For example, <a href="resources/lecture03-01.html">this web page (written in Japanese)</a>
     would be interpreted correctly under Firefox and Google Chrome. However, it would be corrupted when viewed using Safari, unless the encoding method is  manually adjusted  from the &quot;Text encoding&quot; option under the &quot;View&quot; menu. You may intentionally cause corruptions under Firefox by selecting different encoding methods in the same way.
   </p>
   
   
   <p>
     <span class="bold red">
-      Upon coding HTML documents, it is recommended to indicate the character encoding method using the &quot;meta&quot; tag shown above. It is also important to save your code using the correct method of encoding. </span>If you are using Emacs, you can save files using the desired method of encoding by typing &quot;C-x return f&quot;, followed by the name of the encoding method. For GUI text editors, there sould be a menu for selecting encoding methods. 
+      Upon coding HTML documents, it is recommended that you indicate the character encoding method using the &quot;meta&quot; tag listed above. It is also important to save your code using the correct method of encoding. </span>If you are using Emacs, you can save files with the desired method of encoding by typing &quot;C-x return f&quot;, followed by the name of the encoding method. For GUI text editors, there sould be a menu for selecting encoding methods. 
   </p>
   
   <h4>
     Unfound Fonts
   </h4>
   <p>
-    Corruptions would also occur when the browser can't find the corresponding font installed on the computer. For example, if you try to view web pages written in Arabic or Korean, with a computer that does not have certain language packs installed, corruptions may occur. The only way to avoid such problems would be to use images with characters, instead of text, or to have everyone install appropriate fonts.
+    Corruptions would also occur when the browser can't find the corresponding font installed on the computer. For example, if you try to view web pages written in Arabic or Korean, with a computer that does not have certain language packs installed, corruptions may occur. The only way to avoid such problems would be to use images with characters, instead of text, or to have everyone install appropriate font packages.
   </p>
   
   <h3>In This Section...</h3>

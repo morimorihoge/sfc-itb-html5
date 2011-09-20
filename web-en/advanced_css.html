@@ -109,7 +109,7 @@ $(function(){
     }
   </pre>
   <p>
-  In this particular case, this class may be applied to any tag or element. However, if you want the highlight to look different, based on the name of the tag, this could be a problem. For example, say the background color of the &quot;header&quot; area is black, and the background color of the &quot;article&quot; area is white. If you were to highlight text in each of the areas, it may be better if they had different colors. </p>
+  In this particular case, it may be applied to any tag or element. However, if you want the highlight to look different, based on the name of the tag, this could be a problem. For example, say the background color of the &quot;header&quot; area is black, and the background color of the &quot;article&quot; area is white. If you were to highlight text in each of the areas, it may be better if they had different colors. </p>
   <p>In order to change the color, the most simplistic method would be create two different classes for each of the areas, as shown below.</p>
 <pre class="brush: css">
     /* Highlight For Header */
@@ -124,7 +124,7 @@ $(function(){
     }
   </pre>
   <p>
-  Creating individual classes may not be a problem if the number of varieties are small. However, there were a wide varieties of styles, the style sheet would become complicated with similar class names.</p>
+  Creating individual classes may not be a problem if the number of varieties are small. However, if there are a wide varieties of styles, the style sheet would become complicated with similar class names.</p>
   
   <p>
     The solution to this problem would be use <span class="red bold">
@@ -148,34 +148,32 @@ $(function(){
     As mentioned aboved, the same class name may be defined for any type of tag in the HTML file.</p>
   
   <pre class="brush: xml">
-  &lt;!-- html,headタグは省略 --&gt;
   &lt;body&gt;
     &lt;header&gt;
-      headerエリア．&lt;span class="important"&gt;
-        この部分がimportantクラスで強調されている
+      "Header" Area &lt;br /&gt;&lt;span class="important"&gt;
+        This portion is being highlighted by the "important" attribute.&lt;br /&gt;&lt;br /&gt;
       &lt;/span&gt;
     &lt;/header&gt;
     &lt;article&gt;
-      articleエリア．&lt;span class="important"&gt;
-        この部分がimportantクラスで強調されている．
+      "Article" Area &lt;br /&gt;&lt;span class="important"&gt;
+        This portion is being highlighted by the "important" attribute.&lt;br /&gt;&lt;br /&gt;
       &lt;/span&gt;
     &lt;/article&gt;
     &lt;footer&gt;
-      footerエリア．&lt;span class="important"&gt;
-        この部分がimportantクラスで強調されている.
-        マッチするセレクタが無いので見た目は変わらない
+      "Footer" Area &lt;br /&gt;&lt;span class="important"&gt;
+        This portion is being marked with a "important" attribute.&lt;br /&gt;
+        However, nothing would change because there are no corresponding selectors.&lt;br /&gt;
       &lt;/span&gt;
     &lt;/footer&gt;
   &lt;/body&gt;
-
-</pre>
+  </pre>
   <p><a href="resources/advanced_css-01.html">Open the sample code with a browser</a></p>
   <p>
-  Descendant selectors also enable to make things clear on CSS files. This may seem confusing at first, but it is used commonly in most HTML template. Therefore, you would need the knowledge of them upon adjusting style definitions and values in HTML templates.</p>
+  Descendant selectors  make things clear on CSS files. These ideas may seem confusing at first, but it is used commonly in most HTML templates. Therefore, you would need the knowledge of them upon adjusting style definitions and values in HTML templates.</p>
   
   <h4>Multiple Class Definitions</h4>
   <p>
-  When defining classes as HTML attributes, you may add multiple class names to a single definition. The following code indicates an sample of multiple class definitions. <span class="bold red">When defining multiple class names, separate them with a space in between each class name</span>. </p>
+  When defining classes as HTML attributes, you are able to add multiple class names to a single definition. The following code indicates an sample of multiple class definitions. <span class="bold red">When defining multiple class names, separate them with a space in between each class name</span>. </p>
   
   <pre class="brush: css">
   /* Class For Bold Characters */

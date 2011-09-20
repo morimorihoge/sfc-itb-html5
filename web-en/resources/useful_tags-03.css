@@ -1,13 +1,13 @@
-/* 表を強調するためのスタイル */
+/* Style Definitions for Table */
 table {
   border: solid 1px black;
 }
-
+ 
 th {
   border: solid 1px gray;
   background-color: #eeeeee;
 }
-
+ 
 td {
   border: solid 1px gray;
 }
