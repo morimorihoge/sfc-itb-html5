@@ -59,7 +59,7 @@ $(function(){
       <a href="./appendix.html" class="current">Appendix</a>
       <ul>
         <li><a href="./character_encoding.html">
-          Character Codes
+          Character Encoding
         </a></li>
         <li><a href="./cross_browser.html">
           Cross-browser Coding
@@ -84,86 +84,70 @@ $(function(){
 
 <!-- メインコンテンツ -->
 <article id="content" class="articlecontent">
-  <h2>
+  <h2>Commonly Used HTML Tags
     
   </h2>
   <p>
-    第6回で様々なHTMLタグがあることを紹介したが，それらの詳細な使い方については解説しなかった．
-    ここでは，数多くのHTMLタグの中から良く使われ，使い方を知っていると便利なタグを紹介する
+    In lecture #6, we have discussed how to use various HTML tags. In this section, we would go over some of the most commonly used tags, and show examples. 
   </p>
   
   <h3>
-    ul, ol, liによる列挙
+    Lists
   </h3>
   <p>
-    ul (Unordered List), ol (Ordered List), li (List Item)を使うと
-    項目を列挙することができる．
-    これらのタグは<span class="bold red">
-      必ずul, olの中に0個以上のliタグが来るように配置する．
-      また，ul, olタグの直下に文字列を書いてはいけない．
-    </span>
-    ulとolの差は，li要素の前に黒丸が来る（順序なし：unordered）か，数値が来る（ordered）かの違いである．
-  </p>
+  The &quot;ul&quot; (unordered list), &quot;ol&quot; (ordered list), and &quot;li&quot; (list item) tags are useful  among making a list in HTML. Items listed on the &quot;ordered list&quot; begin with a number, and items listed on the &quot;unordered list&quot; begin with a bullet.  <span class="bold red">Upon listing items, you must use the &quot;li&quot; tag for each item.</span></p>
   <pre class="brush: xml">
   &lt;ul&gt;
-    &lt;li&gt;りんご&lt;/li&gt;
-    &lt;li&gt;ごりら&lt;/li&gt;
-    &lt;li&gt;らっこ&lt;/li&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Grape&lt;/li&gt;
   &lt;/ul&gt;
   &lt;ol&gt;
-    &lt;li&gt;羽でチュン&lt;/li&gt;
-    &lt;li&gt;羽でチュチュン&lt;/li&gt;
-    &lt;li&gt;羽そろえば牙を向く&lt;/li&gt;
+    &lt;li&gt;Item Number One&lt;/li&gt;
+    &lt;li&gt;Item Number Two&lt;/li&gt;
+    &lt;li&gt;Item Number Three&lt;/li&gt;
   &lt;/ol&gt;
   </pre>
   <p>
     <a href="resources/useful_tags-01.html">
-      表示結果
+      Open the sample code with a browser
     </a>
   </p>
   
   <h3>
-    dl, dt, ddによる定義・説明リスト
+    Definition Lists
   </h3>
   <p>
-    複数の要素に対して説明を列挙していく時に用いると良い．前述したul, ol, liタグに似ているが，
-    dl, dt, ddは対となる要素の組み合わせのリストであることが異なる．
-    dl (Description List)タグ内に
-    dt (Description Term)タグとして説明したい用語を記述し，
-    dd (Description, Definition)タグで説明を書いていく．
-  </p>
+  In order to create a list with a definition for each listed item, the use of &quot;dl&quot; (definition list), &quot;dt&quot; (definition term), and &quot;dd&quot; (definition/description) tags may be a good option. In definition lists, the &quot;definition term&quot; indicates a single listed item, and the &quot;difinition&quot; indicates the explanation or the description of the item. </p>
   
   <pre class="brush: xml">
   &lt;dl&gt;
     &lt;dt&gt;HTML&lt;/dt&gt;
     &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
 
-    &lt;dt&gt;JK&lt;/dt&gt;
-    &lt;dd&gt;常識的に考えて&lt;/dd&gt;
+    &lt;dt&gt;JFK&lt;/dt&gt;
+    &lt;dd&gt;John F. Kennedy&lt;/dd&gt;
 
-    &lt;dt&gt;チョベリバ&lt;/dt&gt;
-    &lt;dd&gt;超ベリーバッド&lt;/dd&gt;
+    &lt;dt&gt;USA&lt;/dt&gt;
+    &lt;dd&gt;United States of America&lt;/dd&gt;
   &lt;/dl&gt;
   </pre>
   <p>
     <a href="resources/useful_tags-02.html">
-      表示結果
+      Open the sample code with a browser
     </a>
   </p>
   
   
   <h3>
-    tableタグによる表の表示
+    Tables
   </h3>
   <p>
-    HTMLで表を表現するときに使うのがtableタグである．
-    tableタグはHTML5で記述方法が大きく再定義されたが，ひとまず以下の書き方をしていれば
-    古いブラウザでも正しく表示される（W3C Markup Validatorでもエラーにはならない）．
-  </p>
+  When creating tables in HTML, the &quot;table&quot; tag would be something useful. New usage methods of the &quot;table&quot; tag was introduced for HTML5. However, in order to maintain backward compatibility with older browsers, we recommend you use the following  format of code when creating tables. This format would pass the W3C Markup Validatorwork for HTML5, and work with non-HTML5 browsers, as well.</p>
   
-  スタイルシート
+  CSS
   <pre class="brush: css">
-  /* 表を強調するためのスタイル */
+  /* Style Definitions for Table */
   table {
     border: solid 1px black;
   }
@@ -182,44 +166,34 @@ $(function(){
   <pre class="brush: xml">
   &lt;table&gt;
     &lt;tr&gt;
-      &lt;th&gt;見出し1&lt;/th&gt;
-      &lt;th&gt;見出し2&lt;/th&gt;
-      &lt;th&gt;見出し3&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;Hobby&lt;/th&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;データ1-1&lt;/td&gt;
-      &lt;td&gt;データ1-2&lt;/td&gt;
-      &lt;td&gt;データ1-3&lt;/td&gt;
+      &lt;td&gt;Bob&lt;/td&gt;
+      &lt;td&gt;21&lt;/td&gt;
+      &lt;td&gt;Tennis&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;データ2-1&lt;/td&gt;
-      &lt;td&gt;データ2-2&lt;/td&gt;
-      &lt;td&gt;データ2-3&lt;/td&gt;
+      &lt;td&gt;Alice&lt;/td&gt;
+      &lt;td&gt;19&lt;/td&gt;
+      &lt;td&gt;Basketball&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/table&gt;
   </pre>
   <p>
     <a href="resources/useful_tags-03.html">
-      表示結果
+      Open the sample code with a browser
     </a>
   </p>
   <p>
-    HTML5に準拠した正しい構造については以下のサイトを参考にすると良い．
+  For creating tables in the new format exclusively for HTML5, refer to the following web sites.</p>
+  <p><a href="http://perishablepress.com/press/2010/06/08/html5-table-template/">HTML5 Table Template</a><br>
   </p>
-  <ul>
-    <li><a href="http://webmitikusa.blog47.fc2.com/blog-entry-20.html">Webの道草：テーブルの正しい構造</a></li>
-    <li><a href="http://www.htmq.com/html5/table.shtml">HTMLクイックリファレンス：table</a></li>
-  </ul>
-  
-  <h3>
-    まとめ
-  </h3>
+<h3>In This Section...</h3>
   <p>
-    ここに挙げた以外にも沢山のHTMLタグがあるが，最初から全てを覚えようとはせずに，
-    必要になったときに覚えていくようにすれば十分である．
-    ただし，ここに挙げた３種類のタグは一般的なWebページでも使われる可能性が高いタグであるので，
-    使いこなせると良い．
-  </p>
+  You have learned how to use some of the most commonly used tags in HTML. For making high quality we pages, there are dozens more tags that must be covered. However, you do not need to review and memorize each one of them in the initial phase. When you encounter a situation where you need to acquire new skills, refer to the documents on the web, or simply review the source code of existing web pages. </p>
   
 </article>
 

@@ -1,21 +1,21 @@
 article {
-  border: 1px solid black;/* 要素全体を1pxの線で囲む */
-  width: 800px;/* 横幅は800px固定 */
-  /* 
-    以下3行は影の表現 
-    http://www.htmq.com/css3/box-shadow.shtml
+  border: 1px solid black; /* box the entire article with a black line */
+  width: 800px; /* width of article is 800 px */
+  /*
+    The following 3 lines defines the shadows
+    http://www.w3.org/TR/css3-background/#the-box-shadow
   */
   -webkit-box-shadow: 10px 10px 25px gray;
   -moz-box-shadow: 10px 10px 25px gray;
   box-shadow: 10px 10px 25px gray;
 }
-
-/* 見出し */
+ 
+/* Caption */
 h1 {
   font-size: 24px;
 }
-
-/* 重要な部分を強調 */
+ 
+/* Make the "important" senction bold */
 .important {
   font-weight: bold;
   color: red;

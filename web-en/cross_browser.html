@@ -59,7 +59,7 @@ $(function(){
       <a href="./appendix.html" class="current">Appendix</a>
       <ul>
         <li><a href="./character_encoding.html">
-          Character Codes
+          Character Encoding
         </a></li>
         <li><a href="./cross_browser.html">
           Cross-browser Coding
@@ -85,185 +85,118 @@ $(function(){
 <!-- メインコンテンツ -->
 <article id="content" class="articlecontent">
   <h2>
-    クロスブラウザ対応について
+    Cross-browser Coding
   </h2>
   <p>
-    世の中には様々なWebブラウザがあり，それらのサポートする機能や特徴は多種多様である．
-    こうした他種類のブラウザに対応することを特に
-    <span class="bold red">
-      クロスブラウザ対応
-    </span>と呼ぶ．
-    本ページでは，クロスブラウザ対応における問題や注意点について解説する．
+    There are various types of web browsers, and the compatibility of web pages differ among the browsers. The term <span class="bold red">&quot;cross-browser&quot;</span> refers to the capibility of a web page to support all of the different browsers. This section would discuss the main issues of cross-browser coding.
   </p>
   
   <h3>
-    2011年現在で主要なブラウザ
+    The Most Commonly Used Web Browsers (As of 2011)
   </h3>
   <p>
-    以下に2011年現在で主要なブラウザを挙げる．Otherの割合が大きいが，
-    これは恐らくこの統計を出力する少し前にChromeのバージョンアップ（12.0）が行われたこと，
-    IE9がランキングに入っていないことなどが原因と予想される．
+    The following graph indicates the most commonly used web browsers, as of 2011. 
   </p>
-  <img src="images/browser_share.png" alt="browser_share" width="600" />
-  <br /><br />
-  <a href="http://gs.statcounter.com/">StatCounter Global Stats</a>より
-  
-  <p>
-    ここで出てきた主要なブラウザについて大まかな分類を行うと，以下の通りになる．
+  <p><img src="images/browser_share.png" alt="browser_share" width="600" /><br />
   </p>
+<p>
+  The details of the most common browsers are as indicated below.</p>
   <ul>
     <li>
-      <span class="bold">IE 8.0</span>：Windows 7以降のWindowsにプレインストールされている．定期的にWindows Updateを実行していれば
-      IEのバージョンは8.0になっている．Windows専用．
-      <span class="bold red">HTML5，CSS3には未対応</span>
+      <span class="bold">IE 8.0 : </span>A browser developed by Microsoft. Pre-installed on Windows 7 and later. IE 8.0 is exclusive for Windows operating systems. 
+      <span class="bold red">IE 8.0 does not support HTML5 nor CSS3.</span>
     </li>
     <li>
-      <span class="bold">IE 7.0</span>：Windows XP/Vista向けに提供されている．
-      <span class="bold red">HTML5，CSS3には未対応</span>．かつ
-      一部の動作にクセやバグがあり，昨今公開されているライブラリが動作しないことがある．
-    </li>
+      <span class="bold">IE 7.0</span> : A browser developed by Microsoft. Used mainly on Windows XP and Windows Vista systems. 
+    <span class="bold red">IE 7.0 does not support HTML5 nor  CSS3. </span>It also has slight bugs, and recent libraries may not operate correctly.  </li>
     <li>
-      <span class="bold">IE 6.0</span>：Windows XP，それ以前のWindowsでの標準ブラウザ．
-      <span class="bold red">HTML5，CSS3には未対応</span>．かつ
-      一部の動作にクセやバグがあり，昨今公開されているライブラリが動作しないことがある．
-      IE 7.0よりもさらに不具合が多く，対応には手間がかかることが多い．
-    </li>
+    <span class="bold">IE 6.0</span> : A browser developed by Microsoft. Pre-installed on Windows XP and older. <span class="bold red">IE 6.0 does not support HTML5 nor  CSS3.</span> It also has a bugs (more than IE 7.0), and recent libraries may not operate correctly.</li>
     <li>
-      <span class="bold">Firefox</span>：Mozillaの開発するブラウザ．HTML5, CSS3の一部に対応している（3.xより4系の方が対応状況が良い）．
-      Windows，Mac OS X，Linux版が提供されている．
-    </li>
+    <span class="bold">Firefox : </span>A browser developed by Mozilla. Firefox supports  both HTML5 and CSS3. It is also compatible with Windows, Mac OS X, and Linux systems. </li>
     <li>
-      <span class="bold">Safari</span>：Apple社の提供するWebブラウザ．Mac OS Xの標準ブラウザであるが，Windows版も提供されている．
-      HTML5，CSS3に対応しているが，デフォルトフォントの設定の違いなどから
-      他のブラウザ（Firefox, Chrome）と違う見た目になることがまれにある．
-    </li>
+    <span class="bold">Safari : </span>A browser developed by Apple. Pre-installed on Mac OS X, but also compatible with Windows. Safari supports both HTML5 and CSS3. However, some web pages may appear different compared to other browsers, such as Firefox and Chrome, due to differences in default font settings. </li>
     <li>
-      <span class="bold">Chrome</span>：Googleの提供するWebブラウザ．Windows，Mac OS X，Linux版が提供されている．
-      HTML5，CSS3に対応している．
+      <span class="bold">Chrome</span> : A browser developed by Google. Chrome supports both HTML5 and CSS3, and is compatible with Windows, Mac OS X, and Linux systems.
     </li>
   </ul>
-  <p>
-    上記に挙げる際に，IEについてはバージョンを明確に区別して挙げたが，これは，IEのシェアが他のブラウザに比較して大きいのに加え，
-    各バージョンによって大きく仕様が変わり，バージョン番号まで意識する必要があるためである．
-  </p>
-  
-  <h3>
-    クロスブラウザ対応にまつわる問題について
+<h3>
+    Issues Regarding Cross-browser Coding
   </h3>
   <p>
-    前節で挙げた通り，世の中では異なる種類のブラウザが使われており，その動向は日に日に変化している．
-    新しいバージョンや，プレインストールされたものでないブラウザは，動作が軽快であったり，
-    最新のWebの機能に対応していたり，独自機能で高機能化されていたりとそれぞれに特徴がある．
-    例えば，情報基礎の授業でMacにプレインストールされているSafariでは無くFirefoxを使うことで，
-    Firebugというアドオンを利用している．
+    As described in the previous section, their are various types of web browsers, and newer versions are released every once in a while. Some browsers may be faster and more stable than others, while some provide a wide variety of add-ons. For example, in this course, we are using Firefox as a standard browser instead of Safari. This enables us to use an add-on called Firebug, for debugging errors and adjusting parameters.
   </p>
   
   <p>
-    このように，<span class="red bold">
-      ユーザは自分の好きなブラウザを使ってWebにアクセスしているため，複数のブラウザでも
-      正常に表示できるようにWebページを作成することは非常に重要である．
+    Each user may have their own preference of which browser to use upon surfing the web. Therefore, <span class="red bold">
+      it is very important to create a web site which is compatible for all browsers. 
     </span>
-    例えば，IE 7.0以上のバージョン専用のWebページを作成した場合，前述の図によると
+    For example, if you were to create a web site exclusively for IE 7.0 and later, <span class="red bold">only 40% of all internet users would be able to view your site.  </span>
+    This may not be a problem if  all viewers of your web site were to have the same type of web browser. However, in most cases, it is better to make it viewable by the entire public. In the most common cases today, web sites tend to officially support at least
     <span class="red bold">
-      全ユーザの40%しか正常に見られなくなってしまう．
-    </span>
-    社員に配布したPCからのアクセスしか許さないといった様な全ユーザにブラウザ環境を強制できる場合を除いては，
-    できるだけ多くのブラウザで表示できるようにWebページを作成するのが良いだろう．
-    どのバージョンまで後方互換性を保つかという問題もあるが，昨今のWeb業界では
-    <span class="red bold">
-      IEは7.0以上，Safari, Firefoxなどの
-      サードパーティ製ブラウザは必要に応じて公式対応
-    </span>
-    という姿勢が多くなっている．IE 6.0は数々のバグやJavaScriptライブラリの
-    互換性問題などから，既に過去の遺産として扱われている傾向が強い（参考：
-      <a href="http://www.itmedia.co.jp/news/articles/1003/08/news030.html">ITmedia: IE6の“葬儀”行われる　Microsoftから献花も</a>
-    ）．
-    なお，IE以外のブラウザは基本的に自動アップデート機能が付いており，常に最新バージョンが適用されるため，
-    あまりバージョンについて厳しい指定が行われることは少ない．
-  </p>
-  
-  <h4>
-    HTML5とクロスブラウザ対応
-  </h4>
+  IE 7.0 and later</span>. They may also support third-party web browsers such as Safari, Firefox, and Chrome. </p>
+  <p>Speaking of IE 6.0, it is said to be one of the legacies, since it has bugs that prevent some recent JavaScript libraries from operating correctly. As for Safari, Firefox, and Chrome, they are equipped with automatic updating functions, so the version number should not be a problem, as long web sites are compatible with the most recent version.</p>
+<h4>Issues of HTML5</h4>
   <p>
-    本授業で解説しているHTML5は，比較的新しい標準であり，古いバージョンのブラウザでは
-    いくつかの問題が発生する．
-    例えば，IE 7.0以下のバージョンでは，HTML5の新要素（articleタグ等）に対応していないため，
-    スタイルシートが適用されなかったり，そもそも表示されないといった問題が発生する．
-    しかし，articleタグなどのHTML5の新要素をうまく使うことで，より読みやすく，
-    質の良いWebページが作れることもまた事実である．
-    ソフトウェア一般に言えることだが，新しいソフトウェア，ライブラリは既存の物に比べて洗練，高機能化されているので
-    新しいものを使ったほうがより洗練された物が少ない労力で作れるようになる．
-    こうしたトレードオフの関係を下表に示す．
-  </p>
+  HTML5 is a relatively new standard for coding web pages, and it may encounter problems when viewed by older browsers. For example, IE 7.0 does not support newly-introduced tags of HTML5, such as the &quot;article&quot; tag. Therefore, the contents many not appear, or styles may be applied properly. However, such tags exclusive for HTML5 are very useful among coding high quality web pages, and enables web creators to put state-of-the-art features into practice, with fewer lines of code. </p>
+  <p>The following table indicates the trade-off between older versions and newer versions of standards and  web browsing software.  </p>
   
-  <table>
+  <table width="486">
     <caption>
-      新旧バージョンのトレードオフ
+      Trade-off Between Versions
     </caption>
     <tbody>
       <tr>
-        <th></th>
-        <th>
-          旧バージョン
-        </th>
-        <th>
-          新バージョン
-        </th>
+        <th width="170"><div align="center"></div></th>
+        <th width="150">
+        <div align="center">Older Versions </div></th>
+        <th width="150">
+        <div align="center">Newer Versions </div></th>
       </tr>
       <tr>
         <th>
-          機能
-        </td>
+          <div align="center">Features
+  </td>
+          </div>
         <td>
-          低機能，低速
-        </td>
+        <div align="center">
+          Less Features<br />Slower Performance
+        </div></td>
         <td>
-          高機能，高効率
-        </td>
+        <div align="center">More Features<br />
+        Faster Performance </div></td>
       </tr>
       <tr>
         <th>
-          ユーザ数
-        </td>
+          <div align="center">Number of Users</td>
+          </div>
         <td>
-          多い
-        </td>
+        <div align="center">More Users </div></td>
         <td>
-          少ない
-        </td>
+        <div align="center">Less Users </div></td>
       </tr>
       <tr>
         <th>
-          開発効率
-        </td>
+          <div align="center">Efficiency of Coding
+            </td>
+          </div>
         <td>
-          一般に低い
-        </td>
+        <div align="center">Low </div></td>
         <td>
-          一般に高い
-        </td>
+        <div align="center">High </div></td>
       </tr>
     </tbody>
   </table>
 
-  <p>
-    一方で，新しいものを使うときには，既存バージョンとの<span class="bold red">後方互換性</span>が問題になる．
-    後方互換性とは，新しいバージョンのために作られたものが古いバージョンのソフトウェアでも正しく機能するのかどうかという性質である．
-    後方互換性のあるWebページを作ることで，HTML5に対応したブラウザを使っているユーザにはHTML5の機能が利用でき，
-    HTML5未対応のブラウザを使っているユーザにも最低限の情報を提供することができる．
+  <p>&nbsp;
   </p>
+  <p>While newer versions provide higher quality and efficiency, we would need to care about maintaining <span class="bold red">backward compatibility</span> with existing versions. For example, when coding a web page with HTML5, it is important to provide minimum support to users with older browsers, while providing the leading-edge functions for users with the newest browsers.</p>
   
   <h4>
-    html5.jsを使って旧ブラウザをHTML5対応化
+    Providing Support for HTML5 to Older Browsers
   </h4>
   <p>
-    HTML5の後方互換性問題を解決する手段として
-    <a href="http://remysharp.com/2009/01/07/html5-enabling-script/">html5.js</a>
-    というJavascriptを利用する方法がある．
-    これは，Javascriptというブラウザに標準搭載されたプログラム実行環境を利用して，HTML5非対応のブラウザでも
-    HTML5の新要素に対応させるというもので，既存のHTML5のhead要素内に以下のコードを埋め込むだけで利用できる．
-  </p>
+    In order to maintain backward compatibility for HTML5 with older browsers, 
+  <a href="http://remysharp.com/2009/01/07/html5-enabling-script/">html5.js</a> may be a solution. This JavaScript library provides support for HTML5 to older browsers, which do not support HTML5 by default. It order to make use of this library, all you have to do is add the following tags within the &quot;head&quot; element. </p>
   
   <pre class="brush: xml">
     &lt;!--[if lt IE 9]&gt;
@@ -272,16 +205,14 @@ $(function(){
   </pre>
   
   <p>
-    上記の通り，html5.jsによる対応は非常に簡単であるので，HTML5でHTMLを記述するときは
-    常に上記のコードを追加しておくと良い．
+    As shown above, the usage of html5.js is very easy, so we recommend you add the tags for utilizing html5.js, when coding in HTML5.
   </p>
   
   <h3>
-    まとめ
+    In This Section...
   </h3>
   <p>
-    本ページでは，クロスブラウザ対応とその問題について説明し，HTML5における後方互換性の問題について解説した．
-    その上で，html5.jsによる簡単なHTML5の後方互換性対策の方法を解説した．
+    In this section, you have learned about cross-browser coding, and the issues related to it. Also, you have learned how to maintain backward compatibility for HTML5 with older versions of web browsers.
   </p>
   
 </article>

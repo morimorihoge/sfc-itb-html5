@@ -59,7 +59,7 @@ $(function(){
       <a href="./appendix.html">Appendix</a>
       <ul>
         <li><a href="./character_encoding.html">
-          Character Codes
+          Character Encoding
         </a></li>
         <li><a href="./cross_browser.html">
           Cross-browser Coding
@@ -99,7 +99,7 @@ $(function(){
   
   <p>
     Since the goal of this lecture is to create a self-introduction web page,
-    the first step would be to add your name and picture (or some kind of image).
+    the first step would be to add your name and picture.
   </p>  
   <img src="images/itb-07-1.png" width="600" alt="itb07-1" />
   <br /><br />
@@ -112,7 +112,7 @@ $(function(){
   <br /><br />
   
   <p>
-    Photo Booth is a software that enables users to take pictures using the built-in camera on the Mac.
+    Photo Booth is a software that enables users to take pictures using the built-in camera on the iMac.
   </p>
   <img src="images/itb-07-3.png" width="600" alt="itb07-4" />
   <br /><br />
@@ -135,7 +135,7 @@ $(function(){
   <br /><br />
   
   <p>
-  Don't forget to save the picture (select &quot;Save&quot; under the &quot;File&quot; menu) after you have finished resizing it. You can also crop your picture using the &quot;Preview&quot; application.First, drag the mouse, and select the area that you wish to crop. Afterwards, select &quot;Crop&quot; from the &quot;Tools&quot; menu.</p>
+  Don't forget to save the picture (select &quot;Save&quot; under the &quot;File&quot; menu) after you have finished resizing it. You can also crop your picture using the &quot;Preview&quot; application. First, drag the mouse, and select the area that you wish to crop. Afterwards, select &quot;Crop&quot; from the &quot;Tools&quot; menu.</p>
   <img src="images/itb-07-11.png" width="600" alt="itb07-11" />
   <br />
   ．  <img src="images/itb-07-12.png" width="600" alt="itb07-12" />
@@ -154,7 +154,7 @@ $(function(){
 　   &lt;img src="URL or Relative Path to Image file" alt="Alternative Name" /&gt;
   </pre>
   <p>
-    The &quot;alt&quot; attribute defines an alternative name for the image. It would appear on the screen as a text if the image file is unable to load. In the following example, the HTML file is stored under the &quot;resources&quot; directory, and the image file (bob_picture.jpg) is stored under the &quot;images&quot; directory. Therefore, the relative path of the image file would be &quot;../image/bob_picture.jpg&quot;, from the perspective of the HTML file. 
+    The &quot;alt&quot; attribute defines an alternative name for the image. It would appear on the screen as a text if the image file was unable to load. In the following example, the HTML file is stored under the &quot;resources&quot; directory, and the image file (taro_picture.jpg) is stored under the &quot;images&quot; directory. Therefore, the relative path of the image file would be &quot;../image/bob_picture.jpg&quot;, from the perspective of the HTML file. 
   </p>
   <pre class="brush: xml;highlight: [7];">
     &lt;!DOCTYPE html&gt;
@@ -163,13 +163,13 @@ $(function(){
       &lt;title&gt;03-02&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
-      &lt;img src="../images/bob_picture.jpg" alt="BOB" /&gt;
+      &lt;img src="../images/taro_picture.jpg" alt="TARO" /&gt;
     &lt;/body&gt;
     &lt;/html&gt;
   </pre>
-  <p><a href="resources/lecture03-02.html">Open with browser</a><br />
+  <p><a href="resources/lecture03-02.html">Open the sample code with a browser</a><br />
   </p>
-  <p>If the text defined as the &quot;Alternative Name&quot; appears instead of the image, check if the path is correct and the actual image file exists at the correct location.</p>
+  <p>If the text defined as the &quot;Alternative Name&quot; appears instead of the image, check if the actual image file exists under the defined location.</p>
 <h3>Hyperlinks</h3>
   <p>
     As a key feature of web pages, there are hyperlinks (a.k.a. &quot;links&quot;), which enables users to jump to another page by clicking on them. </p>
@@ -199,7 +199,7 @@ $(function(){
     &lt;/body&gt;
     &lt;/html&gt;
   </pre>
-  <p><a href="resources/lecture03-01.html">Open with browser</a><br />
+  <p><a href="resources/lecture03-01.html">Open the sample code with a browser</a><br />
     <br />
     
   </p>
@@ -210,7 +210,7 @@ $(function(){
   
   <h4>What Are Third-Party Web Services?</h4>
   <p>
-    Currently, many people use Twitter, for example, to &quot;tweet&quot; what he or she is doing right now. Some may use Google Maps to look for a place to eat, or others may use Facebook to share their pictures with friends and family members. Some of these web services provide features which enable users to embed the information from such services to their own web page. These features may be very useful upon enriching your web page, so consider using them based on what kind of information you want to share.
+    Currently, many people use Twitter, for example, to &quot;tweet&quot; what he or she is doing right now. Some may use Google Maps to look for a place to eat, while others  use Facebook to share their pictures with friends and family members. Some of these web services provide features which enable users to embed the information from such services to their own web page. These features may be very useful upon enriching your web page, so consider using them based on what kind of information you want to share.
   </p>
   <img src="images/itb-07-10.png" width="600" alt="itb07-11" />
   <br /><br />
@@ -218,18 +218,18 @@ $(function(){
   <h4>Sharing Your Favorite Place With Google Maps</h4>
   <p>
   <a href="http://maps.google.com/">Google Maps</a> is a web service which enables users to search and view the map of any place around the globe. Google Maps also enable users to add maps to their own web page. As a practice, lets add a map that pin points the location of your favorite place.</p>
-  <p> <img src="images/itb-07-5.png" width="600" alt="itb07-5" />
+  <p> <img src="images/itb-07-5.png" alt="itb07-5" width="600" />
     <br /><br />
   </p>
   <p>
     First of all, enter the name or address of your favorite shop in the search window of <a href="http://maps.google.com/">Google Maps (http://maps.google.com/)</a>.
   </p>
-  <img src="images/itb-07-6.png" width="600" alt="itb07-6" />
+  <img src="images/itb-07-6.png" alt="itb07-6" width="600" />
   <br /><br />
   <p>
     Next, click on the &quot;Customize and preview embedded map&quot; link under the &quot;Link&quot; menu (icon with a picture of a chain) located on the top right corner of the screen.
   </p>
-  <img src="images/itb-07-8.png" width="600" alt="itb07-8" />
+  <img src="images/itb-07-8.png" alt="itb07-8" width="600" />
   <br /><br />
   <p>
     Adjust the size of the map, and copy the HTML code located at the bottom. Then, paste the code to your original page.</p>
@@ -254,7 +254,7 @@ $(function(){
   <p>
     <a href="http://twitter.com/">Twitter</a> is one of the most popular micro-blogging service worldwide. As mentioned above, Twitter also provides widgets for showing real-time &quot;tweets&quot; on your orignal page. In order to embed the Twitter Widget, access the 
     <a href="http://twitter.com/about/resources/widgets">Twitter Widget Web Site</a> to begin with.</p>
-  <img src="images/itb-07-9.png" width="600" alt="itb07-9" />
+  <img src="images/itb-07-9.png" alt="itb07-9" width="600" />
   <br /><br />
   <p>
     Select the type of widget you wish, and customize it to your preferences. When everything is finished, cilck on &quot;Finish &amp; Grab Code&quot;. Finally, copy and paste the code to your own orignal HTML file, as it was with the Google Maps widget.

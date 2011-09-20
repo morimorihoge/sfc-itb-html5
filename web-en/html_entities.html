@@ -59,7 +59,7 @@ $(function(){
       <a href="./appendix.html" class="current">Appendix</a>
       <ul>
         <li><a href="./character_encoding.html">
-          Character Codes
+          Character Encoding
         </a></li>
         <li><a href="./cross_browser.html">
           Cross-browser Coding
@@ -109,17 +109,17 @@ $(function(){
   </pre>
   
   <p>
-    In this sample, the symbols, &quot;&lt;&quot; and &quot;&gt;&quot; are used as characters for a <span class="bold red">text string</span>. Us humans would be able to recognize  these as &quot;brackets&quot;. However, web browsers would see them as indicators of HTML tags. When browsers detect the first &quot;&lt;&quot; symbol, it would then 
+    In this sample, the symbols, &quot;&lt;&quot; and &quot;&gt;&quot;, are used as characters for a <span class="bold red">text string</span>. Us humans would be able to recognize  these as &quot;brackets&quot;. However, web browsers would see them as indicators of HTML tags. When browsers detect the first &quot;&lt;&quot; symbol, it would then 
   look for the next &quot;&gt;&quot; symbol, and recognizes the characters in between as HTML tags. In this particular case, browsers would recognize the characters, &quot;HyperText Markup Language&quot;, as a HTML tag. Since this sample code does not have an end tag marked &quot;&lt;/Hypertext Markup Language&gt;&quot;, the validator would return errors.  </p>
   <p>
-    So, what should we do if we want to use special characters as regular text in HTML??
+    So, what should we do if we want to use special characters as regular text??
   </p>
   
   <h4>The Escape Character &quot;&amp;&quot; </h4>
   <p>
   The solution to the question above are &quot;escapes&quot;. <span class="bold red">Escapes enables us to express certain characters with alternative codes.  </span>This feature is not only supported by HTML, but also other programming languages as well, though rules and formats may not be the same. </p>
   <p>
-    In HTML, the ampersand symbol (&amp;) is used for indicating escapes. For example, the &quot;&lt;&quot; symbol, the &quot;&gt;&quot; symbol, and the &quot;&amp;&quot; may be expressed in the following way. 
+    In HTML, the ampersand symbol (&amp;) is used for indicating escapes. For example, the &quot;&lt;&quot; symbol, the &quot;&gt;&quot; symbol, and the &quot;&amp;&quot; symbol may be expressed in the following way. 
   </p>
   <ul>
     
@@ -137,18 +137,11 @@ $(function(){
   &lt;/p&gt;
   </pre>
   <p>
-    By using escapes, the browser would be able to tell tags from aprtこれで，&lt;, &gt;の記号はWebブラウザにとって文字列として解釈されるようになる．
-    また，エスケープ&amp;記号自体もエスケープの対象になっているのは，&amp;自体を文字列として扱いたい場合に
-    &amp;もまたエスケープ出来ないとうまく扱うことが出来ないためである．
-  </p>
+  By using escapes, the browser would be able to tell tags apart from special characters. </p>
 
-  <h3>
-    まとめ
-  </h3>
+  <h3>In This Section...</h3>
   <p>
-    本ページではHTMLエンティティとされる特殊文字を文字列として扱う方法を解説した．
-    正しいHTMLを書くためには必要な情報なので，最終課題までには覚えておくこと．
-  </p>
+  You have learned about HTML entities (escapes and special characters). HTML entities are very important upon writing codes in the appropriate way, so be sure to review them prior to working on your final assignment.</p>
   
 </article>
 

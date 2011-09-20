@@ -1,9 +1,9 @@
-/* 太字にするだけのクラス */
+/* Class For Bold Characters */
 .bold {
   font-weight: bold;
 }
-
-/* 赤字にするだけのクラス */
+ 
+/* Class For Highlighting */
 .red {
   color: red;
 }

@@ -59,7 +59,7 @@ $(function(){
       <a href="./appendix.html" class="current">Appendix</a>
       <ul>
         <li><a href="./character_encoding.html">
-          Character Codes
+          Character Encoding
         </a></li>
         <li><a href="./cross_browser.html">
           Cross-browser Coding
@@ -85,260 +85,178 @@ $(function(){
 <!-- メインコンテンツ -->
 <article id="content" class="articlecontent">
   <h2>
-    文字化けと文字コード
+    Character Encodings
   </h2>
   <p>
-    Webページを作成するにあたり，文字コードに問題がありページが正常に表示されないことがある．
-    本ページではWebで使われる文字コードについて解説する．
+    Upon creating web pages, you may encounter problems related to character encodings, especially when writing pages with languages other than English. In this section, we would discuss the basics and differences of character encodings. 
   </p>
   
   <h3>
-    コンピュータにおける情報の表現方法
+    &quot;Characters&quot; in Computers
   </h3>
   <p>
-    文字コードの話をする前に，コンピュータ上で文字列がどの様にして扱われているのかについて考える．
-    コンピュータが情報を扱う最小単位は<span class="red bold">bit（ビット）</span>であり，
-    1bitは「0」または「1」の2通りの値を持つ（「真(true)と偽(false)など，他の呼び方もある」）．
-    コンピュータの世界では，この最小情報量であるbitを表現するのに2進数，8進数，16進数を使うことが多い．
-  </p>
+  Before we discuss anything about character encodings, we would first discuss about how computers handle &quot;characters&quot;. In the world of computers, every piece of information is expressed with <span class="red bold">chains of bits</span>. Each bit indicates either a &quot;0&quot; or a &quot;1&quot;, and chains of bits are commonly indicated using  binary, octal, or hexadecimal numbers.</p>
   
   <p>
-    2進数でデータを表現するとき，桁数がそのままビット数となり，例えば「000111」は6 bitsの情報量を持つ．
-    8進数では1桁が0〜7までの8通りあるので，8進数の1桁は3 bitsの情報量を持つことになる．よって8進数で「650」は
-    9 bitsの情報量を持つ．最後に，16進数では1桁を0〜9，A〜Fまでの16通りで表現するので，1桁で4 bitsの情報量を持つ．
-    よって，16進数で「F134」は16 bitsの情報量を持つことになる．
-    それぞれの表現方法で表せるデータの範囲は下表の通りである．
-  </p>
+  In the binary number system, each digit represents a single bit. For example, the number &quot;000111&quot; indicates a chain of 6 bits. In the octal number system, each digit ranges from &quot;0&quot; to &quot;7&quot;, representing a chain of 3 bits. Therefore, the number &quot;650&quot; in the octal number system indicates a chain of 9 bits. Finally, in the hexadicimal number system, each digit ranges from &quot;0&quot; to &quot;9&quot;, and &quot;A&quot; to &quot;F&quot;. Each digit is able to represent a chain of 4 bits, which also means that the number &quot;F134&quot;, for example, indicates a chain of 16 bits. The following chart indicates the range  of values a 4-digit number may indicate, in the three numbering systems.</p>
   
   <table>
-    <caption>4桁のn進数で表現できる値の範囲</caption>
+    <caption>
+    The Range of 4-Digit Numbers<br>
+    (The numbers in parentheses indicate the equivalent values in decimals.)
+</caption>
     <tbody>
       <tr>
-        <th>n</th>
-        <th>
-          使用する文字
-        </th>
-        <th>
-          最小値（括弧内は10進数の値）
-        </th>
-        <th>
-          最大値（括弧内は10進数）
-        </th>
+        <th width="120"><div align="center"></div></th>
+        <th width="130"><div align="center">Used Characters</div></th>
+        <th width="120">
+          <div align="center">Minimum Value</div></th>
+        <th width="120">
+          <div align="center">Maximum Value</div></th>
       </tr>
       <tr>
-        <td>2進数</td>
-        <td>0, 1</td>
-        <td>0000（0）</td>
-        <td>1111（15）</td>
+        <td><div align="center">Binary</div></td>
+        <td><div align="center">0 and 1</div></td>
+        <td><div align="center">0000 (0)</div></td>
+        <td><div align="center">1111 (15)</div></td>
       </tr>
       <tr>
-        <td>8進数</td>
-        <td>0 〜 7</td>
-        <td>0000（0）</td>
-        <td>7777（4095）</td>
+        <td><div align="center">Octal</div></td>
+        <td><div align="center">0 to 7</div></td>
+        <td><div align="center">0000 (0)</div></td>
+        <td><div align="center">7777 (4095)</div></td>
       </tr>
       <tr>
-        <td>16進数</td>
-        <td>0　〜 9, A　〜 F</td>
-        <td>0000（0）</td>
-        <td>FFFF（65535）</td>
+        <td><div align="center">Hexadecimal</div></td>
+        <td><div align="center">0 to 9, &quot;A&quot; to &quot;F&quot;</div></td>
+        <td><div align="center">0000 (0)</div></td>
+        <td><div align="center">FFFF (65535)</div></td>
       </tr>
     </tbody>
   </table>
   <br />
   
   <h3>
-    コンピュータにおける文字データの扱い方
+    Handling of Characters
   </h3>
   <p>
-    コンピュータでは情報をbitと呼ばれる2進数の数値に変換していることを示したが，
-    <span class="red bold">2進数では数値しか表現することができない．</span>
-    では，アルファベットや日本語の文字はどのようにして表現すれば良いのだろうか？
-  </p>
+    In the previous section, we discussed how computers handle information using chains of binary bits. <span class="red bold">However, binary bits are only able to express numbers. </span>
+  If that is the case, how would computers handle characters??</p>
   
   <p>
-    答えは，<span class="bold red">
-      各数値と各文字の対応表を使って文字列を表現している
-    </span>
-    のである．
-    例えば，最も良く使われる半角英数字の対応表では，以下のルールが適用される．
-  </p>
+    Getting right to the answer, <span class="bold red">computers uses character mapping tables, which indicate codes (in numbers) for each one of the characters</span>. For example, the <a href="http://www.asciitable.com/">ASCII  table</a> indicates codes for the alphabets and numbers commonly used in most languages. In the ASCII table, the following rules apply for mapping (encoding) characters.</p>
   <ul>
     <li>
-      1文字は必ず8 bitsで表現する（先頭1bitは0固定とし，使わない）
-    </li>
-    <li>0〜9の半角数字，a-z, A-Zの半角英字（大文字，小文字），その他ハイフン等の半角記号を表せる</li>
+    The size of a code for 1 character must be 8 bits.</li>
+    <li>The characters listed in this table include numbers from &quot;0&quot; to &quot;9&quot;, alphabet letters from &quot;A&quot; to &quot;Z&quot; (both lower-case and upper-case letters), and symbols such as hyphens (&quot;-&quot;) and periods (&quot;.&quot;).</li>
     <li>
-      スペース（空白）や改行も文字として扱う
-    </li>
-    <li>
-      数値と文字の変換には
-      <a href="http://www9.plala.or.jp/sgwr-t/c_sub/ascii.html">ASCIIコード表</a>
-      を用いる．
+      Spaces and line feeds are also considered as 1 character.
     </li>
   </ul>
   <p>
-    上記のルールを適用して半角英数字の文字列を16進数変換すると，下図の通りになる．
+  If computers were to handle the  following characters, it would be translated into &quot;chains of numbers&quot; using the ASCII table, as shown below.</p>
+  <p> <img src="images/char_encoding01.png" alt="char_encoding01" width="600" /><br />
   </p>
-  
-  <img src="images/char_encoding01.png" alt="char_encoding01" width="600" />
-  <br /><br />
-  
   <p>
-    このように，コンピュータの中で数値を文字に変換するための表のことを
-    <span class="bold red">
-      文字コード
-    </span>と呼ぶ．
-    文字コードにはたくさんの種類があるが，日本で一般的に見かける文字コードを下表に示す．
+    As shown above, computers handle characters using numbers. The numbers which correspond to certain characters are called <span class="bold red">character codes</span>. As there are a lot of different spoken languages throughout the world, there are different methods of character encoding for each individual language. The following table indicates the details of the encoding methods mainly used in Japan for expressing Japanese characters, as well as alphabets.
   </p>
   
   <table>
-    <caption>
-      主要な文字コード一覧
+    <caption>&nbsp;
     </caption>
     <tbody>
       <tr>
         <th style="width: 80px">
-          名称
-        </th>
+        <div align="center"></div></th>
         <th>
-          表現できる文字種
-        </th>
+        <div align="center">Types of Characters</div></th>
         <th>
-          主な利用用途
-        </th>
+        <div align="center">Main Usage</div></th>
       </tr>
       <tr>
-        <td>ASCII</td>
+        <td><div align="center">ASCII</div></td>
         <td>
-          半角英数文字，及び改行，スペースなど
-        </td>
+        <div align="center">1-Byte Alphabets, Numbers, Symbols</div></td>
         <td>
-          コンピュータにおいて最も良く使われる文字コード．
-        </td>
+        <div align="center">The most basic set of character codes.</div></td>
       </tr>
       <tr>
-        <td>Shift JIS</td>
+        <td><div align="center">Shift JIS</div></td>
         <td>
-          半角英数字＋日本語
-        </td>
+        <div align="center">Alphabets, Numbers, Symbols, Japanese</div></td>
         <td>
-          以前まで日本語Windowsで標準として使われていた（正確にはCP932）．
-        </td>
+        <div align="center">Mainly used in previous versions of Windows.</div></td>
       </tr>
       <tr>
-        <td>EUC-JP</td>
+        <td><div align="center">EUC-JP</div></td>
         <td>
-          半角英数字＋日本語
-        </td>
+        <div align="center">Alphabets, Numbers, Symbols, Japanese</div></td>
         <td>
-          以前まで日本語UNIXシステムで標準として使われていた．
-        </td>
+        <div align="center">Mainly used  in previous versions of UNIX systems.</div></td>
       </tr>
       <tr>
-        <td>ISO-2022-JP</td>
+        <td><div align="center">ISO-2022-JP</div></td>
         <td>
-          半角英数字＋日本語
-        </td>
+        <div align="center">Alphabets, Numbers, Symbols, Japanese</div></td>
         <td>
-          日本語メールにおける業界標準．今でも広く使われており，携帯電話などではこの文字コード以外を正確に解釈できない
-          ものも多い．
-        </td>
+          <div align="center">Mainly used for  e-mail messages written in Japanese. </div></td>
       </tr>
       <tr>
-        <td>UTF-8</td>
+        <td><div align="center">UTF-8</div></td>
         <td>
-          あらゆる言語の文字（を目指している）
-        </td>
+        <div align="center">Multiple Languages</div></td>
         <td>
-          昨今のコンピュータ業界での業界標準．現行のWindowsやMac OS X, Linuxは
-          この文字コードが標準．
-        </td>
+          <div align="center">Mainly used in the most recent versions of Windows, Mac OS X, and Linux systems, as a standard.</div></td>
       </tr>
     </tbody>
   </table>
   <br />
   
   <p>
-    他にも数多の文字コードがあるが，今後
-    <span class="bold red">特に理由がなければUTF-8を用いる事が望ましい</span>．
-    本授業資料もUTF-8で作成することを前提としている．
-  </p>
+  There are other types of codes which aren't described here, but if there are no special requirements and exceptions, <span class="bold red">we strongly recommend you use  UTF-8 for encoding HTML documents</span>. </p>
   
   <h3>
-    文字化け
+    Corruption of Characters
   </h3>
   <p>
-    Webを巡回していたり，自分でWebページを作成していると，まれに以下のように壊れて表示されるページに出くわすことがある．
-  </p>
-  
-  <img src="images/char_encoding02.png" alt="char_encoding02" width="600" />
-  <br /><br />
-  
-  <p>
-    こうした現象のことを<span class="bold red">
-      文字化け
-    </span>と呼ぶ．
-    文字化けの原因は大抵以下のどれかが原因である
-  </p>
-  
-  <h4>Webページの文字コードとページを表示しようとしているブラウザが解釈している文字コードが異なる</h4>
-  <p>
-    最も多いケースがこれである．これは，HTMLファイルを作成したときの文字コードと，ブラウザがHTMLファイルを
-    読み込むときの文字コードが異なることが原因である．
-    ファイルの文字コードとブラウザの読み出す文字コードが異なると，文字の変換が正常に行われないため，
-    文字が正しく認識されなくなってしまう．
+  When surfing the web, you may have seen pages that have corrupted characters, as shown below. </p>
+  <p><img src="images/char_encoding02.png" alt="char_encoding02" width="600" /><br />
+    
   </p>
   <p>
-    ブラウザは通常HTMLファイルのheadタグ中に書かれたmetaタグのcharset属性を参考に
-    文字コードを判別する．
+    The cause of these problems are often one of the following reasons.
   </p>
-  <pre class="brush: xml">
+  
+  <h4>Mismatch of Character Encoding Methods</h4>
+  <p>
+  In most cases, corruptions are caused by mismatches of character encodings between the original HTML document and the browser setting. </p>
+  <p>When browsers load HTML documents, it first examines the &quot;meta&quot; tag with the &quot;charset&quot; attribute, within the &quot;head&quot; element. This tag indicates the character encoding method of the entire HTML document. After examining the tag, it then adjusts its settings, so that the entire document could be interpreted correctly.</p>
+<pre class="brush: xml">
     &lt;meta charset="UTF-8" /&gt;
   </pre>
   
   <p>
-    charset属性が指定されていないHTMLファイルの場合，どの文字コードとして読み込むかは
-    ブラウザによって異なる．例えば
-    <a href="http://web.sfc.keio.ac.jp/~morimori/sfc-itb-html5/resources/lecture03-01.html">
-      このページ
-    </a>は
-    FirefoxやGoogle Chromeでは正常に日本語が表示されるが，Safariでは文字化けする．
-    しかし，Safariの「表示メニュー -> テキストエンコーディング」でUTF-8を直接指定することで正常に表示される．
-    同じように，Firefoxでも「表示メニュー -> 文字エンコーディング」でUTF-8以外の文字コードを指定すると
-    意図的に文字化けを発生させることができる．
+  If the browser can't find the corresponding tag, it tries to interpret the document with its default encoding settings. If the encoding methods match, there won't be a problem. However, if the default settings don't match that of the document, it is more or less likely that character corruptions would occur. The occurance of corruptions differ based on the type and the default settings of the browser. </p>
+  <p>For example, <a href="resources/lecture03-01.html">this web page (written in Japanese)</a>
+    would be interpreted correctly under Firefox and Google Chrome. However, it would be corrupted when viewed using Safari, unless the encoding method is  manually adjusted  from the &quot;Text encoding&quot; option under the &quot;View&quot; menu. You may intentionally cause corruptions under Firefox by selecting different encoding methods in the same way.
   </p>
   
   
   <p>
     <span class="bold red">
-      テキストエディタには文字エンコーディングを指定して保存する方法が提供されている．
-    </span>
-    例えば，Emacsであれば「C-x return f」に続いて保存したい文字コードを指定することで，任意の文字コードで保存することができるし，
-    <a href="http://www.mimikaki.net/">mi</a>や
-    <a href="http://www5f.biglobe.ne.jp/~t-susumu/library/tpad.html">TeraPad
-      </a>
-    等のGUIテキストエディタでは，多くの場合ファイルを保存するときに文字コードを指定することができる（
-    指定できない場合「名前を付けて保存」などでできる事が多い）．
-    Webページを作成する場合は，閲覧者がどのブラウザでアクセスしてくるかは分からないため，HTML内で正しく文字コードを指定して
-    おくべきである．
+      Upon coding HTML documents, it is recommended that you indicate the character encoding method using the &quot;meta&quot; tag listed above. It is also important to save your code using the correct method of encoding. </span>If you are using Emacs, you can save files with the desired method of encoding by typing &quot;C-x return f&quot;, followed by the name of the encoding method. For GUI text editors, there sould be a menu for selecting encoding methods. 
   </p>
   
   <h4>
-    指定された言語のフォントがない
+    Unfound Fonts
   </h4>
   <p>
-    日本語フォントしかインストールされていないコンピュータで韓国語やアラビア語のページを閲覧したときに文字化けする．
-    これは文字コードが正しくても文字化けしてしまう事例で，回避するには閲覧者に該当言語のフォントをインストールしてもらうか，
-    そもそも文字を画像として貼り付けるといった対策をするしか無い．
+    Corruptions would also occur when the browser can't find the corresponding font installed on the computer. For example, if you try to view web pages written in Arabic or Korean, with a computer that does not have certain language packs installed, corruptions may occur. The only way to avoid such problems would be to use images with characters, instead of text, or to have everyone install appropriate font packages.
   </p>
   
-  <h3>
-    まとめ
-  </h3>
+  <h3>In This Section...</h3>
   <p>
-    本ページでは，コンピュータにおけるデータの扱いと文字コードについて解説した．
-    また，文字化けの原因とその対策について解説した．
+    You have learned the basics of character encodings and how computers handle characters. You have also learned how to avoid character corruptions.
   </p>
   
 </article>
@@ -371,7 +289,7 @@ $(function(){
 <footer>
   <p>Copyright&copy; 2011 SFC</p>
 </footer>
-
+x1
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
