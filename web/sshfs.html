@@ -208,18 +208,22 @@ $(function(){
     Mac OS XでSSHマウントを行うには，
     <a href="http://code.google.com/p/macfuse/">MacFUSE</a>と
     <a href="http://code.google.com/p/sshfs-gui/">sshfs-gui</a>を
-    インストールする必要がある．
-    MacFUSEはSSHマウントを実現するソフトウェアで，sshfs-guiはSSHマウントを簡単に設定できる
+    インストールする必要がある（※MacFUSEの公式は2008年以降更新されておらず，Snow Leopard/Lion環境でうまく動作しないため，
+    ここではMacFUSE互換のOSXFUSEを用いる）．
+    OSXFUSE（MacFUSE）はSSHマウントを実現するソフトウェアで，sshfs-guiはSSHマウントを簡単に設定できる
     ソフトウェアである．
     SSHマウントの仕組みや利点についてはWindowsの項を参照すること．
   </p>
   
   <p>
-	  まず初めに，MacFUSEをインストールする．
-	  上記のWebサイトからダウンロードできるMacFUSEには起動できない不具合が存在するため，<a href="http://www.offthehill.org/wp-content/uploads/2010/12/macfuse-core-10.5-2.1.9.zip">不具合修正バージョン (2.1.9) をダウンロード</a>する．
-	  ダウンロードしたファイルを展開し，中の <span class="bold red">MacFUSE Core.pkg</span> をダブルクリックするとインストールが開始されるので，インストールする．
+	  まず初めに，OSXFUSEをインストールする．
+	  <a href="http://osxfuse.github.com/">
+	   OSXFUSE公式ページ
+	  </a>から，最新のOSXFUSEをダウンロードする．
+	  ダウンロードしたファイルを展開し，中の <span class="bold red">Install OSXFUSE.pkg</span> をダブルクリックするとインストールが開始されるので，インストールする．
+	  インストール時にインストールするパッケージを選択できるが，この際に「<span class="bold red">Mac FUSE Compatibility Layer</span>」をインストールする．
   </p>
-  <img src="images/macfuse-install.png" alt="macfuse-install" width="600" />
+  <img src="images/osxfuse-install.png" alt="osxfuse-install" width="600" />
   <br /><br />
   
   <p>
