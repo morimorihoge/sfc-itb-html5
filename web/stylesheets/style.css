@@ -265,3 +265,21 @@ footer a:hover {
     color: #FFFFFF;
     text-decoration: none;
 }
+
+img.noshadow {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+#otoiawase-rollover a {
+    display: block;
+    width: 202px;
+    height: 52px;
+    background: url(../images/toiawase_off.jpg);
+    text-decoration: none;
+    text-indent: -1000em;
+}
+
+#otoiawase-rollover a:hover {
+    background: url(../images/toiawase_on.jpg);
+}
