@@ -6,7 +6,7 @@
   <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
   <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
   <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
-  
+
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -14,22 +14,22 @@
   <script type="text/javascript" src="javascripts/shCore.js"></script>
   <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
   <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
-  
+
 </head>
 <body>
 <script type="text/javascript">
 $(function(){
-  SyntaxHighlighter.all();  
+  SyntaxHighlighter.all();
 });
 </script>
-  
+
 <!-- ヘッダ -->
 <header>
   <h1>HTML5/CSS3によるサイト構築</h1>
   <p>SFC情報基礎授業資料</p>
 </header>
 
-<!--ナビゲーション --> 
+<!--ナビゲーション -->
 <nav>
   <div class="menu">
   <ul>
@@ -78,7 +78,7 @@ $(function(){
         </li>
         <li><a href="./photoshop.html">
           Photoshopを使った画像加工と画面効果</a>
-        </li>    
+        </li>
       </ul>
     </li>
   </ul>
@@ -92,7 +92,7 @@ $(function(){
     前回ではWebページのソースコードを表示し，いろいろな値をいじると表示が変化することを試した．
     今回はそもそもWebページはどのように作られているのか，詳しく学んでいく．
   </p>
-  
+
   <h3>HTMLとCSSの役割</h3>
   <p>
     人間が紙に印刷された文章を読む時は，文字の大きさや色，配置などで，見出しや本文を何気なく認識することができる．
@@ -114,7 +114,7 @@ $(function(){
   <p>
     HTMLはタグによって記述する．ここではタグとその要素について，詳しく解説する．
   </p>
-  
+
   <h4>タグ（Tag）</h4>
   <p>
   HTMLは，タグと呼ばれる目印で文章の構造を囲うことで記述していく．
@@ -196,7 +196,7 @@ $(function(){
   </p>
   <img src="images/cn13.png" width="500" alt="cn13" />
   <br /><br />
-  
+
   <p>
     ここまでにはpタグとbrタグの例しか出していないが，他にもHTMLで使えるタグは沢山定義されているので，以下のサイトなどを参考にすると良い．
   </p>
@@ -276,7 +276,7 @@ $(function(){
   &lt;/body&gt;
   &lt;/html&gt;
   </pre>
-  
+
   <h4>正しいHTMLが書けているかのチェック</h4>
   <p>
     自分の書いたHTMLの構文が正しいタグ構造で書かれているかを確認するには，<a href="http://validator.w3.org/">W3Cの提供するMarkup Validation Service（構文チェックサービス）</a>を利用すると良い．
@@ -293,19 +293,19 @@ $(function(){
   <p>検証に失敗</p>
   <img src="images/validation_error_details.png" width="600" alt="validation_error_details" />
   <p>失敗時のエラー理由．ここでは二つのエラーの原因がimgタグに必須のalt属性をセットしていないことだということが分かる．</p>
-    
+
   <h4>演習</h4>
   <ul>
     <li>新規HTMLファイル<span class="bold">lecture02.html</span>を作成し，一つのh1タグによる見出しと複数のpタグによる記事を作成せよ</li>
     <li>上記で作成した記事全体をarticleタグで囲め</li>
     <li>作成したHTMLが正しいかどうかを<a href="http://validator.w3.org/">W3C Markup Validation Service</a>を使って検証せよ．エラーが発生した場合は修正し，エラーが無くなるまで修正すること．</li>
   </ul>
-  
+
   <h3>CSSの基本</h3>
   <p>
     CSSは、Cascading Style Sheetsの略で、HTML要素の大きさや配置、色など、文章の見栄え（スタイル）に関しての記述を行う。CSSの読みはシーエスエス、または単にスタイルシートと呼ばれる。CSSはHTMLと同じくテキストファイルで記述し，HTMLのheadタグ内からlinkタグを使って必要なCSSファイルを読み込む．
   </p>
-  
+
   <h4>書式</h4>
   <p>
     CSSの基本は，タグ名やクラス名（後述）といった条件に対して，どのようなスタイルを適用するかを次々と記述していくことである．
@@ -328,10 +328,12 @@ $(function(){
   </p>
   <ul>
     <li>タグ名：単にタグ名を設定すれば良い．タグ名だけを指定した場合，その名前のタグ全てに中括弧{}内に指定したプロパティが設定される</li>
-    <li>クラス名：<span style="bold">全てのHTMLタグにはclass属性を付与することができる</span>．class属性で指定した名前をCSS中で<span class="bold">「.クラス名」</span>と指定することで，指定したクラス名を属性に持つHTML要素だけにプロパティを設定することができる．classは複数のHTMLタグで同じ名前を指定することができるので，使い回しが可能</li>
+    <li>クラス名：<span style="font-weight: bold;">全てのHTMLタグにはclass属性を付与することができる</span>．class属性で指定した名前をCSS中で<span class="bold">「.クラス名」</span>と指定することで，指定したクラス名を属性に持つHTML要素だけにプロパティを設定することができる．classは複数のHTMLタグで同じ名前を指定することができるので，使い回しが可能である．
+    また，HTMLでクラスを指定する場合，1つだけでなく複数のクラスを指定することができる．<span style="font-weight: bold;color: red">複数クラスを指定する場合はクラス名を半角スペースで区切って記述すれば良い</span>
+    </li>
     <li>id：<span class="bold">全てのHTMLタグにはHTMLファイル中で<span class="red">一意な</span>id属性を付与することができる．</span>id属性で指定した名前をCSS中<span class="bold">「#id名」</span>と指定することで，指定したid名を属性に持つHTML要素だけにプロパティを設定することができる．id名はHTMLファイル中で一意であることが求められるので，ページ中で一つしか存在しないことが分かっている要素に対してのみ使用できる</li>
   </ul>
-  
+
   <h4>プロパティと値</h4>
   <p>
     プロパティには予め決められたプロパティ名を記述する必要がある．<a href="http://www.htmq.com/style/indexa.shtml">スタイルシートリファレンス（ABC順）</a>に詳しい一覧があるので，プロパティの一覧についてはそちらを参照の事．
@@ -345,11 +347,11 @@ $(function(){
     <a href="http://www.htmq.com/style/padding.shtml">padding</a>プロパティなど，
     値の数が1〜4つと可変のプロパティもあるので，利用する際は各プロパティのリファレンスを良く読んで使うこと．
   </p>
-  
+
   <p>
     以下にタグ名とクラス名を使ったHTMLとCSSのサンプルを挙げる．
   </p>
-  
+
   <p>
     lecture02-03.html
   </p>
@@ -378,7 +380,7 @@ $(function(){
     ※：5行目のlinkタグ内のhref属性でlecture02-03.cssを読み込んでいる．相対パスで表記してあるので，
     <span class="bold">lecture02-03.cssはlecture02-03.htmlと同じディレクトリに置く必要がある</span>．
   </p>
-  
+
   <p>
     lecture02-03.css
   </p>
@@ -409,16 +411,80 @@ $(function(){
   <p>
     <a href="resources/lecture02-03.html">ブラウザで開く</a>
   </p>
-  
+
+  <h3>複雑なセレクタ</h3>
+  <p>
+    セレクタはタグ，クラス，idどれか一つだけではなく，複数を組み合わせてより詳細な条件を指定することができる．
+    詳細なセレクタ指定を使うことで，共通部分を抜き出して重複記述を減らしたり，他人の書いたCSSを拡張するときでも副作用（表示崩れ）の起こらないCSSを書くことができる．
+  </p>
+
+  <h4>クラスとタグの同時指定（AND条件）</h4>
+  <p>
+    同じ名前のクラスを内部で使い回しているが，特定のタグの場合のみ挙動を変えたい場合にクラスとタグを同時指定することができる．
+    書式は「タグ名.クラス名」となる．
+  </p>
+  <pre class="brush: css">
+      /* importantクラスは一律で赤字で表示したい */
+      .important {
+        color: red;
+      }
+
+      /* importantクラスの中で，さらにaタグの場合には太字で表示したい */
+      a.important {
+        font-weight: bold;
+      }
+  </pre>
+  <pre class="brush: html">
+      <span class="important">ここはただの赤字で表示される</span>
+      <a href="test.html" class="important">ここは赤字かつ太字で表示される</a>
+  </pre>
+
+  <h4>親子関係の指定</h4>
+  <p>
+    特定要素の下にあるもののみを指定することができる．例えば，headerタグとfooterタグ内でそれぞれ同じクラス名を利用するが，見た目は変えたい，といった場合に利用可能である．
+    書式は「セレクタ１[半角スペース]セレクタ２」の書式で「セレクタ１の下にあるセレクタ２要素」を指定する．
+    また，半角スペース区切りの場合は孫要素まで適用されるが，直接の子要素のみに範囲を限定したい場合は「セレクタ１ > セレクタ２」と指定する．
+  </p>
+
+  <h4>疑似クラス，疑似要素による指定</h4>
+  <p>
+    疑似クラスとは，実際にはHTMLタグ内には記述されていないがセレクタとして利用できるクラスである．
+    通常のブラウザで訪問済み・未訪問のリンクは異なる色で表示されるが，これは疑似クラスによって実現されている．「:疑似クラス名」で指定することができる．
+    やや難易度は高いが，使いこなせるとスマートにCSSを記述できることがある．
+  </p>
+  <ul>
+      <li>:link　未訪問リンク</li>
+      <li>:visited 訪問済みリンク</li>
+      <li>:hover マウスカーソルが要素の上に乗っている瞬間のみ有効</li>
+      <li>:first-child 要素内の最初の小要素</li>
+      <li>:nth-of-type(n) n番目の要素（CSS3のみ．古いブラウザでは機能しない）</li>
+  </ul>
+  <p>
+    完全な一覧は <a href="http://www.htmq.com/csskihon/005.shtml">CSS2セレクタ一覧表</a>，及び <a
+          href="http://www.htmq.com/css3/index.shtml#sele">CSS3セレクタ一覧表</a>を参照すること．
+  </p>
+
+  <h4>その他の指定方式</h4>
+  <p>
+    その他にも，特定の属性を絞りこんだり，特定要素の後にある要素を指定したりなど，多彩なセレクタの指定方式がある．
+    最初から全ての記述方式を覚えるのは難しいが，少しずつ使いこなしていくことで自分の思い通りのWebページが作成できるようになる．
+  </p>
+
   <h4>演習</h4>
   <ul>
     <li>HTMLの演習で作成したHTMLファイルlecture02.htmlに対応するCSSファイル<span class="bold">lecture02.css</span>を作成し，linkタグで読み込む様にせよ</li>
-    <li>サンプルを参考に，タグ名とクラス名を使って見た目を整形せよ</li>
+    <li>HTMLにpタグで囲った文章を3つ追加し，「first」「second」「third」という名前のクラスを設定せよ．</li>
+    <li>pタグの文字サイズ（font-size）を20pxに設定せよ</li>
+    <li>pタグかつfirstクラスの要素の文字色（color）を青（blue）に設定せよ</li>
+    <li>pタグかつsecondクラスの要素の文字サイズ（font-size）を24pxに設定せよ</li>
+    <li>pタグかつthirdクラスの要素の文字スタイル（font-style）をイタリック体（italic）に設定せよ</li>
+    <li>CSSを変更せず，HTMLだけを修正して前述のfirst，second，thirdクラス全てが適用されたpタグの要素を追加せよ</li>
+    <li>サンプルを参考に，自由にタグ名とクラス名を使って見た目を整形せよ</li>
   </ul>
   <p>
     ※：CSSのプロパティを調整する際は，Firebugを使って見え方を微調整した後CSSファイルを編集するようにすると効率が良い．
   </p>
-  
+
   <h3>まとめ</h3>
   <p>
     HTMLとCSSの基礎を学んだので．これで最低限のWebページを作ることができる様になった．
@@ -452,7 +518,7 @@ $(function(){
   </section>
 </aside>
 
-<!-- フッタ --> 
+<!-- フッタ -->
 <footer>
   <p>Copyright&copy; 2013 SFC</p>
 </footer>
