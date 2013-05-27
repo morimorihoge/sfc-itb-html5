@@ -6,7 +6,7 @@
   <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
   <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
   <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
-  
+
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -14,22 +14,22 @@
   <script type="text/javascript" src="javascripts/shCore.js"></script>
   <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
   <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
-  
+
 </head>
 <body>
 <script type="text/javascript">
 $(function(){
-  SyntaxHighlighter.all();  
+  SyntaxHighlighter.all();
 });
 </script>
-  
+
 <!-- ヘッダ -->
 <header>
   <h1>HTML5/CSS3によるサイト構築</h1>
   <p>SFC情報基礎授業資料</p>
 </header>
 
-<!--ナビゲーション --> 
+<!--ナビゲーション -->
 <nav>
   <div class="menu">
   <ul>
@@ -97,21 +97,59 @@ $(function(){
     <span class="bold red">
       クロスブラウザ対応
     </span>と呼ぶ．
-    本ページでは，クロスブラウザ対応における問題や注意点について解説する．
+    本ページでは，クロスブラウザ対応における問題や注意点について解説する．また，参考までに古い授業資料を残してあるので，ブラウザシェアの推移について参考にすると良い．
   </p>
-  
+
   <h3>
-    2011年現在で主要なブラウザ
+      2013年現在で主要なブラウザ
   </h3>
   <p>
-    以下に2011年現在で主要なブラウザを挙げる．Otherの割合が大きいが，
-    これは恐らくこの統計を出力する少し前にChromeのバージョンアップ（12.0）が行われたこと，
-    IE9がランキングに入っていないことなどが原因と予想される．
+      以下に2013年現在で主要なブラウザ挙げる．この統計ではバージョンの近い（互換性の高い）ブラウザバージョンは一つのブラウザとして扱われている．
   </p>
-  <img src="images/browser_share.png" alt="browser_share" width="600" />
+  <img src="images/browser_share_world2013.png" width="600" alt="世界のブラウザシェア"/>
+  <p>世界のブラウザシェア</p>
+
+  <img src="images/browser_share_japan2013.png" width="600" alt="日本のブラウザシェア"/>
+  <p>日本のブラウザシェア</p>
+  <a href="http://gs.statcounter.com/">StatCounter Global Stats</a>より
+
+  <p>
+      ここで出てきた主要なブラウザについて2011年からの差分を述べる．
+  </p>
+
+  <ul>
+      <li>
+          <span class="bold">IE 9.0</span>：Windows 7以降のWindowsにプレインストールされている．定期的にWindows Updateを実行していれば
+          IEのバージョンは9.0になっている（2013年春現在）．Windows専用．
+          <span class="bold red">HTML5，CSS3に対応している</span>
+      </li>
+  </ul>
+
+  <p>
+      2013年に入り，上位4ブラウザの中でHTML5/CSS3に対応していないブラウザはIE 8.0だけである．
+      また，昨今では無視できなくなったスマートフォン，タブレット端末によるブラウザの統計は以下の通りである．
+  </p>
+  <img src="images/mobile_share_world2013.png" width="600" alt="モバイルブラウザシェア"/>
+  <p>モバイル端末のブラウザシェア</p>
+
+  <p>
+      昨今はこうしたモバイル端末の利用が急増している．こうしたモバイル端末は多くの端末でHTML5/CSS3をサポートしているが，
+      スマートフォンなどの表示領域が物理的に小さい端末も多い．
+      そのため，Webサイトのターゲット層によってスマートフォン用に見た目を使い分けるといった工夫がサイト構築でも求められる様になっている．
+      同じHTML/CSSでも画面サイズによって見た目を出し分ける <a href="http://ascii.jp/elem/000/000/700/700611/">レスポンシブデザイン</a>
+      といった技術も登場してきている．
+  </p>
+
+  <h3>
+    【旧資料】2011年現在で主要なブラウザ
+  </h3>
+  <p>
+    以下に2011年現在で主要なブラウザを挙げる．
+  </p>
+  <img src="images/browser_share_world2011.png" alt="browser_share" width="600" />
   <br /><br />
   <a href="http://gs.statcounter.com/">StatCounter Global Stats</a>より
-  
+
   <p>
     ここで出てきた主要なブラウザについて大まかな分類を行うと，以下の通りになる．
   </p>
@@ -150,7 +188,7 @@ $(function(){
     上記に挙げる際に，IEについてはバージョンを明確に区別して挙げたが，これは，IEのシェアが他のブラウザに比較して大きいのに加え，
     各バージョンによって大きく仕様が変わり，バージョン番号まで意識する必要があるためである．
   </p>
-  
+
   <h3>
     クロスブラウザ対応にまつわる問題について
   </h3>
@@ -161,7 +199,7 @@ $(function(){
     例えば，情報基礎の授業でMacにプレインストールされているSafariでは無くFirefoxを使うことで，
     Firebugというアドオンを利用している．
   </p>
-  
+
   <p>
     このように，<span class="red bold">
       ユーザは自分の好きなブラウザを使ってWebにアクセスしているため，複数のブラウザでも
@@ -185,7 +223,7 @@ $(function(){
     なお，IE以外のブラウザは基本的に自動アップデート機能が付いており，常に最新バージョンが適用されるため，
     あまりバージョンについて厳しい指定が行われることは少ない．
   </p>
-  
+
   <h4>
     HTML5とクロスブラウザ対応
   </h4>
@@ -200,7 +238,7 @@ $(function(){
     新しいものを使ったほうがより洗練された物が少ない労力で作れるようになる．
     こうしたトレードオフの関係を下表に示す．
   </p>
-  
+
   <table>
     <caption>
       新旧バージョンのトレードオフ
@@ -257,7 +295,7 @@ $(function(){
     後方互換性のあるWebページを作ることで，HTML5に対応したブラウザを使っているユーザにはHTML5の機能が利用でき，
     HTML5未対応のブラウザを使っているユーザにも最低限の情報を提供することができる．
   </p>
-  
+
   <h4>
     html5.jsを使って旧ブラウザをHTML5対応化
   </h4>
@@ -272,14 +310,14 @@ $(function(){
   <pre class="brush: xml">
     &lt;!--[if lt IE 9]&gt;
     &lt;script src="http://html5shim.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
-    &lt;! endif=""&gt;&lt;/!&gt;
+    &lt;![endif]--&gt;
   </pre>
-  
+
   <p>
     上記の通り，html5.jsによる対応は非常に簡単であるので，HTML5でHTMLを記述するときは
     常に上記のコードを追加しておくと良い．
   </p>
-  
+
   <h3>
     まとめ
   </h3>
@@ -287,7 +325,7 @@ $(function(){
     本ページでは，クロスブラウザ対応とその問題について説明し，HTML5における後方互換性の問題について解説した．
     その上で，html5.jsによる簡単なHTML5の後方互換性対策の方法を解説した．
   </p>
-  
+
 </article>
 
 
@@ -315,7 +353,7 @@ $(function(){
   </section>
 </aside>
 
-<!-- フッタ --> 
+<!-- フッタ -->
 <footer>
   <p>Copyright&copy; 2013 SFC</p>
 </footer>
