@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>情報基礎授業資料 HTML5/CSS3によるサイト構築</title>
+  <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css"/>
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css"/>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/shCore.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
+
+</head>
+<body>
+<script type="text/javascript">
+  $(function () {
+    SyntaxHighlighter.all();
+  });
+</script>
+
+<!-- ヘッダ -->
+<header>
+  <h1>HTML5/CSS3によるサイト構築</h1>
+
+  <p>SFC情報基礎授業資料</p>
+</header>
+
+<!--ナビゲーション -->
+<nav>
+  <div class="menu">
+    <ul>
+      <li>
+        <!-- ファイル名を省略するとindex.htmlを表示する -->
+        <a href="./">Home</a>
+      </li>
+      <li>
+        <a href="./lecture01.html">第6回</a>
+      </li>
+      <li>
+        <a href="./lecture02.html">第7回</a>
+      </li>
+      <li>
+        <a href="./lecture03.html">第8回</a>
+      </li>
+      <li>
+        <a href="./mid_report.html">中間課題</a>
+      </li>
+      <li>
+        <a href="./final_report.html">最終課題</a>
+      </li>
+      <li>
+        <a href="./sshfs.html">SSHFS</a>
+      </li>
+      <li>
+        <a href="./appendix.html" class="current">Appendix</a>
+        <ul>
+          <li><a href="./character_encoding.html">
+            文字化けと文字コード
+          </a></li>
+          <li><a href="./cross_browser.html" class="current">
+            クロスブラウザ対応
+          </a></li>
+          <li><a href="./html_entities.html">
+            HTMLエンティティ</a>
+          </li>
+          <li><a href="./advanced_css.html">
+            CSSをもう少し詳しく理解する</a>
+          </li>
+          <li><a href="./useful_tags.html">
+            よく使うHTMLタグと使い方</a>
+          </li>
+          <li><a href="./use_templates.html">
+            HTMLテンプレートからサイトを構築する</a>
+          </li>
+          <li><a href="./photoshop.html">
+            Photoshopを使った画像加工と画面効果</a>
+          </li>
+          <li><a href="./development_on_your_pc.html">
+            自分のPC/Macで開発環境を構築する</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- メインコンテンツ -->
+<article id="content" class="articlecontent">
+  <h2>
+    自分のPC/Macで開発環境を構築する
+  </h2>
+
+  <p>
+    本授業資料は基本的にSFCの特別教室のMacを使って操作することが前提となっているが，Webページ開発やプログラミングといった
+    スキルは授業中に学習するだけではとても満足に習得することはできない．
+    本ページでは，Windwos環境とMac環境を対象とした，自分の私物マシン上で本授業資料と同等の開発環境を整える方法を解説する．
+  </p>
+
+  <p>
+    ※本資料の内容はCNSコンサルタントのサポート外の内容のため，全クラスで設定を必須とするものではない．
+    自分のマシンを使った開発を推奨とするかも含めて，自力で環境構築を行うのに不安があれば担当講師に相談すること
+  </p>
+
+  <h3>
+    Windows環境
+  </h3>
+
+  <p>
+    Windows環境での設定について解説する．本ページではWindows 7を対象に解説するが，基本的にはその他のバージョンでも同様に動作するはずである．
+  </p>
+
+  <h4>
+    FirefoxのインストールとFirebugの設定
+  </h4>
+
+  <p>
+    本授業資料の推奨環境はFirefoxである．Internet ExplorerやGoogle Chromeでも開発自体には問題がないが，一部のCSSプロパティの解釈
+    やレンダリング方法・対応状況がブラウザによって異なるので，原則本授業のページ作成を行う場合にはFirefoxを用いるのが良い．
+    Firefoxをインストールするには，
+    <a href="http://www.mozilla.jp/firefox/">Firefoxのトップページ</a>から，Firefoxをダウンロードしてインストールする．
+  </p>
+  <img src="images/firefox_windows.png" alt="firefoxのインストール（Windows）" width="600"/>
+
+  <p>
+    昨今のWebブラウザではFirebug相当の機能が標準搭載されるようになったため，Firebugを使うことは特に必須ではないが，本授業資料での解説が
+    Firebugを前提としているためインストールしておいた方が授業との連携上都合が良いのでインストールする．
+    インストールしてFirefoxを起動したら，<a href="https://addons.mozilla.org/ja/firefox/addon/firebug/">Firebugのインストールページ</a>
+    から「Firefoxに追加」ボタンを押し，ダイアログに従ってFirebugをインストールする．
+  </p>
+  <img src="images/install_firebug_windows.png" alt="firebugのインストール（Mac）" width="600"/>
+
+  <p>
+    正常にインストールが完了したかどうかを確かめるには，左上のFirefoxメニューから「アドオン」を選び「拡張機能」のタブを選択して
+    右側のアドオン一覧にFirebugが表示されているかどうかを確認する．もし無効化されている場合は有効化すること
+  </p>
+  <img src="images/firebug_installed_01.png" alt="Firebug installed" width="600"/>
+
+  <p>
+    また，正常にFirebugが有効化されていれば，右上に見慣れたFirebugアイコンが表示されているはずである．
+  </p>
+  <img src="images/firebug_installed_02.png" alt="Firebug installed" width="600"/>
+
+  <h4>
+    テキストエディタ（Terapad）のインストール
+  </h4>
+
+  <p>
+    特別教室の環境ではテキストエディタとして<a href="http://www.mimikaki.net/">mi</a>を使っていたが，
+    <a href="http://www.mimikaki.net/download/alpha.html">Windows版のmi</a>は本資料作成時点でまだα版であること，
+    またそれほどWindowのテキストエディタとしてメジャーで無いことから，Windowsのテキストエディタとして長く一般的で，
+    フリーかつ十分な機能を要した <a href="http://www5f.biglobe.ne.jp/~t-susumu/library/tpad.html">TeraPad</a>を
+    インストールする．
+    TeraPadはmiと同じくHTMLのコードハイライト機能などを要し，日本語環境で多くのユーザが使っているので，もし利用していて不明な
+    ことがあった場合にはインターネット上で多くの情報を集めることができる．
+  </p>
+
+  <p>
+    <a href="http://www5f.biglobe.ne.jp/~t-susumu/library/tpad.html">TeraPadのホームページ</a>の「ダウンロード」から
+    「インストーラ付き」版のTeraPadをダウンロードしてインストールする．インストールはこれで終了である．
+    通常インストールすれば，スタートメニューに登録される．
+  </p>
+  <img src="images/terapad_installed.png" alt="TeraPadのインストール" width="400"/>
+  <img src="images/terapad_window.png" alt="TeraPad起動画面" width="600"/>
+
+  <p>
+    TeraPadの使い方はほとんどmiと同様である．注意点として，インストールした初期状態だと文字コードがSJISで保存されてしまうことがあるので，
+    画面下部のステータスバーが「UTF-8」になっていない場合はファイルメニューから「文字/改行コード指定保存」を選び，文字コード「UTF-8」
+    改行コード「LF」を選択するようにすること．
+  </p>
+  <img src="images/terapad_status_bar.png" alt="TeraPadの文字コード表示" width="600"/>
+  <img src="images/terapad_specify_encoding.png" alt="TeraPadの文字コード指定保存" width="300"/>
+  <img src="images/terapad_encode_setting.png" alt="文字コード指定保存" width="300"/>
+
+  <h4>CNSとの接続</h4>
+  <p>
+    ここまでで開発環境は一通り揃ったが，このままではCNSの自分のホームディレクトリにアクセスできないため，インターネット経由で
+    CNSの自分のホームディレクトリにアクセスできるようにする必要がある．
+    こちらについては<a href="./sshfs.html">SSHFSのページ</a>で詳しく解説しているので，そちらを参照すること．
+  </p>
+
+  <hr class="paragraph" />
+
+  <h3>Mac環境</h3>
+  <p>
+    次に，Mac環境について説明する．Mac環境は基本的に特別教室の環境に近いので，詳細は省略する．
+  </p>
+
+  <h4>
+    FirefoxのインストールとFirebugの設定
+  </h4>
+
+  <p>
+    基本的にWindows版と同様の手順でインストールできる．Firebugのインストール後，正しくインストールされているかの確認を
+    必ず行うこと．
+  </p>
+
+  <h4>
+    テキストエディタ（mi）のインストール
+  </h4>
+
+  <p>
+    Mac環境であれば特別教室と同じ<a href="http://www.mimikaki.net/">mi</a>を利用することができる．
+    <a href="http://www.mimikaki.net/">miのホームページ</a>から最新バージョンをダウンロードしてインストールすれば良い．
+    必要であればDockへの登録も行っておくと，起動がスムーズにできる．
+  </p>
+
+  <h4>CNSとの接続</h4>
+  <p>
+    ここまでで開発環境は一通り揃ったが，このままではCNSの自分のホームディレクトリにアクセスできないため，インターネット経由で
+    CNSの自分のホームディレクトリにアクセスできるようにする必要がある．
+    こちらについては<a href="./sshfs.html">SSHFSのページ</a>で詳しく解説しているので，そちらを参照すること．
+  </p>
+
+</article>
+
+
+<aside>
+  <section>
+    <h3>
+      SFC/ITC関連参考サイトリンク
+    </h3>
+    <ul>
+      <li><a href="http://itc.sfc.keio.ac.jp/pukiwiki/">湘南藤沢インフォメーションテクノロジーセンター</a></li>
+      <li><a href="http://itc.sfc.keio.ac.jp/pukiwiki/index.php?%B5%BB%BD%D1%BE%F0f%CA%F3%2FWWW">技術情報/WWW</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>
+      外部参考サイトリンク
+    </h3>
+    <ul>
+      <li><a href="https://addons.mozilla.org/ja/firefox/addon/firebug/">Firebug公式サイト</a></li>
+      <li><a href="http://www.htmq.com/index.htm">HTMLクイックリファレンス</a></li>
+      <li><a href="http://www.tagindex.com/color/color_name.html">カラーチャート/カラーネーム 147色 - TAG index Webサイト</a></li>
+      <li><a href="http://validator.w3.org/">W3C　Markup　Validation Service</a></li>
+    </ul>
+  </section>
+</aside>
+
+<!-- フッタ -->
+<footer>
+  <p>Copyright&copy; 2013 SFC</p>
+</footer>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23811911-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

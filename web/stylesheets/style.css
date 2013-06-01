@@ -332,3 +332,11 @@ img.noshadow {
 #otoiawase-rollover a:hover {
   background: url(../images/toiawase_on.jpg);
 }
+
+hr.paragraph {
+  border-width: 2px 0px 0px 0px;
+  border-style: solid;
+  border-color: #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
