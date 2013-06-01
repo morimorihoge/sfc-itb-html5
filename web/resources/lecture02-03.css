@@ -1,6 +1,6 @@
 article {
-  border: 1px solid black;/* 要素全体を1pxの線で囲む */
-  width: 800px;/* 横幅は800px固定 */
+  border: 1px solid black; /* 要素全体を1pxの線で囲む */
+  width: 800px; /* 横幅は800px固定 */
   /* 
     以下3行は影の表現 
     http://www.htmq.com/css3/box-shadow.shtml

@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <title>情報基礎授業資料 HTML5/CSS3によるサイト構築</title>
   <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
-  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
-  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
-  
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css"/>
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css"/>
+
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -14,74 +14,75 @@
   <script type="text/javascript" src="javascripts/shCore.js"></script>
   <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
   <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
-  
+
 </head>
 <body>
 <script type="text/javascript">
-$(function(){
-  SyntaxHighlighter.all();  
-});
+  $(function () {
+    SyntaxHighlighter.all();
+  });
 </script>
-  
+
 <!-- ヘッダ -->
 <header>
   <h1>HTML5/CSS3によるサイト構築</h1>
+
   <p>SFC情報基礎授業資料</p>
 </header>
 
-<!--ナビゲーション --> 
+<!--ナビゲーション -->
 <nav>
   <div class="menu">
-  <ul>
-    <li>
-      <!-- ファイル名を省略するとindex.htmlを表示する -->
-      <a href="./">Home</a>
-    </li>
-    <li>
-      <a href="./lecture01.html">第6回</a>
-    </li>
-    <li>
-      <a href="./lecture02.html">第7回</a>
-    </li>
-    <li>
-      <a href="./lecture03.html">第8回</a>
-    </li>
-    <li>
-      <a href="./mid_report.html">中間課題</a>
-    </li>
-    <li>
-      <a href="./final_report.html">最終課題</a>
-    </li>
-    <li>
-      <a href="./sshfs.html">SSHFS</a>
-    </li>
-    <li>
-      <a href="./appendix.html" class="current">Appendix</a>
-      <ul>
-        <li><a href="./character_encoding.html">
-          文字化けと文字コード
-        </a></li>
-        <li><a href="./cross_browser.html">
-          クロスブラウザ対応
-        </a></li>
-        <li><a href="./html_entities.html">
-          HTMLエンティティ</a>
-        </li>
-        <li><a href="./advanced_css.html">
-          CSSをもう少し詳しく理解する</a>
-        </li>
-        <li><a href="./useful_tags.html" class="current">
-          よく使うHTMLタグと使い方</a>
-        </li>
-        <li><a href="./use_templates.html">
-          HTMLテンプレートからサイトを構築する</a>
-        </li>
-        <li><a href="./photoshop.html">
-          Photoshopを使った画像加工と画面効果</a>
-        </li>        
-      </ul>
-    </li>
-  </ul>
+    <ul>
+      <li>
+        <!-- ファイル名を省略するとindex.htmlを表示する -->
+        <a href="./">Home</a>
+      </li>
+      <li>
+        <a href="./lecture01.html">第6回</a>
+      </li>
+      <li>
+        <a href="./lecture02.html">第7回</a>
+      </li>
+      <li>
+        <a href="./lecture03.html">第8回</a>
+      </li>
+      <li>
+        <a href="./mid_report.html">中間課題</a>
+      </li>
+      <li>
+        <a href="./final_report.html">最終課題</a>
+      </li>
+      <li>
+        <a href="./sshfs.html">SSHFS</a>
+      </li>
+      <li>
+        <a href="./appendix.html" class="current">Appendix</a>
+        <ul>
+          <li><a href="./character_encoding.html">
+            文字化けと文字コード
+          </a></li>
+          <li><a href="./cross_browser.html">
+            クロスブラウザ対応
+          </a></li>
+          <li><a href="./html_entities.html">
+            HTMLエンティティ</a>
+          </li>
+          <li><a href="./advanced_css.html">
+            CSSをもう少し詳しく理解する</a>
+          </li>
+          <li><a href="./useful_tags.html" class="current">
+            よく使うHTMLタグと使い方</a>
+          </li>
+          <li><a href="./use_templates.html">
+            HTMLテンプレートからサイトを構築する</a>
+          </li>
+          <li><a href="./photoshop.html">
+            Photoshopを使った画像加工と画面効果</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </nav>
 
@@ -90,14 +91,16 @@ $(function(){
   <h2>
     よく使うHTMLタグと使い方
   </h2>
+
   <p>
     第7回で様々なHTMLタグがあることを紹介したが，それらの詳細な使い方については解説しなかった．
     ここでは，数多くのHTMLタグの中から良く使われ，使い方を知っていると便利なタグを紹介する
   </p>
-  
+
   <h3>
     ul, ol, liによる列挙
   </h3>
+
   <p>
     ul (Unordered List), ol (Ordered List), li (List Item)を使うと
     項目を列挙することができる．
@@ -124,10 +127,11 @@ $(function(){
       表示結果
     </a>
   </p>
-  
+
   <h3>
     dl, dt, ddによる定義・説明リスト
   </h3>
+
   <p>
     複数の要素に対して説明を列挙していく時に用いると良い．前述したul, ol, liタグに似ているが，
     dl, dt, ddは対となる要素の組み合わせのリストであることが異なる．
@@ -153,17 +157,18 @@ $(function(){
       表示結果
     </a>
   </p>
-  
-  
+
+
   <h3>
     tableタグによる表の表示
   </h3>
+
   <p>
     HTMLで表を表現するときに使うのがtableタグである．
     tableタグはHTML5で記述方法が大きく再定義されたが，ひとまず以下の書き方をしていれば
     古いブラウザでも正しく表示される（W3C Markup Validatorでもエラーにはならない）．
   </p>
-  
+
   スタイルシート
   <pre class="brush: css">
   /* 表を強調するためのスタイル */
@@ -180,7 +185,7 @@ $(function(){
     border: solid 1px gray;
   }
   </pre>
-  
+
   HTML
   <pre class="brush: xml">
   &lt;table&gt;
@@ -206,6 +211,7 @@ $(function(){
       表示結果
     </a>
   </p>
+
   <p>
     HTML5に準拠した正しい構造については以下のサイトを参考にすると良い．
   </p>
@@ -213,17 +219,18 @@ $(function(){
     <li><a href="http://webmitikusa.blog47.fc2.com/blog-entry-20.html">Webの道草：テーブルの正しい構造</a></li>
     <li><a href="http://www.htmq.com/html5/table.shtml">HTMLクイックリファレンス：table</a></li>
   </ul>
-  
+
   <h3>
     まとめ
   </h3>
+
   <p>
     ここに挙げた以外にも沢山のHTMLタグがあるが，最初から全てを覚えようとはせずに，
     必要になったときに覚えていくようにすれば十分である．
     ただし，ここに挙げた３種類のタグは一般的なWebページでも使われる可能性が高いタグであるので，
     使いこなせると良い．
   </p>
-  
+
 </article>
 
 
@@ -251,7 +258,7 @@ $(function(){
   </section>
 </aside>
 
-<!-- フッタ --> 
+<!-- フッタ -->
 <footer>
   <p>Copyright&copy; 2013 SFC</p>
 </footer>
@@ -262,10 +269,13 @@ $(function(){
   _gaq.push(['_setAccount', 'UA-23811911-1']);
   _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
   })();
 
 </script>

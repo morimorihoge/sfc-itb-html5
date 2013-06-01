@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <title>情報基礎授業資料 HTML5/CSS3によるサイト構築</title>
   <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
-  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
-  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
-  
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css"/>
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css"/>
+
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -14,312 +14,325 @@
   <script type="text/javascript" src="javascripts/shCore.js"></script>
   <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
   <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
-  
+
 </head>
 <body>
 <script type="text/javascript">
-$(function(){
-  SyntaxHighlighter.all();  
-});
+  $(function () {
+    SyntaxHighlighter.all();
+  });
 </script>
-  
+
 <!-- ヘッダ -->
 <header>
   <h1>HTML5/CSS3によるサイト構築</h1>
+
   <p>SFC情報基礎授業資料</p>
 </header>
 
-<!--ナビゲーション --> 
+<!--ナビゲーション -->
 <nav>
   <div class="menu">
-  <ul>
-    <li>
-      <!-- ファイル名を省略するとindex.htmlを表示する -->
-      <a href="./">Home</a>
-    </li>
-    <li>
-      <a href="./lecture01.html">第6回</a>
-    </li>
-    <li>
-      <a href="./lecture02.html">第7回</a>
-    </li>
-    <li>
-      <a href="./lecture03.html">第8回</a>
-    </li>
-    <li>
-      <a href="./mid_report.html">中間課題</a>
-    </li>
-    <li>
-      <a href="./final_report.html">最終課題</a>
-    </li>
-    <li>
-      <a href="./sshfs.html">SSHFS</a>
-    </li>
-    <li>
-      <a href="./appendix.html" class="current">Appendix</a>
-      <ul>
-        <li><a href="./character_encoding.html">
-          文字化けと文字コード
-        </a></li>
-        <li><a href="./cross_browser.html">
-          クロスブラウザ対応
-        </a></li>
-        <li><a href="./html_entities.html">
-          HTMLエンティティ</a>
-        </li>
-        <li><a href="./advanced_css.html">
-          CSSをもう少し詳しく理解する</a>
-        </li>
-        <li><a href="./useful_tags.html">
-          よく使うHTMLタグと使い方</a>
-        </li>
-        <li><a href="./use_templates.html" class="current">
-          HTMLテンプレートからサイトを構築する</a>
-        </li>
-        <li><a href="./photoshop.html">
-          Photoshopを使った画像加工と画面効果</a>
-        </li>        
-      </ul>
-    </li>
-  </ul>
+    <ul>
+      <li>
+        <!-- ファイル名を省略するとindex.htmlを表示する -->
+        <a href="./">Home</a>
+      </li>
+      <li>
+        <a href="./lecture01.html">第6回</a>
+      </li>
+      <li>
+        <a href="./lecture02.html">第7回</a>
+      </li>
+      <li>
+        <a href="./lecture03.html">第8回</a>
+      </li>
+      <li>
+        <a href="./mid_report.html">中間課題</a>
+      </li>
+      <li>
+        <a href="./final_report.html">最終課題</a>
+      </li>
+      <li>
+        <a href="./sshfs.html">SSHFS</a>
+      </li>
+      <li>
+        <a href="./appendix.html" class="current">Appendix</a>
+        <ul>
+          <li><a href="./character_encoding.html">
+            文字化けと文字コード
+          </a></li>
+          <li><a href="./cross_browser.html">
+            クロスブラウザ対応
+          </a></li>
+          <li><a href="./html_entities.html">
+            HTMLエンティティ</a>
+          </li>
+          <li><a href="./advanced_css.html">
+            CSSをもう少し詳しく理解する</a>
+          </li>
+          <li><a href="./useful_tags.html">
+            よく使うHTMLタグと使い方</a>
+          </li>
+          <li><a href="./use_templates.html" class="current">
+            HTMLテンプレートからサイトを構築する</a>
+          </li>
+          <li><a href="./photoshop.html">
+            Photoshopを使った画像加工と画面効果</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </nav>
 
 <!-- メインコンテンツ -->
 <article id="content" class="articlecontent">
-  <h2>HTMLテンプレートからサイトを構築する</h2>
-  <p>
-    HTMLとCSSを1から作成することはは初心者にとっては敷居が高い．
-    本説では，インターネット上に多く公開されているHTMLテンプレートを用いて
-    Webサイトを構築する手順を解説する．
-  </p>
-  
-  <h3>
-    HTMLテンプレートとは
-  </h3>
-  <p>
-    HTMLテンプレートとは，いわゆるWebサイトデザインの雛形の事である．通常数ページ分のHTMLと
-    CSSの組み合わせで提供される（物によってはJavascriptも含まれる）．
-    Webサイトは自由なデザイン設計ができるが，基本的に多くのWebサイトは似通った構成をしていることが多い．
-    ある程度最終的なサイトのイメージが固まっているときに，0からCSSを作成しようとすると，
-    HTML/CSSに関する詳細な知識が必要になるとともに，サイトデザインに多くの時間を取られてしまう．
-    そんな時に，HTMLテンプレートを使うと，穴埋め式で良いデザインのWebサイトを作っていくことが出来る．
-  </p>
-  <p>
-    HTMLテンプレートを使う利点は以下の通りである．
-  </p>
-  <ul>
-    <li>
-      HTML/CSSについて，完全な理解をしていなくても見た目の良いWebページを作ることが出来る
-    </li>
-    <li>
-      多くのHTMLテンプレートは，マルチブラウザ対応を最初からサポートしているので，
-      <span class="bold">テンプレートに従って書けば自動的にマルチブラウザ対応になる</span>
-    </li>
-    <li>
-      デザインの手間が省け，デザインセンスが無くてもWebサイトが作成できる
-    </li>
-  </ul>
-  <p>
-    一方，HTMLを使うデメリットも存在する．
-  </p>
-  <ul>
-    <li>
-      テンプレートによってCSSやHTMLのタグ構造が決められているので，
-      そのルールを把握しながらHTMLを編集する必要がある
-    </li>
-    <li>
-      CSSやJavaScriptが巧みに使われていることが多く，テンプレートに定義された
+<h2>HTMLテンプレートからサイトを構築する</h2>
+
+<p>
+  HTMLとCSSを1から作成することはは初心者にとっては敷居が高い．
+  本説では，インターネット上に多く公開されているHTMLテンプレートを用いて
+  Webサイトを構築する手順を解説する．
+</p>
+
+<h3>
+  HTMLテンプレートとは
+</h3>
+
+<p>
+  HTMLテンプレートとは，いわゆるWebサイトデザインの雛形の事である．通常数ページ分のHTMLと
+  CSSの組み合わせで提供される（物によってはJavascriptも含まれる）．
+  Webサイトは自由なデザイン設計ができるが，基本的に多くのWebサイトは似通った構成をしていることが多い．
+  ある程度最終的なサイトのイメージが固まっているときに，0からCSSを作成しようとすると，
+  HTML/CSSに関する詳細な知識が必要になるとともに，サイトデザインに多くの時間を取られてしまう．
+  そんな時に，HTMLテンプレートを使うと，穴埋め式で良いデザインのWebサイトを作っていくことが出来る．
+</p>
+
+<p>
+  HTMLテンプレートを使う利点は以下の通りである．
+</p>
+<ul>
+  <li>
+    HTML/CSSについて，完全な理解をしていなくても見た目の良いWebページを作ることが出来る
+  </li>
+  <li>
+    多くのHTMLテンプレートは，マルチブラウザ対応を最初からサポートしているので，
+    <span class="bold">テンプレートに従って書けば自動的にマルチブラウザ対応になる</span>
+  </li>
+  <li>
+    デザインの手間が省け，デザインセンスが無くてもWebサイトが作成できる
+  </li>
+</ul>
+<p>
+  一方，HTMLを使うデメリットも存在する．
+</p>
+<ul>
+  <li>
+    テンプレートによってCSSやHTMLのタグ構造が決められているので，
+    そのルールを把握しながらHTMLを編集する必要がある
+  </li>
+  <li>
+    CSSやJavaScriptが巧みに使われていることが多く，テンプレートに定義された
       <span class="bold red">
         既存のスタイルを安易に変更すると表示が崩れる可能性がある
       </span>（特にmargin, padding, borderなど，
-      ブロックサイズを変更したときにありがち）
-    </li>
-  </ul>
-  <p>
-    こうしたデメリットもあるが，少なくとも初心者の間はHTMLテンプレートを元に
-    Webページを作成する方が最終的に見た目の良いサイトが作れるので，
-    まずはHTMLテンプレートの使い方に慣れておくと良い．
-    HTMLに慣れてくれば，テンプレートの中から自分の使いたいスタイル部分を抜き出して利用するなどの応用も
-    できるようになる．
-  </p>
-  
-  <h3>
-    HTMLテンプレートを取得する
-  </h3>
-  <p>
-    HTMLテンプレートは「free html templates」などの検索ワードで検索すれば
-    非常に多くの無料テンプレートを見つけることができる．
-    ただし，テンプレートごとに有償・無償，商業利用の可・不可が変わってくるので，
-    利用する前には必ずライセンスを確認すること．
-    また，本講義ではHTML5を扱っているので，テンプレートがHTML5で作られているかどうかの確認も必要になる．
-  </p>
-  <p>
-    以下に，HTML5の無料テンプレートを配布しているサイトを挙げる．
-  </p>
-  <ul>
-    <li><a href="http://freehtml5templates.com/">Free HTML5 Templates</a></li>
-  </ul>
-  
-  <h3>
-    HTMLテンプレートからWebサイトを作成する
-  </h3>
-  <p>
-    ここからは，実際にHTMLテンプレートからWebサイトを作成する手順を解説していく
-  </p>
-  
-  <h4>
-    大まかな手順
-  </h4>
-  <ol>
-    <li>
-      サイトの完成形にできるだけ近いレイアウトのテンプレートを探す
-    </li>
-    <li>
-      テンプレートをダウンロードし，まずは正常に表示できるか確かめる
-    </li>
-    <li>
-      必要のないブロックを表示が崩れないように気をつけながら削除する
-    </li>
-    <li>
-      必要なブロックを表示が崩れないように気をつけながら追加していく
-    </li>
-    <li>
-      テンプレートの本文を作りたいWebサイトの内容に置き換えていく
-    </li>
-  </ol>
-  
-  <h4>
+    ブロックサイズを変更したときにありがち）
+  </li>
+</ul>
+<p>
+  こうしたデメリットもあるが，少なくとも初心者の間はHTMLテンプレートを元に
+  Webページを作成する方が最終的に見た目の良いサイトが作れるので，
+  まずはHTMLテンプレートの使い方に慣れておくと良い．
+  HTMLに慣れてくれば，テンプレートの中から自分の使いたいスタイル部分を抜き出して利用するなどの応用も
+  できるようになる．
+</p>
+
+<h3>
+  HTMLテンプレートを取得する
+</h3>
+
+<p>
+  HTMLテンプレートは「free html templates」などの検索ワードで検索すれば
+  非常に多くの無料テンプレートを見つけることができる．
+  ただし，テンプレートごとに有償・無償，商業利用の可・不可が変わってくるので，
+  利用する前には必ずライセンスを確認すること．
+  また，本講義ではHTML5を扱っているので，テンプレートがHTML5で作られているかどうかの確認も必要になる．
+</p>
+
+<p>
+  以下に，HTML5の無料テンプレートを配布しているサイトを挙げる．
+</p>
+<ul>
+  <li><a href="http://freehtml5templates.com/">Free HTML5 Templates</a></li>
+</ul>
+
+<h3>
+  HTMLテンプレートからWebサイトを作成する
+</h3>
+
+<p>
+  ここからは，実際にHTMLテンプレートからWebサイトを作成する手順を解説していく
+</p>
+
+<h4>
+  大まかな手順
+</h4>
+<ol>
+  <li>
     サイトの完成形にできるだけ近いレイアウトのテンプレートを探す
-  </h4>
-  <p>
-    まずは，どのテンプレートを使うかを決める必要がある．
-    テンプレート選びの際に気をつけるのは，
+  </li>
+  <li>
+    テンプレートをダウンロードし，まずは正常に表示できるか確かめる
+  </li>
+  <li>
+    必要のないブロックを表示が崩れないように気をつけながら削除する
+  </li>
+  <li>
+    必要なブロックを表示が崩れないように気をつけながら追加していく
+  </li>
+  <li>
+    テンプレートの本文を作りたいWebサイトの内容に置き換えていく
+  </li>
+</ol>
+
+<h4>
+  サイトの完成形にできるだけ近いレイアウトのテンプレートを探す
+</h4>
+
+<p>
+  まずは，どのテンプレートを使うかを決める必要がある．
+  テンプレート選びの際に気をつけるのは，
     <span class="bold red">
       必要なブロックが存在し，必要ないブロックが無い必要十分なテンプレートを選択すること
     </span>
-    である．
-    多くのテンプレートでは，大体のブロックは共通しているが，ものによってある場合とない場合があるブロックも存在する．
-    以下に主なホームページの構成要素を示す．
-  </p>
-  <ul>
-    <li>
-      ヘッダ（ほとんどの場合ある）
-    </li>
-    <li>
-      ヘッダナビゲーション（ない場合もある）
-    </li>
-    <li>
-      左サイドメニュー（ない場合もある．二段組みの場合も）
-    </li>
-    <li>
-      右サイドメニュー（ない場合もある．二段組みの場合も）
-    </li>
-    <li>
-      本文エリア（かならずあるが，二段組み，三段組の場合も）
-    </li>
-    <li>
-      フッタナビゲーション（ない場合もある）
-    </li>
-    <li>
-      フッタ（ほとんどの場合ある）
-    </li>
-  </ul>
-  <p>
-    参考までに，Free HTML5 Templatesサイトの
-    <a href="http://freehtml5templates.com/sweetsniffs-html5-and-css3-template/">SweetSniffs</a>
-    の場合，下図のような構成になっている．
-  </p>
-  <img src="images/use_templates01.png" width="600" alt="use_templates01" />
-  <br /><br />
-  <p>
-    一方，この授業ページでも使っている
-    <a href="http://freehtml5templates.com/tothepoint-html5-and-css3-template/">
-      ToThePoint
-    </a>
-    では，下図の構成になっている．
-  </p>
-  <img src="images/use_templates02.png" width="600" alt="use_templates02" />
-  <br /><br />
-  
-  <p>
-    二つのテンプレートを見比べてみると，以下の点が異なることが分かる．
-  </p>
-  <ul>
-    <li>SweetSniffsではサイドメニューが二つあるのに対し，ToThePointは左サイドメニューしかなく，その分本文エリアが広い</li>
-    <li>
-      SweetSniffsはフッタにもナビゲーションがあるため，多くのページが存在することを匂わせている
-    </li>
-  </ul>
-  
-  <p>
-    全体として，SweetSniffの方がサイドメニューやフッタナビゲーションが多い分，たくさんのコンテンツを表示するのに
-    適していることが分かる．
-    一方，ToThePointはシンプルな分，本文エリアも広く，ページ数が少ない場合に適しているように思われる．
-  </p>
-  <p>
-    このように，使いたいテンプレートがどのようなブロックで構成されているかを把握しておくと，
-    どのブロックにどの情報を置くのかという目星を付けられる．
-    また，ページ数が少ないサイトにSweetSniffの様な沢山ナビゲーションのあるテンプレートを適用してしまうと，
-    最終的に中身がスカスカになってしまい見栄えが良くないという問題も起こりうるので，テンプレート選びには注意が必要である．
-  </p>
-  
-  <h4>
-    テンプレートをダウンロードし，まずは正常に表示できるか確かめる
-  </h4>
-  <p>
-    使用するテンプレートを決めたら，まずは何も編集しない状態でうまく表示できるかを試してみる．
-    ここでは
-    <a href="http://freehtml5templates.com/cowboyup-html5-and-css3-template/">
-      CowboyUp
-    </a>
-    というテンプレートを使ってみることにする．
-  </p>
-  <p>
-    <a href="http://freehtml5templates.com/cowboyup-html5-and-css3-template/">
-      CowboyUpのテンプレートサイト
-    </a>
-    から「Download Here」を選び，ZIPファイルをダウンロードする．
-    中に入っているファイル構成は下図の様になっている．
-  </p>
-  <img src="images/use_templates03.png" alt="use_templates03" />
-  <br /><br />
-  
-  <p>
-    次に，このフォルダの中身を全て公開フォルダにコピーする．ここではpublic_html以下にitb_templateというフォルダを作って
-    その中にコピーした．
-  </p>
-  <img src="images/use_templates04.png" alt="use_templates04" />
-  <br /><br />
-  
-  <p>
-    この状態で，ファイルを置いたURLにアクセスしてみる．この場合は
-    <a href="http://web.sfc.keio.ac.jp/~morimori/itb_template/">
-      http://web.sfc.keio.ac.jp/~morimori/itb_template/
-    </a>
-    になる．
-    ここで，正しくテンプレートが表示されているので準備段階はOKである．
-    もしこの時点で正しく表示できない場合は，テンプレートを編集する以前の問題なので，ファイルのアクセス権などを確認すること．
-  </p>
-  
-  <h4>
-    必要のないブロックを表示が崩れないように気をつけながら削除する
-  </h4>
-  <p>
-    次に，作りたいWebサイトに必要のないブロックを削っていく．
-    このテンプレートの場合，まずは右サイドメニューの「Things To Do」「Our Sponsers」は
-    とりあえず必要が無かったので，該当部分を削除する．
-    どこを削除すればよいかはFirebugを使うと分かりやすい．Firebugを起動し，
-    <img src="images/icon_firebug.png" alt="firebug" />アイコンを
-    クリックした状態で，調べたいブロックをクリックする．
-    すると，Things To Doはaside id="sidebar"タグの中の中にあることが分かった．
-  </p>
-  <img src="images/use_templates05.png" alt="use_templates05" width="600" />
-  <br /><br />
-  
-  <p>
-    ここまで分かれば，後はHTMLから該当部分を削除していけば良い．以下のハイライトした部分を削除する．
-  </p>
+  である．
+  多くのテンプレートでは，大体のブロックは共通しているが，ものによってある場合とない場合があるブロックも存在する．
+  以下に主なホームページの構成要素を示す．
+</p>
+<ul>
+  <li>
+    ヘッダ（ほとんどの場合ある）
+  </li>
+  <li>
+    ヘッダナビゲーション（ない場合もある）
+  </li>
+  <li>
+    左サイドメニュー（ない場合もある．二段組みの場合も）
+  </li>
+  <li>
+    右サイドメニュー（ない場合もある．二段組みの場合も）
+  </li>
+  <li>
+    本文エリア（かならずあるが，二段組み，三段組の場合も）
+  </li>
+  <li>
+    フッタナビゲーション（ない場合もある）
+  </li>
+  <li>
+    フッタ（ほとんどの場合ある）
+  </li>
+</ul>
+<p>
+  参考までに，Free HTML5 Templatesサイトの
+  <a href="http://freehtml5templates.com/sweetsniffs-html5-and-css3-template/">SweetSniffs</a>
+  の場合，下図のような構成になっている．
+</p>
+<img src="images/use_templates01.png" width="600" alt="use_templates01"/>
+<br/><br/>
+
+<p>
+  一方，この授業ページでも使っている
+  <a href="http://freehtml5templates.com/tothepoint-html5-and-css3-template/">
+    ToThePoint
+  </a>
+  では，下図の構成になっている．
+</p>
+<img src="images/use_templates02.png" width="600" alt="use_templates02"/>
+<br/><br/>
+
+<p>
+  二つのテンプレートを見比べてみると，以下の点が異なることが分かる．
+</p>
+<ul>
+  <li>SweetSniffsではサイドメニューが二つあるのに対し，ToThePointは左サイドメニューしかなく，その分本文エリアが広い</li>
+  <li>
+    SweetSniffsはフッタにもナビゲーションがあるため，多くのページが存在することを匂わせている
+  </li>
+</ul>
+
+<p>
+  全体として，SweetSniffの方がサイドメニューやフッタナビゲーションが多い分，たくさんのコンテンツを表示するのに
+  適していることが分かる．
+  一方，ToThePointはシンプルな分，本文エリアも広く，ページ数が少ない場合に適しているように思われる．
+</p>
+
+<p>
+  このように，使いたいテンプレートがどのようなブロックで構成されているかを把握しておくと，
+  どのブロックにどの情報を置くのかという目星を付けられる．
+  また，ページ数が少ないサイトにSweetSniffの様な沢山ナビゲーションのあるテンプレートを適用してしまうと，
+  最終的に中身がスカスカになってしまい見栄えが良くないという問題も起こりうるので，テンプレート選びには注意が必要である．
+</p>
+
+<h4>
+  テンプレートをダウンロードし，まずは正常に表示できるか確かめる
+</h4>
+
+<p>
+  使用するテンプレートを決めたら，まずは何も編集しない状態でうまく表示できるかを試してみる．
+  ここでは
+  <a href="http://freehtml5templates.com/cowboyup-html5-and-css3-template/">
+    CowboyUp
+  </a>
+  というテンプレートを使ってみることにする．
+</p>
+
+<p>
+  <a href="http://freehtml5templates.com/cowboyup-html5-and-css3-template/">
+    CowboyUpのテンプレートサイト
+  </a>
+  から「Download Here」を選び，ZIPファイルをダウンロードする．
+  中に入っているファイル構成は下図の様になっている．
+</p>
+<img src="images/use_templates03.png" alt="use_templates03"/>
+<br/><br/>
+
+<p>
+  次に，このフォルダの中身を全て公開フォルダにコピーする．ここではpublic_html以下にitb_templateというフォルダを作って
+  その中にコピーした．
+</p>
+<img src="images/use_templates04.png" alt="use_templates04"/>
+<br/><br/>
+
+<p>
+  この状態で，ファイルを置いたURLにアクセスしてみる．この場合は
+  <a href="http://web.sfc.keio.ac.jp/~morimori/itb_template/">
+    http://web.sfc.keio.ac.jp/~morimori/itb_template/
+  </a>
+  になる．
+  ここで，正しくテンプレートが表示されているので準備段階はOKである．
+  もしこの時点で正しく表示できない場合は，テンプレートを編集する以前の問題なので，ファイルのアクセス権などを確認すること．
+</p>
+
+<h4>
+  必要のないブロックを表示が崩れないように気をつけながら削除する
+</h4>
+
+<p>
+  次に，作りたいWebサイトに必要のないブロックを削っていく．
+  このテンプレートの場合，まずは右サイドメニューの「Things To Do」「Our Sponsers」は
+  とりあえず必要が無かったので，該当部分を削除する．
+  どこを削除すればよいかはFirebugを使うと分かりやすい．Firebugを起動し，
+  <img src="images/icon_firebug.png" alt="firebug"/>アイコンを
+  クリックした状態で，調べたいブロックをクリックする．
+  すると，Things To Doはaside id="sidebar"タグの中の中にあることが分かった．
+</p>
+<img src="images/use_templates05.png" alt="use_templates05" width="600"/>
+<br/><br/>
+
+<p>
+  ここまで分かれば，後はHTMLから該当部分を削除していけば良い．以下のハイライトした部分を削除する．
+</p>
   
   <pre class="brush: xml;highlight: [2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
   &lt;aside id="sidebar"&gt;&lt;!-- sidebar --&gt;
@@ -345,18 +358,18 @@ $(function(){
 			&lt;/ul&gt;
   &lt;/aside&gt;&lt;!-- end of sidebar --&gt;
   </pre>
-  
-  <p>
-    削除したら，内容を保存し，ブラウザで表示が崩れないかを確認する．
-  </p>
-  <img src="images/use_templates06.png" alt="use_templates06" width="600" />
-  <br /><br />
-  
-  <p>
-    同じ様に，フッタや他の部分からも必要のない部分を削除していけば良い．
-    この時点ではトップページしか無いので，ヘッダナビゲーションの「Home」以外の要素は全て削除した．
-    具体的には，下図のハイライト部分を削除している．
-  </p>
+
+<p>
+  削除したら，内容を保存し，ブラウザで表示が崩れないかを確認する．
+</p>
+<img src="images/use_templates06.png" alt="use_templates06" width="600"/>
+<br/><br/>
+
+<p>
+  同じ様に，フッタや他の部分からも必要のない部分を削除していけば良い．
+  この時点ではトップページしか無いので，ヘッダナビゲーションの「Home」以外の要素は全て削除した．
+  具体的には，下図のハイライト部分を削除している．
+</p>
   <pre class="brush: xml;highlight: [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]">
   &lt;nav&gt;&lt;!-- top nav --&gt;
 		&lt;div class="menu"&gt;
@@ -386,81 +399,89 @@ $(function(){
 		&lt;/div&gt;
 	&lt;/nav&gt;&lt;!-- end of top nav --&gt;
 	</pre>
-  
-  <h4>
-    必要なブロックを表示が崩れないように気をつけながら追加していく
-  </h4>
-  <p>
-    次に，新たにブロックを追加してみる．
-    ここではサイドメニューにGoogle Mapsのウィジェットを追加する例を挙げる．
-    サイドメニューは前節でも確認したとおり，aside id="sidebar"タグの中になるので，その末尾に
-    Google Mapsのタグを追加してみたところ，下図のようになった．
-  </p>
-  <img src="images/use_templates07.png" alt="use_templates07" width="600" />
-  <br /><br />
 
-  <p>
-    ここで，よく見るとGoogle Mapsウィジェットの右側が切れてしまっていることが分かる．
-    これは，Google Mapsウィジェットの幅が425px（デフォルト）で指定されているのに，
-    サイドメニューの幅が280pxしか無いのが原因である（この幅はFirebugで調べることができる）．
-  </p>
-  <p>
-    というわけで，Google Mapsウィジェットの「埋め込み地図のカスタマイズ」機能から，
-    横幅を280pxに指定し直し，修正したものが下図である．
-    先ほどは右側が切れてしまっていたのが，今度は画面内にナビゲーションボタンが収まっていることが
-    確認できる．
-  </p>
-  <img src="images/use_templates08.png" alt="use_templates08" width="600" />
-  <br /><br />
-  <p>
-    このように，新しく要素を追加していくときには，一つ一つ正しく表示されるかを確認し，
-    表示が崩れてしまうときはその時々に応じてサイズを調整したり，スタイルを追加していく必要がある．
-  </p>
-  
-  <h4>
-    テンプレートの本文を作りたいWebサイトの内容に置き換えていく
-  </h4>
-  <p>
-    必要なブロックが揃ったら，中間課題と同じ様に後は内容を本来作りたいWebサイトのものに置き換えていけば良い．
-    この際，元のテンプレートに無かったコンテンツを貼り付けるときには，新たにスタイルを追加する必要が
-    出てくることがある．
-    その際には他の部分の表示が崩れないかを注意深く確認しながら
-    一つずつ編集していくと良い．
-  </p>
-  <p>
-    また，複数ページで構成されるWebサイトの場合は，各ページへのナビゲーションリンクも
-    正しく設定してやる必要があることに注意する．
-  </p>
+<h4>
+  必要なブロックを表示が崩れないように気をつけながら追加していく
+</h4>
 
-  
-  <h3>
-    二枚目以降のページを作成し，ナビゲーションリンクを貼る
-  </h3>
-  <p>
-    Webサイト複数ページで構成されるのが普通である．
-    ここでは最初に作ったトップページを元に，２枚目以降のページを作成する．
-    なお，二度手間を防ぐために，二枚目以降のページを作る前にサイト共通の部分
-    （ヘッダ・フッタ・サイドバーなど）は完成させておくことが望ましい．
-  </p>
-  
-  <h4>
-    なにはともあれコピー
-  </h4>
-  <p>
-    ここでは，トップページ「Home（index.html）」を元に，連絡先ページ「Contact Us（contact_us.html）」
-    を作成することにする．
-    index.htmlをそのままcontact_us.htmlにコピーする．
-  </p>
-  <img src="images/use_templates09.png" alt="use_templates09" />
-  <br /><br />
-  <p>
-    次に，index.html, contact_us.html両方のナビゲーション部分にお互いへのリンクを貼る．
-    このHTMLテンプレートにおいては，ヘッダナビゲーションはnavタグで囲まれた部分にある．
-    そのナビゲーション部分を下記のように書き換える．
+<p>
+  次に，新たにブロックを追加してみる．
+  ここではサイドメニューにGoogle Mapsのウィジェットを追加する例を挙げる．
+  サイドメニューは前節でも確認したとおり，aside id="sidebar"タグの中になるので，その末尾に
+  Google Mapsのタグを追加してみたところ，下図のようになった．
+</p>
+<img src="images/use_templates07.png" alt="use_templates07" width="600"/>
+<br/><br/>
+
+<p>
+  ここで，よく見るとGoogle Mapsウィジェットの右側が切れてしまっていることが分かる．
+  これは，Google Mapsウィジェットの幅が425px（デフォルト）で指定されているのに，
+  サイドメニューの幅が280pxしか無いのが原因である（この幅はFirebugで調べることができる）．
+</p>
+
+<p>
+  というわけで，Google Mapsウィジェットの「埋め込み地図のカスタマイズ」機能から，
+  横幅を280pxに指定し直し，修正したものが下図である．
+  先ほどは右側が切れてしまっていたのが，今度は画面内にナビゲーションボタンが収まっていることが
+  確認できる．
+</p>
+<img src="images/use_templates08.png" alt="use_templates08" width="600"/>
+<br/><br/>
+
+<p>
+  このように，新しく要素を追加していくときには，一つ一つ正しく表示されるかを確認し，
+  表示が崩れてしまうときはその時々に応じてサイズを調整したり，スタイルを追加していく必要がある．
+</p>
+
+<h4>
+  テンプレートの本文を作りたいWebサイトの内容に置き換えていく
+</h4>
+
+<p>
+  必要なブロックが揃ったら，中間課題と同じ様に後は内容を本来作りたいWebサイトのものに置き換えていけば良い．
+  この際，元のテンプレートに無かったコンテンツを貼り付けるときには，新たにスタイルを追加する必要が
+  出てくることがある．
+  その際には他の部分の表示が崩れないかを注意深く確認しながら
+  一つずつ編集していくと良い．
+</p>
+
+<p>
+  また，複数ページで構成されるWebサイトの場合は，各ページへのナビゲーションリンクも
+  正しく設定してやる必要があることに注意する．
+</p>
+
+
+<h3>
+  二枚目以降のページを作成し，ナビゲーションリンクを貼る
+</h3>
+
+<p>
+  Webサイト複数ページで構成されるのが普通である．
+  ここでは最初に作ったトップページを元に，２枚目以降のページを作成する．
+  なお，二度手間を防ぐために，二枚目以降のページを作る前にサイト共通の部分
+  （ヘッダ・フッタ・サイドバーなど）は完成させておくことが望ましい．
+</p>
+
+<h4>
+  なにはともあれコピー
+</h4>
+
+<p>
+  ここでは，トップページ「Home（index.html）」を元に，連絡先ページ「Contact Us（contact_us.html）」
+  を作成することにする．
+  index.htmlをそのままcontact_us.htmlにコピーする．
+</p>
+<img src="images/use_templates09.png" alt="use_templates09"/>
+<br/><br/>
+
+<p>
+  次に，index.html, contact_us.html両方のナビゲーション部分にお互いへのリンクを貼る．
+  このHTMLテンプレートにおいては，ヘッダナビゲーションはnavタグで囲まれた部分にある．
+  そのナビゲーション部分を下記のように書き換える．
     <span class="bold red">
       必ずindex.html, contact_us.html両方のナビゲーションを修正すること．
     </span>
-  </p>
+</p>
   
   <pre class="brush: xml;highlight: [4,5]">
   &lt;nav&gt;&lt;!-- top nav --&gt;
@@ -472,32 +493,33 @@ $(function(){
 		&lt;/div&gt;
 	&lt;/nav&gt;&lt;!-- end of top nav --&gt;
 	</pre>
-	
-  <p>
-    書き換えた結果，ヘッダナビゲーション部分は下図の様になる．
-  </p>
-  <img src="images/use_templates10.png" alt="use_templates10" width="600" />
-  <br /><br />
-  
-  <p>
-    これで，それぞれのリンクをクリックすることでお互いのページに飛ぶことが出来るようになった．
-    ここまで確認できたらcontact_us.htmlを本来の内容に修正していけば良い．
-    さらにページを増やす場合，
+
+<p>
+  書き換えた結果，ヘッダナビゲーション部分は下図の様になる．
+</p>
+<img src="images/use_templates10.png" alt="use_templates10" width="600"/>
+<br/><br/>
+
+<p>
+  これで，それぞれのリンクをクリックすることでお互いのページに飛ぶことが出来るようになった．
+  ここまで確認できたらcontact_us.htmlを本来の内容に修正していけば良い．
+  さらにページを増やす場合，
     <span class="bold red">
       既に作成した全てのページのナビゲーション部分を修正する必要がある
     </span>
-    事を忘れないこと．
-    これを忘れてしまうと，ページによってナビゲーションの内容が変わってしまう．
-  </p>
-  
-  <h3>
-    まとめ
-  </h3>
-  <p>
-    本ページでは，既存のHTMLテンプレートから作りたいWebページを作成していく手順について解説した．
-    より手軽に見栄えの良いWebサイトを作る方法として知っておくと良いだろう．
-  </p>
-  
+  事を忘れないこと．
+  これを忘れてしまうと，ページによってナビゲーションの内容が変わってしまう．
+</p>
+
+<h3>
+  まとめ
+</h3>
+
+<p>
+  本ページでは，既存のHTMLテンプレートから作りたいWebページを作成していく手順について解説した．
+  より手軽に見栄えの良いWebサイトを作る方法として知っておくと良いだろう．
+</p>
+
 </article>
 
 <aside>
@@ -524,7 +546,7 @@ $(function(){
   </section>
 </aside>
 
-<!-- フッタ --> 
+<!-- フッタ -->
 <footer>
   <p>Copyright&copy; 2013 SFC</p>
 </footer>
@@ -535,10 +557,13 @@ $(function(){
   _gaq.push(['_setAccount', 'UA-23811911-1']);
   _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
   })();
 
 </script>

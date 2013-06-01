@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <title>情報基礎授業資料 HTML5/CSS3によるサイト構築</title>
   <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
-  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
-  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
-  
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css"/>
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css"/>
+
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -14,74 +14,75 @@
   <script type="text/javascript" src="javascripts/shCore.js"></script>
   <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
   <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
-  
+
 </head>
 <body>
 <script type="text/javascript">
-$(function(){
-  SyntaxHighlighter.all();  
-});
+  $(function () {
+    SyntaxHighlighter.all();
+  });
 </script>
-  
+
 <!-- ヘッダ -->
 <header>
   <h1>HTML5/CSS3によるサイト構築</h1>
+
   <p>SFC情報基礎授業資料</p>
 </header>
 
-<!--ナビゲーション --> 
+<!--ナビゲーション -->
 <nav>
   <div class="menu">
-  <ul>
-    <li>
-      <!-- ファイル名を省略するとindex.htmlを表示する -->
-      <a href="./">Home</a>
-    </li>
-    <li>
-      <a href="./lecture01.html">第6回</a>
-    </li>
-    <li>
-      <a href="./lecture02.html">第7回</a>
-    </li>
-    <li>
-      <a href="./lecture03.html">第8回</a>
-    </li>
-    <li>
-      <a href="./mid_report.html">中間課題</a>
-    </li>
-    <li>
-      <a href="./final_report.html">最終課題</a>
-    </li>
-    <li>
-      <a href="./sshfs.html">SSHFS</a>
-    </li>
-    <li>
-      <a href="./appendix.html" class="current">Appendix</a>
-      <ul>
-        <li><a href="./character_encoding.html">
-          文字化けと文字コード
-        </a></li>
-        <li><a href="./cross_browser.html">
-          クロスブラウザ対応
-        </a></li>
-        <li><a href="./html_entities.html">
-          HTMLエンティティ</a>
-        </li>
-        <li><a href="./advanced_css.html" class="current">
-          CSSをもう少し詳しく理解する</a>
-        </li>
-        <li><a href="./useful_tags.html">
-          よく使うHTMLタグと使い方</a>
-        </li>
-        <li><a href="./use_templates.html">
-          HTMLテンプレートからサイトを構築する</a>
-        </li>
-        <li><a href="./photoshop.html">
-          Photoshopを使った画像加工と画面効果</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
+    <ul>
+      <li>
+        <!-- ファイル名を省略するとindex.htmlを表示する -->
+        <a href="./">Home</a>
+      </li>
+      <li>
+        <a href="./lecture01.html">第6回</a>
+      </li>
+      <li>
+        <a href="./lecture02.html">第7回</a>
+      </li>
+      <li>
+        <a href="./lecture03.html">第8回</a>
+      </li>
+      <li>
+        <a href="./mid_report.html">中間課題</a>
+      </li>
+      <li>
+        <a href="./final_report.html">最終課題</a>
+      </li>
+      <li>
+        <a href="./sshfs.html">SSHFS</a>
+      </li>
+      <li>
+        <a href="./appendix.html" class="current">Appendix</a>
+        <ul>
+          <li><a href="./character_encoding.html">
+            文字化けと文字コード
+          </a></li>
+          <li><a href="./cross_browser.html">
+            クロスブラウザ対応
+          </a></li>
+          <li><a href="./html_entities.html">
+            HTMLエンティティ</a>
+          </li>
+          <li><a href="./advanced_css.html" class="current">
+            CSSをもう少し詳しく理解する</a>
+          </li>
+          <li><a href="./useful_tags.html">
+            よく使うHTMLタグと使い方</a>
+          </li>
+          <li><a href="./use_templates.html">
+            HTMLテンプレートからサイトを構築する</a>
+          </li>
+          <li><a href="./photoshop.html">
+            Photoshopを使った画像加工と画面効果</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </nav>
 
@@ -90,6 +91,7 @@ $(function(){
   <h2>
     CSSをもう少し詳しく理解する
   </h2>
+
   <p>
     第7回でCSSの基礎的な内容を紹介したが，CSSにはもっと多くの機能がある．
     本ページではそうしたCSSの応用的な内容について解説する．
@@ -99,17 +101,19 @@ $(function(){
     </a>
     の内容をベースに，一部を抜き出した物なので，より詳しい内容を知りたい場合はそちらを参照すること．
   </p>
-  
+
   <h3>
     クラスの使い方についてもう少し詳しく
   </h3>
+
   <p>
     良いCSSを書くためには，CSSクラスの理解が不可欠である．本説では特に子孫セレクタと複数クラスの同時指定について解説する．
   </p>
-  
+
   <h4>
     子孫セレクタ
   </h4>
+
   <p>
     第7回の内容では，セレクタにはタグ名やクラス，idを指定することができると解説した．
     しかし，もっと細かい条件でセレクタを指定することが可能である．
@@ -127,6 +131,7 @@ $(function(){
     しかし，ここで作った「important」クラスは，HTML全体に適用される．例えば，headerタグ内でもarticleでも，
     とにかくimportantクラスを指定すると前述のスタイルが適用されてしまう．
   </p>
+
   <p>
     通常はこのような挙動で問題は無いのだが，
     <span class="red bold">
@@ -135,6 +140,7 @@ $(function(){
     例えば，header領域の背景色が黒で，article領域の背景色が白だった場合，強調させたい時には別の色を用いたい場合が
     あるかもしれない．また，表示するフォントサイズなども適宜変更したいという場合があり得る．
   </p>
+
   <p>
     この場合，これまでやってきた方法で対応しようとすると，header用とarticle用の
     二つのクラスを以下のように定義することになる．
@@ -158,7 +164,7 @@ $(function(){
     しかし，この対応方法だと，さらにナビゲーション部分やフッタ部分で同じことをやろうとしたときに，
     <span class="red bold">クラス名がどんどん煩雑になっていってしまうという問題がある</span>．
   </p>
-  
+
   <p>
     これを解決するのが<span class="red bold">
       子孫セレクタ
@@ -212,16 +218,18 @@ $(function(){
   <a href="resources/advanced_css-01.html">
     サンプルコード
   </a>
+
   <p>
     子孫セレクタは上記の様なシチュエーションの他にも，細かくセレクタを指定することで，そのスタイルが
     HTMLのどこで使われているかを見やすくするという利点もある．
     必要がなければ特に使いこなさなくても良いが，世の中で配布されているテンプレートでは
     当たり前の様に使われているので，それらを改変する時には上記の知識が必要である．
   </p>
-  
+
   <h4>
     複数クラスの同時指定
   </h4>
+
   <p>
     属性にクラス名を記述する際，同時に複数のクラスを指定することができる．
     複数クラスを指定する際は，<span class="bold red">クラス名を指定する際にスペースを空けてクラス名を記述していく</span>．
@@ -261,11 +269,12 @@ $(function(){
   <a href="resources/advanced_css-02.html">
     サンプルコード
   </a>
+
   <p>
     このように，複数クラスの同時指定をうまく利用すると，スタイルシートの重複を避けたり，
     HTMLファイルの見通しがよくなったりするので，うまく活用できるところでは活用すると良い．
   </p>
-  
+
 </article>
 
 
@@ -293,7 +302,7 @@ $(function(){
   </section>
 </aside>
 
-<!-- フッタ --> 
+<!-- フッタ -->
 <footer>
   <p>Copyright&copy; 2013 SFC</p>
 </footer>
@@ -304,10 +313,13 @@ $(function(){
   _gaq.push(['_setAccount', 'UA-23811911-1']);
   _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
   })();
 
 </script>

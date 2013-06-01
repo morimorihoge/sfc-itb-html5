@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <title>情報基礎授業資料 HTML5/CSS3によるサイト構築</title>
   <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
-  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
-  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
-  
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css"/>
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css"/>
+
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -14,166 +14,172 @@
   <script type="text/javascript" src="javascripts/shCore.js"></script>
   <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
   <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
-  
+
 </head>
 <body>
 <script type="text/javascript">
-$(function(){
-  SyntaxHighlighter.all();  
-});
+  $(function () {
+    SyntaxHighlighter.all();
+  });
 </script>
-  
+
 <!-- ヘッダ -->
 <header>
   <h1>HTML5/CSS3によるサイト構築</h1>
+
   <p>SFC情報基礎授業資料</p>
 </header>
 
-<!--ナビゲーション --> 
+<!--ナビゲーション -->
 <nav>
   <div class="menu">
-  <ul>
-    <li>
-      <!-- ファイル名を省略するとindex.htmlを表示する -->
-      <a href="./">Home</a>
-    </li>
-    <li>
-      <a href="./lecture01.html">第6回</a>
-    </li>
-    <li>
-      <a href="./lecture02.html">第7回</a>
-    </li>
-    <li>
-      <a href="./lecture03.html" class="current">第8回</a>
-    </li>
-    <li>
-      <a href="./mid_report.html">中間課題</a>
-    </li>
-    <li>
-      <a href="./final_report.html">最終課題</a>
-    </li>
-    <li>
-      <a href="./sshfs.html">SSHFS</a>
-    </li>
-    <li>
-      <a href="./appendix.html">Appendix</a>
-      <ul>
-        <li><a href="./character_encoding.html">
-          文字化けと文字コード
-        </a></li>
-        <li><a href="./cross_browser.html">
-          クロスブラウザ対応
-        </a></li>
-        <li><a href="./html_entities.html">
-          HTMLエンティティ</a>
-        </li>
-        <li><a href="./advanced_css.html">
-          CSSをもう少し詳しく理解する</a>
-        </li>
-        <li><a href="./useful_tags.html">
-          よく使うHTMLタグと使い方</a>
-        </li>
-        <li><a href="./use_templates.html">
-          HTMLテンプレートからサイトを構築する</a>
-        </li>
-        <li><a href="./photoshop.html">
-          Photoshopを使った画像加工と画面効果</a>
-        </li>     
-      </ul>
-    </li>
-  </ul>
+    <ul>
+      <li>
+        <!-- ファイル名を省略するとindex.htmlを表示する -->
+        <a href="./">Home</a>
+      </li>
+      <li>
+        <a href="./lecture01.html">第6回</a>
+      </li>
+      <li>
+        <a href="./lecture02.html">第7回</a>
+      </li>
+      <li>
+        <a href="./lecture03.html" class="current">第8回</a>
+      </li>
+      <li>
+        <a href="./mid_report.html">中間課題</a>
+      </li>
+      <li>
+        <a href="./final_report.html">最終課題</a>
+      </li>
+      <li>
+        <a href="./sshfs.html">SSHFS</a>
+      </li>
+      <li>
+        <a href="./appendix.html">Appendix</a>
+        <ul>
+          <li><a href="./character_encoding.html">
+            文字化けと文字コード
+          </a></li>
+          <li><a href="./cross_browser.html">
+            クロスブラウザ対応
+          </a></li>
+          <li><a href="./html_entities.html">
+            HTMLエンティティ</a>
+          </li>
+          <li><a href="./advanced_css.html">
+            CSSをもう少し詳しく理解する</a>
+          </li>
+          <li><a href="./useful_tags.html">
+            よく使うHTMLタグと使い方</a>
+          </li>
+          <li><a href="./use_templates.html">
+            HTMLテンプレートからサイトを構築する</a>
+          </li>
+          <li><a href="./photoshop.html">
+            Photoshopを使った画像加工と画面効果</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </nav>
 
 <!-- メインコンテンツ -->
 <article id="content" class="articlecontent">
-  <h2>第8回：画像の貼りつけとハイパーリンク，外部Webサービスの埋め込み</h2>
-  <p>
-    前回まででWebページ作成の基礎を学び，HTMLが書ける様になった．
-    今回ではWebページに任意の画像を貼り付ける方法と，他のページへのハイパーリンクを貼る方法について学ぶ．
-    また，昨今のWebページで一般的な外部Webサービスの埋め込みについても学習する．
-    第8回までの内容で，自己紹介のためのWebページを作るのを目標とする．
-  </p>
-  
-  <h3>画像の貼り付け</h3>
-  <p>
-    これまでの授業では，自分の Web ページを主に文字で構成することを学習した．
-    しかし，ページを閲覧する人がより内容について理解を深めるために，適切な画像や映像，地図といった
-    マルチメディアコンテンツを利用すべき場面がある．今回は，そうしたマルチメディアコンテンツを有効に利用するための方法について解説する．
-  </p>
-  
-  <p>
-    自己紹介のための Web ページを作ることになったので，
-    ここでは，自分の顔写真(あるいは似顔絵やイメージ画像)を名前のそばに添えてみよう．
-  </p>  
-  <img src="images/itb-07-1.png" width="600" alt="itb07-1" />
-  <br /><br />
-  
-  <h4>Photo Booth を使った写真の撮影</h4>
-  <p>
-    Finder から アプリケーション -&gt; Photo Booth を選択し，起動する．
-  </p>
-  <img src="images/itb-07-2.png" width="600" alt="itb07-2" />
-  <br /><br />
-  
-  <p>
-    Photo Booth は，Mac の画面上枠に埋めこまれているカメラを使って写真を撮影，加工することのできるソフトウェアである．
-    試しに自分の写真を撮影してみよう．
-  </p>
-  <img src="images/itb-07-3.png" width="600" alt="itb07-4" />
-  <br /><br />
+<h2>第8回：画像の貼りつけとハイパーリンク，外部Webサービスの埋め込み</h2>
 
-  <p>
-    「エフェクト」のメニューから，様々な効果を付加して撮影することもできる．
-  </p>
-  
-  <p>
-    撮影した画像は，自分のホームディレクトリの ピクチャ -&gt; Photo Booth の下に保存される．
-    ファイル名が「写真(日付)」と日本語で作成されているが，日本語ファイル名のままだとページへの貼付けに支障をきたすので
-    アルファベットのファイル名( taro_picture.jpg など)に変更しておこう．
-  </p>
-  
-  <h4>画像のサイズを調整する</h4>
-  <p>
-    ファイルを開くと，プレビューで写真が表示されるが，このまま Web ページに貼り付けるには少しサイズが大きすぎる．
-    適切なサイズに調整しよう．
-    ツール -&gt; サイズの調整 から写真のサイズを変更可能だ．幅，高さをそれぞれ半分の 320ピクセル * 240ピクセル にしておこう．
-  </p>
-  <img src="images/itb-07-4.png" width="600" alt="itb07-4" />
-  <br /><br />
-  
-  <p>
-    サイズの調整が終わったら ファイル -&gt; 保存 として忘れずにセーブしておく．
-    また，画像の特定の部分を切り抜くことも可能だ．
-    マウスをドラッグして切り抜きたい場所を選択する．
-  </p>
-  <img src="images/itb-07-11.png" width="600" alt="itb07-11" />
-  <br /><br />
-  
-  <p>
-    その後，ツール -&gt; 切り取り を選択すると，選択した箇所が切り取られて表示される．
-  </p>
-  <img src="images/itb-07-12.png" width="600" alt="itb07-12" />
-  <br /><br />
-  
-  <p>
-    切り抜きが終わったら，同じく ファイル -&gt; 保存 を選択してセーブしておこう．
-  </p>
-  
-  <h4>ページに貼りつけよう</h4>
-  <p>
-    画像の用意ができたら，実際に Web ページに貼りつけて表示させよう．
-    画像の表示には img タグを利用する．HTML 内の任意の場所で
-  </p>
+<p>
+  前回まででWebページ作成の基礎を学び，HTMLが書ける様になった．
+  今回ではWebページに任意の画像を貼り付ける方法と，他のページへのハイパーリンクを貼る方法について学ぶ．
+  また，昨今のWebページで一般的な外部Webサービスの埋め込みについても学習する．
+  第8回までの内容で，自己紹介のためのWebページを作るのを目標とする．
+</p>
+
+<h3>画像の貼り付け</h3>
+
+<p>
+  これまでの授業では，自分の Web ページを主に文字で構成することを学習した．
+  しかし，ページを閲覧する人がより内容について理解を深めるために，適切な画像や映像，地図といった
+  マルチメディアコンテンツを利用すべき場面がある．今回は，そうしたマルチメディアコンテンツを有効に利用するための方法について解説する．
+</p>
+
+<p>
+  自己紹介のための Web ページを作ることになったので，
+  ここでは，自分の顔写真(あるいは似顔絵やイメージ画像)を名前のそばに添えてみよう．
+</p>
+<img src="images/itb-07-1.png" width="600" alt="itb07-1"/>
+<br/><br/>
+
+<h4>Photo Booth を使った写真の撮影</h4>
+
+<p>
+  Finder から アプリケーション -&gt; Photo Booth を選択し，起動する．
+</p>
+<img src="images/itb-07-2.png" width="600" alt="itb07-2"/>
+<br/><br/>
+
+<p>
+  Photo Booth は，Mac の画面上枠に埋めこまれているカメラを使って写真を撮影，加工することのできるソフトウェアである．
+  試しに自分の写真を撮影してみよう．
+</p>
+<img src="images/itb-07-3.png" width="600" alt="itb07-4"/>
+<br/><br/>
+
+<p>
+  「エフェクト」のメニューから，様々な効果を付加して撮影することもできる．
+</p>
+
+<p>
+  撮影した画像は，自分のホームディレクトリの ピクチャ -&gt; Photo Booth の下に保存される．
+  ファイル名が「写真(日付)」と日本語で作成されているが，日本語ファイル名のままだとページへの貼付けに支障をきたすので
+  アルファベットのファイル名( taro_picture.jpg など)に変更しておこう．
+</p>
+
+<h4>画像のサイズを調整する</h4>
+
+<p>
+  ファイルを開くと，プレビューで写真が表示されるが，このまま Web ページに貼り付けるには少しサイズが大きすぎる．
+  適切なサイズに調整しよう．
+  ツール -&gt; サイズの調整 から写真のサイズを変更可能だ．幅，高さをそれぞれ半分の 320ピクセル * 240ピクセル にしておこう．
+</p>
+<img src="images/itb-07-4.png" width="600" alt="itb07-4"/>
+<br/><br/>
+
+<p>
+  サイズの調整が終わったら ファイル -&gt; 保存 として忘れずにセーブしておく．
+  また，画像の特定の部分を切り抜くことも可能だ．
+  マウスをドラッグして切り抜きたい場所を選択する．
+</p>
+<img src="images/itb-07-11.png" width="600" alt="itb07-11"/>
+<br/><br/>
+
+<p>
+  その後，ツール -&gt; 切り取り を選択すると，選択した箇所が切り取られて表示される．
+</p>
+<img src="images/itb-07-12.png" width="600" alt="itb07-12"/>
+<br/><br/>
+
+<p>
+  切り抜きが終わったら，同じく ファイル -&gt; 保存 を選択してセーブしておこう．
+</p>
+
+<h4>ページに貼りつけよう</h4>
+
+<p>
+  画像の用意ができたら，実際に Web ページに貼りつけて表示させよう．
+  画像の表示には img タグを利用する．HTML 内の任意の場所で
+</p>
   <pre class="brush: xml">
 　   &lt;img src="画像ファイルへの相対パス，もしくは URL" alt="代替名" /&gt;
   </pre>
-  <p>
-    と記述することで指定したファイルを表示できる．代替名は画像が見つからなかった場合に表示される文字列である．
-    今回は，resourcesディレクトリ内にあるHTMLファイルから，imagesというディレクトリににある画像を保存して表示する．
-    そのため，HTML ファイルから画像ファイルへの相対パスは "../images/taro_picture.jpg" であり，
-    以下の記述によって taro_picture.jpg をページ内に表示できる．
-  </p>
+<p>
+  と記述することで指定したファイルを表示できる．代替名は画像が見つからなかった場合に表示される文字列である．
+  今回は，resourcesディレクトリ内にあるHTMLファイルから，imagesというディレクトリににある画像を保存して表示する．
+  そのため，HTML ファイルから画像ファイルへの相対パスは "../images/taro_picture.jpg" であり，
+  以下の記述によって taro_picture.jpg をページ内に表示できる．
+</p>
   <pre class="brush: xml;highlight: [7];">
     &lt;!DOCTYPE html&gt;
     &lt;html&gt;
@@ -185,24 +191,27 @@ $(function(){
     &lt;/body&gt;
     &lt;/html&gt;
   </pre>
-  <a href="resources/lecture03-02.html">ブラウザで見る</a>
-  <p>
-    画像が表示されず，alt属性に設定した代替名が表示されている場合は，src属性に指定したパスが間違っているか，画像がそもそも存在しない
-    可能性があるので，確認すること．
-  </p>
-  
-  <h3>ハイパーリンクの作成</h3>
-  <p>
-    Webページはハイパーリンク（単にリンクとも呼ばれる）によって，マウスでクリックすることで別ページに遷移することができるのが特徴である．
-    ここではハイパーリンクの貼り方を学ぶ
-  </p>
-  
-  <h4>aタグによるハイパーリンク</h4>
-  <p>
-    ハイパーリンクの作成にはaタグを用いる．第7回でも少し解説したが，aタグのhref属性にリンク先のURL，または相対パスを記述することで，
-    要素がリンク対象になる．
-    要素に使えるのは文字列だけというわけではなく，imgタグを要素内に記述することで，画像自体をリンク対象にすることもできる．
-  </p>
+<a href="resources/lecture03-02.html">ブラウザで見る</a>
+
+<p>
+  画像が表示されず，alt属性に設定した代替名が表示されている場合は，src属性に指定したパスが間違っているか，画像がそもそも存在しない
+  可能性があるので，確認すること．
+</p>
+
+<h3>ハイパーリンクの作成</h3>
+
+<p>
+  Webページはハイパーリンク（単にリンクとも呼ばれる）によって，マウスでクリックすることで別ページに遷移することができるのが特徴である．
+  ここではハイパーリンクの貼り方を学ぶ
+</p>
+
+<h4>aタグによるハイパーリンク</h4>
+
+<p>
+  ハイパーリンクの作成にはaタグを用いる．第7回でも少し解説したが，aタグのhref属性にリンク先のURL，または相対パスを記述することで，
+  要素がリンク対象になる．
+  要素に使えるのは文字列だけというわけではなく，imgタグを要素内に記述することで，画像自体をリンク対象にすることもできる．
+</p>
   
   <pre class="brush: xml;highlight: [8,9,11,12,13,14];">
     &lt;!DOCTYPE html&gt;
@@ -224,51 +233,58 @@ $(function(){
     &lt;/body&gt;
     &lt;/html&gt;
   </pre>
-  <a href="resources/lecture03-01.html">ブラウザで見る</a>
-  <br /><br />
-  
-  <h3>外部の Web サービスが提供する情報を埋め込む</h3>
-  <p>
-    昨今のWebページでは，Webパーツやウィジェットと呼ばれる外部サービスの情報を自分のページに埋め込むことが一般的になった．
-    ここでは，そうした外部Webサービスが提供する情報を埋め込む方法を説明する．
-  </p>
-  
-  <h4>外部Webサービスとは</h4>
-  <p>
-    伝えたい情報の内容によっては，地図などを Web ページ内に埋め込み表示できると，より分かりやすく伝えることができる．
-    Web サービスの中には，地図やアカウントの発言など，サービス内の情報を自分の Web ページに埋め込むことができるような機能や，
-    埋め込むための ウィジェット(Widget)を用意しているサービスもある．伝えたい内容に合わせて，情報の埋め込みを積極的に活用すると良い．
-  </p>
-  <img src="images/itb-07-10.png" width="600" alt="itb07-11" />
-  <br /><br />
-  
-  <h4>Google Maps でお気に入りのお店を紹介しよう</h4>
-  <p>
-    <a href="http://maps.google.com/">Google Maps</a> は，世界中の地図を検索し，表示することのできる Web サービスである．
-    またこのサービスは，特定の場所周辺の地図を切り出し，自分の Web ページに埋め込んで表示できる機能を提供している．
-    自分のお気に入りの店を地図に表示し，紹介してみよう．
-  </p>
-  <img src="images/itb-07-5.png" width="600" alt="itb07-5" />
-  <br /><br />
-  <p>
-    まず最初に<a href="http://maps.google.com/">Google Maps (http://maps.google.co.jp/)</a>
-    の検索ボックスに，表示させたい場所の名前(店名でも検索できる)や住所を入力し，表示させる．
-  </p>
-  <img src="images/itb-07-6.png" width="600" alt="itb07-6" />
-  <br /><br />
-  <p>
-    画面右上の「リンク」から「埋め込み地図のカスタマイズとプレビュー」をクリックすると，カスタマイズのためのウィンドウが開く．
-  </p>
-  <img src="images/itb-07-8.png" width="600" alt="itb07-8" />
-  <br /><br />
-  <p>
-    地図のサイズをプレビューを見ながら確認し，画面下に生成されている HTML タグをコピーして，自分の Web ページの地図を表示したい場所に貼りつける．
-  </p>
-  <p>
+<a href="resources/lecture03-01.html">ブラウザで見る</a>
+<br/><br/>
+
+<h3>外部の Web サービスが提供する情報を埋め込む</h3>
+
+<p>
+  昨今のWebページでは，Webパーツやウィジェットと呼ばれる外部サービスの情報を自分のページに埋め込むことが一般的になった．
+  ここでは，そうした外部Webサービスが提供する情報を埋め込む方法を説明する．
+</p>
+
+<h4>外部Webサービスとは</h4>
+
+<p>
+  伝えたい情報の内容によっては，地図などを Web ページ内に埋め込み表示できると，より分かりやすく伝えることができる．
+  Web サービスの中には，地図やアカウントの発言など，サービス内の情報を自分の Web ページに埋め込むことができるような機能や，
+  埋め込むための ウィジェット(Widget)を用意しているサービスもある．伝えたい内容に合わせて，情報の埋め込みを積極的に活用すると良い．
+</p>
+<img src="images/itb-07-10.png" width="600" alt="itb07-11"/>
+<br/><br/>
+
+<h4>Google Maps でお気に入りのお店を紹介しよう</h4>
+
+<p>
+  <a href="http://maps.google.com/">Google Maps</a> は，世界中の地図を検索し，表示することのできる Web サービスである．
+  またこのサービスは，特定の場所周辺の地図を切り出し，自分の Web ページに埋め込んで表示できる機能を提供している．
+  自分のお気に入りの店を地図に表示し，紹介してみよう．
+</p>
+<img src="images/itb-07-5.png" width="600" alt="itb07-5"/>
+<br/><br/>
+
+<p>
+  まず最初に<a href="http://maps.google.com/">Google Maps (http://maps.google.co.jp/)</a>
+  の検索ボックスに，表示させたい場所の名前(店名でも検索できる)や住所を入力し，表示させる．
+</p>
+<img src="images/itb-07-6.png" width="600" alt="itb07-6"/>
+<br/><br/>
+
+<p>
+  画面右上の「リンク」から「埋め込み地図のカスタマイズとプレビュー」をクリックすると，カスタマイズのためのウィンドウが開く．
+</p>
+<img src="images/itb-07-8.png" width="600" alt="itb07-8"/>
+<br/><br/>
+
+<p>
+  地図のサイズをプレビューを見ながら確認し，画面下に生成されている HTML タグをコピーして，自分の Web ページの地図を表示したい場所に貼りつける．
+</p>
+
+<p>
   Google Maps ウィジェットを貼りつけた際，<a href="http://validator.w3.org/">W3C Markup Validation Service</a>でエラーが出る場合には，
   エラーの内容の通り，スタイルシートに iframe タグのプロパティを設定し，HTML ファイル側の記述を削除する必要がある．
-  </p>
-  style.css
+</p>
+style.css
   <pre class="brush: css">
       iframe {
           frameborder: 0;
@@ -277,29 +293,33 @@ $(function(){
           marginwidth: 0;
       }
   </pre>
-  Google Maps ウィジェットとして表示された iframe タグの中に記述されている frameborder などの指定を削除する．
+Google Maps ウィジェットとして表示された iframe タグの中に記述されている frameborder などの指定を削除する．
   <pre class="brush: xml">
     &lt;iframe width="425" height="350" src="ほげほげ"&gt;
   </pre>
 
-  <h4>Twitter ウィジェットを表示してみよう</h4>
-  <p>
-    <a href="http://twitter.com/">Twitter</a> は，ここ数年話題になっているマイクロブログサービスである．
-    Twitter に関する細かい説明は省くが，このサービスも，自分の発言や他人の発言(公開される設定になっているもの)を自分の Web ページに表示することのできる
-    ウィジェット(Widget: 簡易なプログラム)を提供している．
-    <a href="http://twitter.com/about/resources/widgets">Twitter Widget のページ(http://twitter.com/about/resources/widgets)</a>にアクセスし，プロフィールウィジェット(あるいは，検索ウィジェット)を表示してみよう．
-  </p>
-  <img src="images/itb-07-9.png" width="600" alt="itb07-9" />
-  <br /><br />
-  <p>
-    どちらかを選択して表示される情報をカスタマイズし，「完了&amp;コード取得」をクリックするとカスタマイズされたウィジェットを表示するコードが出力される．
-    カスタマイズした内容はコード内に含まれているため，例えばウィジェットの幅を変更したければ width: を，高さを変更するなら height を表示したい場所に合わせて変更すればよい．
-  </p>
-  
-  <h4>演習</h4>
-  <p>
-    Google MapsとTwitter Widgetを埋め込んだHTMLファイルを作成し，動作を確認せよ．
-  </p>
+<h4>Twitter ウィジェットを表示してみよう</h4>
+
+<p>
+  <a href="http://twitter.com/">Twitter</a> は，ここ数年話題になっているマイクロブログサービスである．
+  Twitter に関する細かい説明は省くが，このサービスも，自分の発言や他人の発言(公開される設定になっているもの)を自分の Web ページに表示することのできる
+  ウィジェット(Widget: 簡易なプログラム)を提供している．
+  <a href="http://twitter.com/about/resources/widgets">Twitter Widget
+    のページ(http://twitter.com/about/resources/widgets)</a>にアクセスし，プロフィールウィジェット(あるいは，検索ウィジェット)を表示してみよう．
+</p>
+<img src="images/itb-07-9.png" width="600" alt="itb07-9"/>
+<br/><br/>
+
+<p>
+  どちらかを選択して表示される情報をカスタマイズし，「完了&amp;コード取得」をクリックするとカスタマイズされたウィジェットを表示するコードが出力される．
+  カスタマイズした内容はコード内に含まれているため，例えばウィジェットの幅を変更したければ width: を，高さを変更するなら height を表示したい場所に合わせて変更すればよい．
+</p>
+
+<h4>演習</h4>
+
+<p>
+  Google MapsとTwitter Widgetを埋め込んだHTMLファイルを作成し，動作を確認せよ．
+</p>
 
 </article>
 
@@ -328,7 +348,7 @@ $(function(){
   </section>
 </aside>
 
-<!-- フッタ --> 
+<!-- フッタ -->
 <footer>
   <p>Copyright&copy; 2013 SFC</p>
 </footer>
@@ -339,10 +359,13 @@ $(function(){
   _gaq.push(['_setAccount', 'UA-23811911-1']);
   _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
   })();
 
 </script>
