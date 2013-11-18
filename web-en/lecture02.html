@@ -76,6 +76,12 @@ $(function(){
         <li><a href="./use_templates.html">
           Using HTML Templates</a>
         </li>
+        <li><a href="./photoshop.html">
+	    Image Editing and Visual Effect using Photoshop</a>
+        </li>
+        <li><a href="./development_on_your_pc.html">
+	    Setting Up Web Development Environment on Your PC/Mac</a>
+        </li>
       </ul>
     </li>
   </ul>
@@ -84,7 +90,7 @@ $(function(){
 
 <!-- メインコンテンツ -->
 <article id="content" class="articlecontent">
-  <h2>Lecture #6 : Understand the Internal Structure of HTML and CSS</h2>
+  <h2>Lecture #7 : Understand the Internal Structure of HTML and CSS</h2>
   <p>
   	In the previous lecture, we have viewed the source code of a web page, and played around with the 
     values. In this lecture, we would discuss how web pages are made.
@@ -301,7 +307,7 @@ $(function(){
   <p>--- Failed Validation Checks ---</p>
   <img src="images/validation_error_details.png" width="600" alt="validation_error_details" />
   <p>In this particular situation, the errors are dues to the missing &quot;alt&quot; attribute, which must be included within the &quot;img&quot; tag.</p>
-    
+
   <h4>Excersice</h4>
   <ul>
     <li>Create a new HTML file &quot;<span class="bold">lecture02.html</span>&quot;, and write an article document with at least one &quot;h1&quot; caption tag, and multiple &quot;p&quot; paragraph tags. </li>
@@ -405,10 +411,71 @@ $(function(){
   <p>
     <a href="resources/lecture02-03.html">Open the sample code with a browser</a>
   </p>
+
+
+  <h3>Advanced Selectors</h3>
+  By using mulitple combination of the tag, class, and id, selectors
+  can define precise styles.  The precise description of selectors can
+  lead to descrease the verbose style description, or to prevent the
+  side effect when you modify the CSS written by other developers. 
+
+  <h4>Specifying class and tag at the same position(AND)</h4>
+  <p>
+    When you want to switch one class definition for different tags, you should specify tag and class name at the same position. 
+    The description format is <span class="bold">tag.class</span>. 
+  </p>
+  <pre class="brush: css">
+      /* important class is for red font color. */
+      .important {
+        color: red;
+      }
+
+      /* important for the a tag is for red font color and bold style. */
+      a.important {
+        font-weight: bold;
+      }
+  </pre>
+  <pre class="brush: html">
+      <span class="important">Here is red color. </span>
+      <a href="test.html" class="important">Here is red and bold font. </a>
+  </pre>
+
+  <h4>Definition of parent-child relationship</h4>
+  <p>
+    This is used to define direct children of other elements.  For example, you can apply different styles for header and footer tag even when you are using the same class name.  The format is <span class="bold">selector 1 [white space] selector 2</span>.  It means the selector 2 is a child of selector 1.  When the delimiter is white space, selector 1 affects to its children and grand children.  If you want to limit the effect only for its children, you can use greater than delimiter, like <span class="bold">selector 1 > selector 2</span>. 
+  </p>
+
+  <h4>Pseudo-classes, and pseudo-elements <!-- 疑似クラス，疑似要素による指定 --></h4>
+  <p>
+    Peudo classes can be used as selectors even though they are not described in HTML tags. An examples is <span class="bold">:visited</span>.  You can specify the color of visited or unvisited links by using this pseudo-class.  The format is <span class="bold">:pseudo-class name</span>.  Although pseudo-classe look a little bit confusing, these descriptions enble you enrich your web expression. 
+  </p>
+  <ul>
+      <li>:link -&gt; unvisited links</li>
+      <li>:visited -&gt; visited links</li>
+      <li>:hover -&gt; applied when the mouse pointer is positioned over the element</li>
+      <li>:first-child -&gt; identifies a first child element in its parent element</li>
+      <li>:nth-of-type(n) -&gt; nth element (only CSS3. Old browsers does not support.) </li>
+  </ul>
+  <p>
+    Refer to <a href="http://www.htmq.com/csskihon/005.shtml">CSS2 Selectors</a>，and <a href="http://www.htmq.com/css3/index.shtml#sele">CSS3 Selectors</a> for the complete list of pseudo-classes. 
+  </p>
+
+  <h4>Other Selectors</h4>
+  <p>
+    There are more and more selector usage, eg.) narrowing down specific attributes, specifying an element in specific elements, and so on. 
+    Though it is difficult to use all selector functionality at the beginning, please learn lots of them gradually and you can create web pages you want. 
+  </p>
   
   <h4>Exercise</h4>
   <ul>
     <li>Make a CSS file (lecture02.css) for the &quot;lecture02.html&quot; page you have created in the previous exercise. Load the CSS using a &quot;link&quot; tag.</li>
+
+    <li>In lecture02.html, prepare three sentences maked up with p tag.  Add class name for these tags as first, second, and third respectively. </li>
+    <li>Set font size (font-size) of all &quot;p&quot; elements as 20px. </li>
+    <li>Set font color (color) of &quot;first class&quot; as blue. </li>
+    <li>Set font size (font-size) of &quot;second class&quot; as 24px. </li>
+    <li>Set font style (font-style) of &quot;third class&quot; as italic.</li>
+    <li>Add a new p element with some sentences which is applied first, second, and third class. Do not modify CSS file. </li>
     <li>Adjust the style and design using &quot;specific tag names&quot; and &quot;classes&quot;.</li>
   </ul>
   <p>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web Design With HTML5/CSS3</title>
+  <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css"/>
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css"/>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/shCore.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
+
+</head>
+<body>
+<script type="text/javascript">
+  $(function () {
+    SyntaxHighlighter.all();
+  });
+</script>
+
+<!-- ヘッダ -->
+<header>
+  <h1>Web Design With HTML5/CSS3</h1>
+  <p>SFC IT Literacy Course</p>
+</header>
+
+<!--ナビゲーション -->
+<nav>
+  <div class="menu">
+    <ul>
+    <li>
+      <!-- Go to index.html when no file name is assigned -->
+      <a href="./" >Home</a>
+    </li>
+    <li>
+      <a href="./lecture01.html">Lec. #6</a>
+    </li>
+    <li>
+      <a href="./lecture02.html">Lec. #7</a>
+    </li>
+    <li>
+      <a href="./lecture03.html">Lec. #8</a>
+    </li>
+    <li>
+      <a href="./mid_report.html">Mid-term</a>
+    </li>
+    <li>
+      <a href="./final_report.html">Final</a>
+    </li>
+    <li>
+      <a href="./sshfs.html">SSHFS</a>
+    </li>
+    <li>
+      <a href="./appendix.html" class="current">Appendix</a>
+      <ul>
+        <li><a href="./character_encoding.html">
+          Character Encoding
+        </a></li>
+        <li><a href="./cross_browser.html">
+          Cross-browser Coding
+        </a></li>
+        <li><a href="./html_entities.html">
+          HTML Entities</a>
+        </li>
+        <li><a href="./advanced_css.html">
+          CSS in Detail</a>
+        </li>
+        <li><a href="./useful_tags.html">
+          Commonly Used HTML Tags</a>
+        </li>
+        <li><a href="./use_templates.html">
+          Using HTML Templates</a>
+        </li>
+        <li><a href="./photoshop.html">
+	    Image Editing and Visual Effect using Photoshop</a>
+        </li>
+        <li><a href="./development_on_your_pc.html">
+	    Setting Up Web Development Environment on Your PC/Mac</a>
+        </li>
+      </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- メインコンテンツ -->
+<article id="content" class="articlecontent">
+  <h2>
+    Setting up Development Environment on Your Own PC/Mac
+    <!-- 自分のPC/Macで開発環境を構築する -->
+  </h2>
+
+  <p>
+    This lecture assumes that you create web pages on SFC's Mac. However, you will want to do programming and web development on your own machine.  This tutorial introduces how to setup development environment on your PC or Mac.  
+
+
+    <!-- 本授業資料は基本的にSFCの特別教室のMacを使って操作することが前提となっているが，Webページ開発やプログラミングといった -->
+    <!-- スキルは授業中に学習するだけではとても満足に習得することはできない． -->
+    <!-- 本ページでは，Windwos環境とMac環境を対象とした，自分の私物マシン上で本授業資料と同等の開発環境を整える方法を解説する． -->
+  </p>
+
+  <p>
+    Note that this tutorial is not for all classes.  CNS consultant does not know the contents of this tutorial.  
+    In addition, some teachers do not recommend setting up and use your own environment.  Please ask for your teacher if you needed. 
+
+
+    <!-- ※本資料の内容はCNSコンサルタントのサポート外の内容のため，全クラスで設定を必須とするものではない． -->
+    <!-- 自分のマシンを使った開発を推奨とするかも含めて，自力で環境構築を行うのに不安があれば担当講師に相談すること -->
+  </p>
+
+  <h3>
+    Windows 
+    <!-- Windows環境 -->
+  </h3>
+
+  <p>
+    In this section, we introduce how-tos for Windows environment.  The OS version is Windows 7.  Probably, other version will also work. 
+
+    <!-- Windows環境での設定について解説する．本ページではWindows 7を対象に解説するが，基本的にはその他のバージョンでも同様に動作するはずである． -->
+  </p>
+
+  <h4>
+    Installing Firefox and setting up Firebug
+
+    <!-- FirefoxのインストールとFirebugの設定 -->
+  </h4>
+
+  <p>
+    This lecture recommend using Firefox.  You can develop using some other browsers, like Internet Explorer or Google Chrome.  However, support of some CSS properties differs on each browsers.  If you want to avoid confusion by the difference, we recommend to use Firefox.  
+    
+    You can download Firefox from <a href="http://www.mozilla.jp/firefox/">Firefox web page</a>. 
+
+    <!-- 本授業資料の推奨環境はFirefoxである．Internet ExplorerやGoogle Chromeでも開発自体には問題がないが，一部のCSSプロパティの解釈 -->
+    <!-- やレンダリング方法・対応状況がブラウザによって異なるので，原則本授業のページ作成を行う場合にはFirefoxを用いるのが良い． -->
+    <!-- Firefoxをインストールするには， -->
+    <!-- <a href="http://www.mozilla.jp/firefox/">Firefoxのトップページ</a>から，Firefoxをダウンロードしてインストールする． -->
+  </p>
+  <img src="images/firefox_windows.png" alt="Firefox web page (Windows) " width="600"/>
+
+  <p>
+    Next is installing Firebug.  You can also find similar functionality within other browsers.  However, the course material is based on Firebug, it is recommended to install Firebug.  
+  </p>
+
+  <p>
+    Visit <a href="https://addons.mozilla.org/ja/firefox/addon/firebug/">Firebug installation page</a> using Firefox, and click &quot;Add to Firefox&quot; button, then follow the instruction as displayed. 
+
+    <!-- 昨今のWebブラウザではFirebug相当の機能が標準搭載されるようになったため，Firebugを使うことは特に必須ではないが，本授業資料での解説が -->
+    <!-- Firebugを前提としているためインストールしておいた方が授業との連携上都合が良いのでインストールする． -->
+    <!-- インストールしてFirefoxを起動したら，<a href="https://addons.mozilla.org/ja/firefox/addon/firebug/">Firebugのインストールページ</a> -->
+    <!-- から「Firefoxに追加」ボタンを押し，ダイアログに従ってFirebugをインストールする． -->
+  </p>
+  <img src="images/install_firebug_windows.png" alt="installing firebug" width="600"/>
+
+  <p>
+    Click Firefox menu button on the top-left corner, and select Add-on, then select Extensions.  If installation is completed, you can find Firebug in the list.  If disabled, enable it. 
+
+    <!-- 正常にインストールが完了したかどうかを確かめるには，左上のFirefoxメニューから「アドオン」を選び「拡張機能」のタブを選択して -->
+    <!-- 右側のアドオン一覧にFirebugが表示されているかどうかを確認する．もし無効化されている場合は有効化すること -->
+  </p>
+  <img src="images/firebug_installed_01.png" alt="Firebug installed" width="600"/>
+
+  <p>
+    If Firebug is enabled, you can find a bug on the top-right corner of Firefox window. 
+
+    <!-- また，正常にFirebugが有効化されていれば，右上に見慣れたFirebugアイコンが表示されているはずである． -->
+  </p>
+  <img src="images/firebug_installed_02.png" alt="Firebug installed" width="600"/>
+
+  <h4>
+    Installing Text editor (Notepad++)
+    <!-- テキストエディタ（Terapad）のインストール -->
+  </h4>
+
+  <p>
+    A text editor used in CNS machines is <a href="http://www.mimikaki.net/">mi</a>.  However, Windows version is still under development (alpha version), and it is not so popular in Windows.  So let's install Notepad++ for your machine. (Note that in Japanese version of this tutorial, <a href="http://www5f.biglobe.ne.jp/~t-susumu/library/tpad.html">TeraPad</a> is introduced.  It is a good editor, but only Japanese version exists.  So, here, we introduce Notepad++.)  Since Notepad++ is a popular text editor, you can find usage information in the Internet a lot. 
+
+    <!-- 特別教室の環境ではテキストエディタとして<a href="http://www.mimikaki.net/">mi</a>を使っていたが， -->
+    <!-- <a href="http://www.mimikaki.net/download/alpha.html">Windows版のmi</a>は本資料作成時点でまだα版であること， -->
+    <!-- またそれほどWindowのテキストエディタとしてメジャーで無いことから，Windowsのテキストエディタとして長く一般的で， -->
+    <!-- フリーかつ十分な機能を要した <a href="http://www5f.biglobe.ne.jp/~t-susumu/library/tpad.html">TeraPad</a>を -->
+    <!-- インストールする． -->
+    <!-- TeraPadはmiと同じくHTMLのコードハイライト機能などを要し，日本語環境で多くのユーザが使っているので，もし利用していて不明な -->
+    <!-- ことがあった場合にはインターネット上で多くの情報を集めることができる． -->
+  </p>
+
+  <p>
+    From a download page of <a href="http://notepad-plus-plus.org/">Notepad++</a> web page, download the exe file, and double click it.  After some instructions, you can start to use Notepad++. 
+
+    <!-- <a href="http://www5f.biglobe.ne.jp/~t-susumu/library/tpad.html">TeraPadのホームページ</a>の「ダウンロード」から -->
+    <!-- 「インストーラ付き」版のTeraPadをダウンロードしてインストールする．インストールはこれで終了である． -->
+    <!-- 通常インストールすれば，スタートメニューに登録される． -->
+  </p>
+<!--  <img src="images/terapad_installed.png" alt="TeraPadのインストール" width="400"/>-->
+  <img src="images/notepad_pp_window.png" alt="TeraPad起動画面" width="600"/>
+
+  <p>
+    A usage of Notepad++ is very similar to mi.  
+
+    <!-- TeraPadの使い方はほとんどmiと同様である．注意点として，インストールした初期状態だと文字コードがSJISで保存されてしまうことがあるので， -->
+    <!-- 画面下部のステータスバーが「UTF-8」になっていない場合はファイルメニューから「文字/改行コード指定保存」を選び，文字コード「UTF-8」 -->
+    <!-- 改行コード「LF」を選択するようにすること． -->
+  </p>
+  <!-- <img src="images/terapad_status_bar.png" alt="TeraPadの文字コード表示" width="600"/> -->
+  <!-- <img src="images/terapad_specify_encoding.png" alt="TeraPadの文字コード指定保存" width="300"/> -->
+  <!-- <img src="images/terapad_encode_setting.png" alt="文字コード指定保存" width="300"/> -->
+
+  <h4>Connecting with CNS Environment <!-- CNSとの接続 --></h4>
+  <p>
+    Now you can develop web pages using your machine.  When you develop web pages on your machine, you would need to send HTML/CSS files to CNS environment.  We introduce <a href="./sshfs.html">SSHFS</a>, which you can put and get any files to and from CNS environment. 
+
+    <!-- ここまでで開発環境は一通り揃ったが，このままではCNSの自分のホームディレクトリにアクセスできないため，インターネット経由で -->
+    <!-- CNSの自分のホームディレクトリにアクセスできるようにする必要がある． -->
+    <!-- こちらについては<a href="./sshfs.html">SSHFSのページ</a>で詳しく解説しているので，そちらを参照すること． -->
+  </p>
+
+  <hr class="paragraph" />
+
+  <h3>Mac Environment <!-- Mac環境 --></h3>
+  <p>
+    In this section, we introduce how-tos for Mac environment.  Since you would be used to Mac environment, we don't describe detailed information about each application. 
+    
+    <!-- 次に，Mac環境について説明する．Mac環境は基本的に特別教室の環境に近いので，詳細は省略する． -->
+  </p>
+
+  <h4>
+    Installing Firefox and Setting Up Firebug
+
+    <!-- FirefoxのインストールとFirebugの設定 -->
+  </h4>
+
+  <p>
+    Please refer to the above Windows instructions.  Make sure that if Firebug is enabled. 
+
+    <!-- 基本的にWindows版と同様の手順でインストールできる．Firebugのインストール後，正しくインストールされているかの確認を -->
+    <!-- 必ず行うこと． -->
+  </p>
+
+  <h4>
+    Installing Text Editor (mi)
+
+    <!-- テキストエディタ（mi）のインストール -->
+  </h4>
+
+  <p>
+    You can use <a href="http://www.mimikaki.net/">mi</a>, which is a same text editor at CNS environment.  Go to <a href="http://www.mimikaki.net/">mi's web page</a>, download and install the latest version.  It is recommended to add mi to Dock, then you launch mi easily. 
+
+    <!-- Mac環境であれば特別教室と同じ<a href="http://www.mimikaki.net/">mi</a>を利用することができる． -->
+    <!-- <a href="http://www.mimikaki.net/">miのホームページ</a>から最新バージョンをダウンロードしてインストールすれば良い． -->
+    <!-- 必要であればDockへの登録も行っておくと，起動がスムーズにできる． -->
+  </p>
+
+  <h4>Connecting with CNS <!-- CNSとの接続 --></h4>
+  <p>
+    Now you can develop web pages using your machine.  When you develop web pages on your machine, you would need to send HTML/CSS files to CNS environment.  We introduce <a href="./sshfs.html">SSHFS</a>, which you can put and get any files to and from CNS environment. 
+    
+
+    <!-- ここまでで開発環境は一通り揃ったが，このままではCNSの自分のホームディレクトリにアクセスできないため，インターネット経由で -->
+    <!-- CNSの自分のホームディレクトリにアクセスできるようにする必要がある． -->
+    <!-- こちらについては<a href="./sshfs.html">SSHFSのページ</a>で詳しく解説しているので，そちらを参照すること． -->
+  </p>
+
+</article>
+
+
+<aside>
+  <section>
+    <h3>
+      SFC/ITC Reference Links
+    </h3>
+    <ul>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/en/top_sfc.html">Shonon Fujisawa Information Technology Center</a></li>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/ja/network_web.html">CNS Web Service (Japanese Only)</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>
+      Other Reference Links
+    </h3>
+    <ul>
+      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/firebug//">Firebug</a></li>
+      <li><a href="http://www.htmlcodetutorial.com/">HTML Code Tutorial</a></li>
+      <li><a href="http://immigration-usa.com/html_colors.html">Complete HTML True Color Chart</a></li>
+      <li><a href="http://validator.w3.org/">W3C Markup Validation Service</a></li>
+    </ul>
+  </section>
+</aside>
+
+<!-- フッタ -->
+<footer>
+  <p>Copyright&copy; 2013 SFC</p>
+</footer>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23811911-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

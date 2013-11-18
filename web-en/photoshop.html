@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web Design With HTML5/CSS3</title>
+  <link type="text/css" href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css"/>
+  <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css"/>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/shCore.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="javascripts/shBrushCss.js"></script>
+
+</head>
+<body>
+<script type="text/javascript">
+  $(function () {
+    SyntaxHighlighter.all();
+  });
+</script>
+
+<!-- ヘッダ -->
+<header>
+  <h1>Web Design With HTML5/CSS3</h1>
+  <p>SFC IT Literacy Course</p>
+</header>
+
+<!--ナビゲーション -->
+<nav>
+  <div class="menu">
+    <ul>
+    <li>
+      <!-- Go to index.html when no file name is assigned -->
+      <a href="./" >Home</a>
+    </li>
+    <li>
+      <a href="./lecture01.html">Lec. #6</a>
+    </li>
+    <li>
+      <a href="./lecture02.html">Lec. #7</a>
+    </li>
+    <li>
+      <a href="./lecture03.html">Lec. #8</a>
+    </li>
+    <li>
+      <a href="./mid_report.html">Mid-term</a>
+    </li>
+    <li>
+      <a href="./final_report.html">Final</a>
+    </li>
+    <li>
+      <a href="./sshfs.html">SSHFS</a>
+    </li>
+    <li>
+      <a href="./appendix.html" class="current">Appendix</a>
+      <ul>
+        <li><a href="./character_encoding.html">
+          Character Encoding
+        </a></li>
+        <li><a href="./cross_browser.html">
+          Cross-browser Coding
+        </a></li>
+        <li><a href="./html_entities.html">
+          HTML Entities</a>
+        </li>
+        <li><a href="./advanced_css.html">
+          CSS in Detail</a>
+        </li>
+        <li><a href="./useful_tags.html">
+          Commonly Used HTML Tags</a>
+        </li>
+        <li><a href="./use_templates.html">
+          Using HTML Templates</a>
+        </li>
+        <li><a href="./photoshop.html">
+	    Image Editing and Visual Effect using Photoshop</a>
+        </li>
+        <li><a href="./development_on_your_pc.html">
+	    Setting Up Web Development Environment on Your PC/Mac</a>
+        </li>
+      </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- メインコンテンツ -->
+<article id="content" class="articlecontent">
+<h2>
+  Image Editing and Visual Effect using Photoshop
+</h2>
+
+<p>
+  Current web pages require graphical image for user friendliness.  In this section, we explain how to create, position, effectively show the images in web pages using Adobe Photoshop. 
+  
+  <!-- 今時の見やすいWebページの作成には画像の利用が不可欠である．ここではPhotoshopを使ってWebページ内で使う画像の作成，配置，効果的に見せる方法について解説する． -->
+</p>
+
+<h3>
+  Type of Image Source
+  <!-- 画像素材の種類 -->
+</h3>
+
+<p>
+  As described in <a href="http://ipl.sfc.keio.ac.jp/text/basic-2013-4/resource/sub/information-theory2.pdf">&quot;digitalization of images and movies&quot; of Information Expression in Computer (2) (Sub-textbook)</a>, computer graphics are classified into a <span class="bold red">bitmap (raster) graphic image</span> and a <span class="bold red">vector graphic image</span>.  Vector images are appropriate as an image source.  
+
+  <!-- コンピュータで画像を扱う際の手法としては，<span class="bold red">ビットマップ（ラスター）画像</span>と<span class="bold red">ベクトル（ベクター）画像</span>があるが，画像を加工する元素材として適しているのはベクトル画像である． -->
+  <!-- ビットマップ画像とベクトル画像の解説については<a href="http://ipl.sfc.keio.ac.jp/text/basic-2013-4/resource/sub/information-theory2.pdf">副教材：コンピュータにおける情報の表現（2）</a>の「画像と動画のデジタル化」参照． -->
+</p>
+
+<h3>Finding Image Source <!-- 画像素材を探す --></h3>
+
+<p>
+  As described in <a href="./use_templates.html">Using HTML Templates</a>, you would find and get online free templates. If you do not have confidence to create image design by yourself, the templates are a good option.  
+
+  <!-- <a href="./use_templates.html">HTMLテンプレートからサイトを構築する</a>でも紹介した様に，昨今Webページを作成するためのライセンスフリーで素材はインターネット上の素材集サイト等から数多く入手することができる．一からデザインを作成するのに自信が無い場合は，こうしたフリー素材を利用すると良い． -->
+</p>
+
+<p>
+  You can find vector image sources on the web site; &quot;free vector&quot;, or you can google with some key words you want.  For example, <a href="http://vector.tutsplus.com/articles/web-roundups/60-free-vector-icon-packs-for-design-professionals/">60 Free Vector Icon Packs for Design Professionals</a> can be found with &quot;free vector icons&quot;.  
+
+  <!-- フリーで利用できるベクトル画像素材を探すには「free vector」に加えて欲しい画像のイメージを表す単語などを入れて検索すると良い．例えば「free vector icons」で検索すると<a -->
+  <!--   href="http://vector.tutsplus.com/articles/web-roundups/60-free-vector-icon-packs-for-design-professionals/">60 Free -->
+  <!-- Vector Icon Packs for Design Professionals</a>の様なまとめサイトが見つかるので，その中から自分の要求に合った素材を探す． -->
+</p>
+
+<p>
+  Notice that check the license of the image sources before you use.  Depending on the license, you cannot edit the images.  It is a good choice to find images licensed <a href="http://creativecommons.jp/licenses/">Createve Commons</a>.  Using google's licence search option is another good choice. 
+
+  <!-- 注意として，素材をダウンロードする際には必ずその画像のライセンス（利用規約）を確認すること．ライセンスによっては改変を禁止していることもあるので，<a -->
+  <!--   href="http://creativecommons.jp/licenses/">クリエイティブ・コモンズ</a>などの分かりやすいライセンスを採用している素材を使うのが良い． -->
+  <!-- また，Google検索では詳細オプションにより二次利用が可能なライセンスのものを検索する機能もあるので，そういった機能を使うと便利である -->
+</p>
+
+<img src="images/google_license_search.png" alt="google license search" width="600"/>
+
+<h3>
+  <!-- リンク画像などのロールオーバー処理 -->
+  Creating Rollover Effects for Hyper-link Images 
+</h3>
+
+<p>
+
+  When you use images for hyper-links, unlike the text hyper-links, there are no common expressions that the image can be clicked or not.  With rollover effects, the image is replaced to another image with slightly different color.  This effect let users know whether the image is clickable or not. 
+
+  <!-- 画像をハイパーリンクのボタンとして利用した場合，ただAタグでリンクを指定しただけではその画像がクリック可能であるか分かりにくいことがある．そういった場合は，マウスを画像にポイントした際に「これはクリックできる」といった意図を表すために，少しだけ違う色使いの画像に切り替えると分かりやすい． -->
+  <!-- こういった処理をロールオーバーと呼ぶ． -->
+</p>
+
+<p>
+  Exapmle: No Rollover (Point mouse cursor on the image)
+  <!-- 例：ロールオーバーなしの画像 --><br/>
+  <img class="noshadow" src="images/toiawase_off.jpg">
+</p>
+
+<p>
+  Exapmle: With Rollover (Point mouse cursor on the image)
+  <!-- 例：ロールオーバーありの画像 -->
+
+<div id="otoiawase-rollover"><a>Inquiry <!-- お問い合わせ --></a></div>
+</p>
+
+<h3>
+  How to Create Button Images 
+  <!-- ボタン画像の作り方 -->
+</h3>
+
+<p>
+  In this tutorial, we create button images from scratch.  Let's create inquiry button used above.  (You can also find lots of tutorials online.  Please google with keywords like &quot;Photoshop button&quot; etc.)
+
+  <!-- ロールオーバー画像を作るには，まずはボタン画像を作成する必要がある．ボタン画像の作成方法については，<a -->
+  <!--   href="http://blog.livedoor.jp/psychedeledge/archives/51812346.html">Photoshop ボタンの作り方 - 初心者向け: PSYCHEDELEDGE</a>など，「Photoshop -->
+  <!-- ボタン」等で検索すれば良いサンプルが豊富にあるので参照すると良い． -->
+  <!-- ここでは前述の例に出した問い合わせボタンを作成してみる． -->
+</p>
+
+<p>
+  First, draw a rectangle using &quot; Rounded Rectangle Tool&quot;.  You can change the background color with &quot;Color:&quot; in menu bar, as shown in Fig. Color. 
+
+  <!-- まず，ベースとなる土台部分を「角丸長方形ツール」を使って作成する．背景職は「塗り」部分で変更することができる． -->
+</p>
+<p>
+<img src="images/photoshop_01.png" style="max-width: 400px;"><br />
+Fig. Rounded Rectangle Tool 
+</p>
+
+<p>
+<img src="images/photoshop_02.png" style="max-width: 600px;"><br />
+Fig. Color 
+</p>
+
+<p>
+  Please right-click on the layer you created, and select &quot;Blending Options&quot;. A new window pops up as show in &quot;Fig. Menu of Blending Options&quot;. Please change the settings in the window, and you would see that visual effects of the layer change. 
+
+  <!-- 作成した角丸長方形のレイヤーを右クリックし「レイヤー効果」を開くと，細かい設定を行うことができる． -->
+  <!-- 左側から変更したい要素を選択し，パラメータを変更してみると見た目が変わるので，自由に変更してみると良い． -->
+</p>
+
+<p>
+<img src="images/photoshop_03.png" style="max-width: 600px;">
+<br />
+Fig. Right Click on Layer 
+</p>
+
+<p>
+<img src="images/photoshop_04.png" style="max-width: 600px;">
+Fig. Menu of Blending Options 
+<p>
+
+<p>
+  In this tutorial, the stroke size is set to 1px as show in Fig. Stroke, and background is colorized with a gradient option  as show in Fig. Gradient Overlay. 
+  <!-- ここでは「境界線」を1px黒色で表示し「グラデーションオーバーレイ」で描画色・背景色を調整した． -->
+</p>
+<p>
+  <img src="images/photoshop_05.png" style="max-width: 600px;">
+  Fig. Stroke. 
+</p>
+<p>
+  <img src="images/photoshop_06.png" style="max-width: 600px;">
+  Fig. Gradient Overlay. 
+</p>
+<p>
+  <img src="images/photoshop_07.png" style="max-width: 600px;">
+
+</p>
+<p>
+  <img src="images/photoshop_07-2.png" style="max-width: 600px;">
+</p>
+<p>
+  Now, you can see a box with gradient as shown in Fig. Gradient Box. 
+ <!-- ここまで設定すると，グラデーション付きの枠が完成する． -->
+</p>
+
+<p>
+<img src="images/photoshop_08.png" style="max-width: 600px;">
+<br />
+Fig. Gradient Box 
+</p>
+
+<p>
+  Then, let's type text using Horizontal Type Tool. 
+  <!-- あとは，この上に「横書き文字ツール」で文字を描画する -->
+</p>
+
+<img src="images/photoshop_09.png" style="max-width: 600px;">
+<img src="images/photoshop_10.png" style="max-width: 300px;">
+
+<p>
+  Lastly, let's copy and paste an icon image.  
+  <!-- 最後に，フリー素材サイトからアイコン画像を貼り付けて位置を調整する． -->
+  <!-- こちらも「レイヤー効果」からエフェクトをかけることで立体感などを出すことができる． -->
+</p>
+
+<img src="images/photoshop_12.png" style="max-width: 600px;">
+
+<p>
+In this tutorial, we give a 3D appearance to the icon by adding drop
+shadow effect. 
+<!-- ここでは，ドロップシャドウを使うことで，アイコンに影を付け，立体感を持たせた． --></p>
+
+<p>
+<img src="images/photoshop_13.png" style="max-width: 600px;">
+<br />
+Fig. Without drop shadow <!-- ドロップシャドウなし -->
+</p>
+
+<p>
+<img src="images/photoshop_14.png" style="max-width: 600px;">
+<br />
+Fig. With drop shadow <!-- ドロップシャドウあり -->
+</p>
+
+<p>
+  Lastly, let's cutout the image you have created, since the size of image is arbitrary.  To cutout the image, you can use &quot;Slice Select Tool&quot;, and select the image you want to save.  Probably, the edge of the image needs to be adjusted.  If you need to adjust the edge, zoom the image more than 1000%, then adjust correctly .
+
+  <!-- 最後に，ここまででキャンバス上に作成した画像は適当に大きなサイズのキャンバスの上に書いているので，画像部分だけの切り出しを行う． -->
+  <!-- 切り出しには「スライスツール」を使い，切り出したい部分を選択する．ここは微調整が必要になるため，拡大率を上げる（Command + ＋キー）などの機能を使い，正確に指定すること． -->
+</p>
+<img src="images/photoshop_15.png" style="max-width: 600px;">
+<img src="images/photoshop_16.png" style="max-width: 600px;">
+
+<p>
+  After you adjusted, select &quot;Save for Web & Devices&quot; from a File menu.  When the image is devided using Slice Tool, you can save each devided part to each file.  In the Fig. Save for Web & Devices, 03 is what you need. So, select the 03 part, and click &quot;save&quot;.  Then you get the image you created.
+
+
+  <!-- スライス範囲を指定したら，ファイルメニューから「Web用に保存」を選択する．スライスツールで分割した状態だと，各分割部分毎にファイル名などを指定することができる．ここでは03が欲しい部分なので，当該部分を選択して「保存」を行えば，当該画像を取得することができる．これでボタン画像の作成が完了する． -->
+</p>
+<img src="images/photoshop_17.png" style="max-width: 300px;">
+<p>
+<img src="images/photoshop_18.png" style="max-width: 600px;">
+Fig. Save for Web & Devices
+</p>
+
+<h3>
+  How to Create Rollover Image 
+  <!-- ロールオーバー画像の作り方 -->
+</h3>
+
+<p>
+  Using the image you created, let's create the image for rollover.  On photoshop, open &quot;Layer Style&quot; again, and choose &quot;Color Overlay&quot;.  Then set the opacity to arbitrary value.  In the figure, it is set to 30%.  It makes the image tint. This is the image for rollover.  Please save the image!
+
+  <!-- 最後に，ロールオーバー用の画像を作成するには，同じファイルで再度角丸長方形のレイヤー効果を開き「カラーオーバーレイ」で「不透明度」を適当に設定する（ここでは30％）． -->
+  <!-- すると，角丸のグラデーションが少し薄い色になるので，これをロールオーバー用画像として再度保存し直せば良い -->
+</p>
+<img src="images/photoshop_19.png" style="max-width: 600px;">
+
+<p>
+<img src="images/photoshop_20.png" style="max-width: 300px;">
+Fig. With Color Overlay
+  <!-- カラーオーバーレイあり -->
+</p>
+
+<p>
+<img src="images/photoshop_21.png" style="max-width: 300px;">
+Fig. Without Color Overlay
+  <!-- カラーオーバーレイなし -->
+</p>
+
+
+<p>
+  You can download the PSD file
+  from <a href="resources/toiawase.psd">here</a>.  
+
+  <!-- 参考までに，ここで利用したPSDファイル（Photoshop形式のファイル） -->
+  <!-- <a href="resources/toiawase.psd">こちらからダウンロードできる</a> -->
+  <!-- ので，色々と試してみると良い． -->
+</p>
+
+<h3>
+  How to Rollover (CSS)
+  <!-- ロールオーバー処理の書き方 -->
+</h3>
+
+<p>
+  Preparing images is finished.  Let's write a code for rollover.  To realize rollover, you have two choices; using CSS's hover pseudo class, and JavaScript.  In this tutorial, we introduce hover pseudo class.
+
+  <!-- 画像が用意できたら，次はロールオーバー処理を記述することで実際にロールオーバーの処理を行う．ロールオーバーを実現するには，一般的にはCSSのhover疑似クラスを用いる方法とJavaScriptを用いる方法があるが，ここではCSSを使った方法を紹介する． -->
+</p>
+
+<p>
+  At first, prepare HTML as follows. 
+</p>
+
+<p>
+  HTML
+</p>
+
+  <pre class="brush: html;">
+<div id="otoiawase-rollover"><a>お問い合わせ</a></div>
+  </pre>
+
+  Then, prepare CSS as follows.  
+
+<p>
+  CSS
+</p>
+  <pre class="brush: css;">
+#otoiawase-rollover a {
+    display: block;
+    width: 202px;
+    height: 52px;
+    background: url(../images/toiawase_off.jpg);
+    text-decoration: none;
+    text-indent: -1000em;
+}
+
+#otoiawase-rollover a:hover {
+    background: url(../images/toiawase_on.jpg);
+}
+  </pre>
+
+<p>
+  In this CSS, two set of CSS statements are described.  The first statement is for A tag, and the second is for A:hover tag.  &quot;hover&quot; is a pseudo class, which means &quot;a condition that mouse is over the element&quot;.
+
+</p>
+
+  <!-- 今回は，Aタグに対して画像を適用する．以下はID「otoiawase-rollover」要素内のAタグに対してtoiawase_off.jpg（マウスが乗っていない状態），toiawase_on.jpg（マウスが重ねられた状態）を切り替えるサンプルである． -->
+  <!-- 「:hover」とは「その要素にマウスが重ねられた状態」を指す疑似クラスで「a:hover」とすることで，Aタグ部分にマウスが重ねられたとき，という指定になる． -->
+
+<p>
+  Note that the width and height value should be changed to your image size.  In addition, the text-indent attribute is set to negative.  This avoids to overlay the text in A tag.
+
+  <!-- ここで，上記CSSのwidth, height属性は元画像のサイズに合わせる必要がある．また，text-indent属性の指定はAタグ内に書いた文字が画像の上に重なって表示するのを避けるための記述である． -->
+</p>
+
+<h3>
+  Excercise
+  <!-- 練習問題 -->
+</h3>
+
+<ul>
+  <li>Make rollover images, and write CSS, and HTML in this tutorial.  </li>
+  <li>Comment out text-indent attribute in the CSS, and see the appearance. </li>
+  <li>Make text color changed when mouse is over using hover pseudo class. </li>
+  <li>Make a banner for your homepage using Photoshop.  Search image samples on the Internet. You can use arbitrary resourecs. </i>
+
+
+  <!-- <li>本ページのロールオーバーサンプル画像とCSS, HTMLを作成し，実際にロールオーバーが動作することを確かめよ</li> -->
+  <!-- <li>CSSのtext-indent属性を設定しないとどのような見た目になるか，確認せよ</li> -->
+  <!-- <li>CSSのhover疑似クラスを使い，マウスを重ねると文字色が変わるエフェクトを実現せよ</li> -->
+  <!-- <li>Photoshopを使って自分のホームページ向けのバナーを作成しなさい．バナーの作成方法やサンプルはインターネット上からやり方を検索し，好きなものを探すこと</li> -->
+</ul>
+
+<h3>
+  Summary
+ <!-- まとめ -->
+</h3>
+
+<p>
+  In this tutorial, we introduced how to make images for web pages using Photoshop.  Hover pseudo class enables to make rollover effect. 
+
+  <!-- 本ページでは，Photoshopを使ってWebページで使う素材の作成方法を紹介した．また，hover疑似クラスを使い，画像のロールオーバー処理を実現した． -->
+</p>
+
+</article>
+
+
+<aside>
+  <section>
+    <h3>
+      SFC/ITC Reference Links
+    </h3>
+    <ul>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/en/top_sfc.html">Shonon Fujisawa Information Technology Center</a></li>
+      <li><a href="http://www.sfc.itc.keio.ac.jp/ja/network_web.html">CNS Web Service (Japanese Only)</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>
+      Other Reference Links
+    </h3>
+    <ul>
+      <li><a href="https://addons.mozilla.org/en-US/firefox/addon/firebug//">Firebug</a></li>
+      <li><a href="http://www.htmlcodetutorial.com/">HTML Code Tutorial</a></li>
+      <li><a href="http://immigration-usa.com/html_colors.html">Complete HTML True Color Chart</a></li>
+      <li><a href="http://validator.w3.org/">W3C Markup Validation Service</a></li>
+    </ul>
+  </section>
+</aside>
+
+<!-- フッタ -->
+<footer>
+  <p>Copyright&copy; 2013 SFC</p>
+</footer>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23811911-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
