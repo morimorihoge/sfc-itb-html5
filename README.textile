@@ -5,7 +5,7 @@ h1. SFC情報基礎 HTML5/CSS3によるサイト構築資料
 
 以下のURLで閲覧できますが、いつまで公開されているかは不明です。消えたらミラーサイトを用意しようと思うので、気づいた人は連絡Issue等で連絡下さい。
 
-http://ipl.sfc.keio.ac.jp/text/basic-2012-4/text/web/
+http://ipl.sfc.keio.ac.jp/text/basic-2013-4/text/web/
 
 pull requestの方法については以下のサイトを参考にして頂けると助かります．
 
